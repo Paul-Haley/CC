@@ -16,9 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".DisplayProfileActivity"
             android:parentActivityName=".MainActivity"
             android:label="Profile"></activity>
+
+        <activity android:name=".ShopActivity"></activity>
     </application>
 
 </manifest>

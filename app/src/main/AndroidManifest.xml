@@ -19,9 +19,13 @@
 
         <activity android:name=".DisplayProfileActivity"
             android:parentActivityName=".MainActivity"
-            android:label="Profile"></activity>
+            android:label="Profile">
+        </activity>
 
-        <activity android:name=".ShopActivity"></activity>
+        <activity android:name=".ShopActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="Shop">
+        </activity>
     </application>
 
 </manifest>

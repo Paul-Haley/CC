@@ -33,4 +33,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DisplayProfileActivity.class);
         startActivity(intent);
     }
+
+    public void viewShop(View view) {
+        //Create view shop intent
+        Intent intent = new Intent(this, ShopActivity.class);
+        startActivity(intent);
+    }
+
+
+
+    private void makeButtonHandlers() {
+
+    }
 }

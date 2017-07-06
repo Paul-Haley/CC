@@ -5,15 +5,112 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cchapy.cc.MainActivity">
+    tools:context="cchapy.cc.MainActivity"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
-    <TextView
+    <ImageButton
+        android:id="@+id/imageButton18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        app:srcCompat="@mipmap/ic_launcher"
+        app:layout_constraintRight_toRightOf="@+id/imageButton15"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton17"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton15" />
+
+    <ImageButton
+        android:id="@+id/imageButton16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        app:layout_constraintRight_toRightOf="@+id/imageButton17"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton17" />
+
+    <ImageButton
+        android:id="@+id/imageButton17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        app:layout_constraintRight_toRightOf="@+id/imageButton18"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton16"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton18" />
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="@+id/imageButton7"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton6"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="@+id/imageButton5"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton8"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        app:layout_constraintLeft_toLeftOf="@+id/imageButton8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton7"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.25"
+        app:layout_constraintRight_toLeftOf="@+id/imageView"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton18"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.25"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintLeft_toRightOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="126dp"
+        android:layout_height="212dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintRight_toLeftOf="@+id/imageButton15"
+        app:layout_constraintLeft_toRightOf="@+id/imageButton5" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="124dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:singleLine="true"
+        android:text="User Name"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintLeft_toRightOf="@+id/imageButton5"
+        app:layout_constraintRight_toLeftOf="@+id/imageButton15"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.26"
+        app:layout_constraintVertical_chainStyle="packed" />
 
 </android.support.constraint.ConstraintLayout>

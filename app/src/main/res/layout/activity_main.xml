@@ -10,175 +10,168 @@
     tools:layout_editor_absoluteX="0dp">
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/Label_Avatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="AVATAR"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton6"
-        app:layout_constraintRight_toRightOf="@+id/imageButton6"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
+        app:layout_constraintLeft_toLeftOf="@+id/Button_Avatar"
+        app:layout_constraintRight_toRightOf="@+id/Button_Avatar"
+        app:layout_constraintTop_toBottomOf="@+id/Button_Avatar" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/Label_Shop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SHOP"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton8"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton7"
-        app:layout_constraintRight_toRightOf="@+id/imageButton7"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
+        app:layout_constraintBottom_toTopOf="@+id/Button_Discounts"
+        app:layout_constraintLeft_toLeftOf="@+id/Button_Shop"
+        app:layout_constraintRight_toRightOf="@+id/Button_Shop"
+        app:layout_constraintTop_toBottomOf="@+id/Button_Shop" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/Label_QR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="QR"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton7"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton5"
-        app:layout_constraintRight_toRightOf="@+id/imageButton5"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+        app:layout_constraintBottom_toTopOf="@+id/Button_Shop"
+        app:layout_constraintLeft_toLeftOf="@+id/Button_QR"
+        app:layout_constraintRight_toRightOf="@+id/Button_QR"
+        app:layout_constraintTop_toBottomOf="@+id/Button_QR" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/Label_Friends"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FRIENDS"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton17"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton18"
-        app:layout_constraintRight_toRightOf="@+id/imageButton18"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton18" />
+        app:layout_constraintBottom_toTopOf="@+id/Button_Leaderboard"
+        app:layout_constraintLeft_toLeftOf="@+id/Button_Friends"
+        app:layout_constraintRight_toRightOf="@+id/Button_Friends"
+        app:layout_constraintTop_toBottomOf="@+id/Button_Friends" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/Label_Settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SETTINGS"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton16"
-        app:layout_constraintRight_toRightOf="@+id/imageButton16"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton16" />
+        app:layout_constraintLeft_toLeftOf="@+id/Button_Settings"
+        app:layout_constraintRight_toRightOf="@+id/Button_Settings"
+        app:layout_constraintTop_toBottomOf="@+id/Button_Settings" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/Label_Leaderboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LEADERBOARD"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton16"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton17"
-        app:layout_constraintRight_toRightOf="@+id/imageButton17"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton17" />
+        app:layout_constraintBottom_toTopOf="@+id/Button_Settings"
+        app:layout_constraintLeft_toLeftOf="@+id/Button_Leaderboard"
+        app:layout_constraintRight_toRightOf="@+id/Button_Leaderboard"
+        app:layout_constraintTop_toBottomOf="@+id/Button_Leaderboard" />
 
     <ImageButton
-        android:id="@+id/imageButton18"
+        android:id="@+id/Button_Friends"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/ic_launcher"
-        app:layout_constraintRight_toRightOf="@+id/textView4"
-        app:layout_constraintLeft_toLeftOf="@+id/textView4"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintRight_toRightOf="@+id/Label_Profile"
+        app:layout_constraintLeft_toLeftOf="@+id/Label_Profile"
+        app:layout_constraintBottom_toTopOf="@+id/Label_Friends"
+        app:layout_constraintTop_toBottomOf="@+id/Label_Profile" />
 
     <ImageButton
-        android:id="@+id/imageButton16"
+        android:id="@+id/Button_Settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/ic_launcher"
-        app:layout_constraintRight_toRightOf="@+id/textView6"
-        app:layout_constraintLeft_toLeftOf="@+id/textView6"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintRight_toRightOf="@+id/Label_Leaderboard"
+        app:layout_constraintLeft_toLeftOf="@+id/Label_Leaderboard"
+        app:layout_constraintBottom_toTopOf="@+id/Label_Settings"
+        app:layout_constraintTop_toBottomOf="@+id/Label_Leaderboard" />
 
     <ImageButton
-        android:id="@+id/imageButton17"
+        android:id="@+id/Button_Leaderboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/ic_launcher"
-        app:layout_constraintRight_toRightOf="@+id/textView7"
-        app:layout_constraintLeft_toLeftOf="@+id/textView7"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintHorizontal_bias="0.5" />
+        app:layout_constraintRight_toRightOf="@+id/Label_Friends"
+        app:layout_constraintLeft_toLeftOf="@+id/Label_Friends"
+        app:layout_constraintBottom_toTopOf="@+id/Label_Leaderboard"
+        app:layout_constraintTop_toBottomOf="@+id/Label_Friends" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/Button_Discounts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/ic_launcher"
-        app:layout_constraintRight_toRightOf="@+id/textView9"
-        app:layout_constraintLeft_toLeftOf="@+id/textView9"
-        app:layout_constraintBottom_toTopOf="@+id/textView10"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintRight_toRightOf="@+id/Label_Shop"
+        app:layout_constraintLeft_toLeftOf="@+id/Label_Shop"
+        app:layout_constraintBottom_toTopOf="@+id/Label_Discounts"
+        app:layout_constraintTop_toBottomOf="@+id/Label_Shop" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/Button_Shop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/ic_launcher"
-        app:layout_constraintRight_toRightOf="@+id/textView8"
-        app:layout_constraintLeft_toLeftOf="@+id/textView8"
-        app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
-        app:layout_constraintHorizontal_bias="0.5" />
+        app:layout_constraintRight_toRightOf="@+id/Label_QR"
+        app:layout_constraintLeft_toLeftOf="@+id/Label_QR"
+        app:layout_constraintBottom_toTopOf="@+id/Label_Shop"
+        app:layout_constraintTop_toBottomOf="@+id/Label_QR" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/Button_Avatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/ic_launcher"
-        app:layout_constraintRight_toRightOf="@+id/textView10"
-        app:layout_constraintLeft_toLeftOf="@+id/textView10"
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintRight_toRightOf="@+id/Label_Discounts"
+        app:layout_constraintLeft_toLeftOf="@+id/Label_Discounts"
+        app:layout_constraintBottom_toTopOf="@+id/Label_Avatar"
+        app:layout_constraintTop_toBottomOf="@+id/Label_Discounts" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/Button_QR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/ic_launcher"
         app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintBottom_toTopOf="@+id/Label_QR"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/imageView"
+        app:layout_constraintRight_toLeftOf="@+id/Image_Avatar"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintVertical_bias="0.19999999"
-        app:layout_constraintHorizontal_bias="0.5" />
+        app:layout_constraintVertical_bias="0.19999999" />
 
     <ImageButton
-        android:id="@+id/imageButton15"
+        android:id="@+id/Button_Profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/ic_launcher"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/Label_Profile"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/imageView"
+        app:layout_constraintLeft_toRightOf="@+id/Image_Avatar"
         app:layout_constraintVertical_bias="0.19999999" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/Image_Avatar"
         android:layout_width="169dp"
         android:layout_height="284dp"
         android:src="@drawable/character_girl_base"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintRight_toLeftOf="@+id/imageButton15"
-        app:layout_constraintLeft_toRightOf="@+id/imageButton5" />
+        app:layout_constraintTop_toBottomOf="@+id/Text_Username"
+        app:layout_constraintRight_toLeftOf="@+id/Button_Profile"
+        app:layout_constraintLeft_toRightOf="@+id/Button_QR" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Text_Username"
         android:layout_width="124dp"
         android:layout_height="42dp"
         android:ems="10"
@@ -186,7 +179,7 @@
         android:text="User Name"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/Image_Avatar"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -194,26 +187,25 @@
         app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/Label_Profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PROFILE"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton18"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton15"
-        app:layout_constraintRight_toRightOf="@+id/imageButton15"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton15" />
+        app:layout_constraintBottom_toTopOf="@+id/Button_Friends"
+        app:layout_constraintLeft_toLeftOf="@+id/Button_Profile"
+        app:layout_constraintRight_toRightOf="@+id/Button_Profile"
+        app:layout_constraintTop_toBottomOf="@+id/Button_Profile" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/Label_Discounts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DISCOUNTS"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton8"
-        app:layout_constraintRight_toRightOf="@+id/imageButton8"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
+        app:layout_constraintBottom_toTopOf="@+id/Button_Avatar"
+        app:layout_constraintLeft_toLeftOf="@+id/Button_Discounts"
+        app:layout_constraintRight_toRightOf="@+id/Button_Discounts"
+        app:layout_constraintTop_toBottomOf="@+id/Button_Discounts" />
 
 </android.support.constraint.ConstraintLayout>

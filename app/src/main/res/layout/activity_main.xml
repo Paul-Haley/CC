@@ -14,9 +14,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="AVATAR"
-        app:layout_constraintRight_toRightOf="@+id/imageButton6"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton6"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="@+id/imageButton6"
+        app:layout_constraintRight_toRightOf="@+id/imageButton6"
         app:layout_constraintTop_toBottomOf="@+id/imageButton6" />
 
     <TextView
@@ -24,49 +26,58 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SHOP"
-        app:layout_constraintRight_toRightOf="@+id/imageButton7"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton7"
+        android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/imageButton8"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton7" />
+        app:layout_constraintLeft_toLeftOf="@+id/imageButton7"
+        app:layout_constraintRight_toRightOf="@+id/imageButton7"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton7"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="QR"
-        app:layout_constraintRight_toRightOf="@+id/imageButton5"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton5"
+        android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/imageButton7"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+        app:layout_constraintLeft_toLeftOf="@+id/imageButton5"
+        app:layout_constraintRight_toRightOf="@+id/imageButton5"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton5"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FRIENDS"
-        app:layout_constraintRight_toRightOf="@+id/imageButton18"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton18"
+        android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/imageButton17"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton18" />
+        app:layout_constraintLeft_toLeftOf="@+id/imageButton18"
+        app:layout_constraintRight_toRightOf="@+id/imageButton18"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton18"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="SETTINGS"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton16"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintLeft_toLeftOf="@+id/imageButton16"
         app:layout_constraintRight_toRightOf="@+id/imageButton16"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton16" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton16" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LEADERBOARD"
-        app:layout_constraintRight_toRightOf="@+id/imageButton17"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton17"
+        android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/imageButton16"
+        app:layout_constraintLeft_toLeftOf="@+id/imageButton17"
+        app:layout_constraintRight_toRightOf="@+id/imageButton17"
         app:layout_constraintTop_toBottomOf="@+id/imageButton17" />
 
     <ImageButton
@@ -97,7 +108,8 @@
         app:layout_constraintRight_toRightOf="@+id/textView7"
         app:layout_constraintLeft_toLeftOf="@+id/textView7"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <ImageButton
         android:id="@+id/imageButton8"
@@ -117,7 +129,8 @@
         app:layout_constraintRight_toRightOf="@+id/textView8"
         app:layout_constraintLeft_toLeftOf="@+id/textView8"
         app:layout_constraintBottom_toTopOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <ImageButton
         android:id="@+id/imageButton6"
@@ -140,7 +153,7 @@
         app:layout_constraintRight_toLeftOf="@+id/imageView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintVertical_bias="0.19999999"
-        app:layout_constraintHorizontal_bias="0.48" />
+        app:layout_constraintHorizontal_bias="0.5" />
 
     <ImageButton
         android:id="@+id/imageButton15"
@@ -156,8 +169,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="126dp"
-        android:layout_height="212dp"
+        android:layout_width="169dp"
+        android:layout_height="284dp"
         android:src="@drawable/character_girl_base"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
@@ -172,22 +185,23 @@
         android:singleLine="true"
         android:text="User Name"
         android:textAlignment="center"
-        android:textSize="18sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.26"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PROFILE"
-        app:layout_constraintRight_toRightOf="@+id/imageButton15"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton15"
+        android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/imageButton18"
+        app:layout_constraintLeft_toLeftOf="@+id/imageButton15"
+        app:layout_constraintRight_toRightOf="@+id/imageButton15"
         app:layout_constraintTop_toBottomOf="@+id/imageButton15" />
 
     <TextView
@@ -195,9 +209,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DISCOUNTS"
-        app:layout_constraintRight_toRightOf="@+id/imageButton8"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton8"
+        android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/imageButton6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="@+id/imageButton8"
+        app:layout_constraintRight_toRightOf="@+id/imageButton8"
         app:layout_constraintTop_toBottomOf="@+id/imageButton8" />
 
 </android.support.constraint.ConstraintLayout>

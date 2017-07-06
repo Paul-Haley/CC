@@ -141,6 +141,7 @@
         android:id="@+id/Button_QR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="viewQR"
         app:srcCompat="@mipmap/ic_launcher"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintBottom_toTopOf="@+id/Label_QR"

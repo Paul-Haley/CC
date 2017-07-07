@@ -37,7 +37,7 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).userName);
+        holder.mFriendUsernameView.setText(mValues.get(position).userName);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,19 +59,23 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public final TextView mIdView;
-        public final TextView mContentView;
+        public final TextView mFriendUsernameView;
+        public final TextView mFriendCityView;
+        public final TextView mFriendLeafView;
         public User mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
             mIdView = (TextView) view.findViewById(R.id.id);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mFriendUsernameView = (TextView) view.findViewById(R.id.leaderboardFriendUsername);
+            mFriendCityView  = (TextView) view.findViewById(R.id.leaderboardFriendCity);
+            mFriendLeafView = (TextView) view.findViewById(R.id.leaderboardFriendLeaves);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString() + " '" + mFriendUsernameView.getText() + "'";
         }
     }
 }

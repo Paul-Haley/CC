@@ -24,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".DisplayProfileActivity"
             android:label="Profile"
@@ -55,6 +56,10 @@
         <activity android:name=".AvatarActivity"
             android:label="Closet"
             android:parentActivityName=".MainActivity"/>
+        <activity android:name=".ScannedActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="Reward">
+        </activity>
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"

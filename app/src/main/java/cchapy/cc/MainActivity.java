@@ -55,4 +55,16 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, leaderboardActivity.class);
         startActivity(intent);
     }
+
+    public void viewSettings(View view) {
+        //Create view Settings intent
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    public void viewDiscounts(View view) {
+        //Create view Settings intent
+        Intent intent = new Intent(this, DiscountActivity.class);
+        startActivity(intent);
+    }
 }

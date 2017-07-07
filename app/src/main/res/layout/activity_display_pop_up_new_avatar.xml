@@ -30,7 +30,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/imageView11"
+            android:id="@+id/rewardStar2"
             android:layout_width="wrap_content"
             android:layout_height="82dp"
             android:layout_column="1"
@@ -41,13 +41,13 @@
             android:layout_marginTop="8dp"
             android:layout_row="0"
             android:layout_weight="1"
-            app:layout_constraintLeft_toRightOf="@+id/imageView10"
+            app:layout_constraintLeft_toRightOf="@+id/rewardStar1"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/symbol_star" />
 
         <ImageView
-            android:id="@+id/imageView7"
+            android:id="@+id/rewardStar0"
             android:layout_width="wrap_content"
             android:layout_height="82dp"
             android:layout_column="5"
@@ -59,12 +59,12 @@
             android:layout_row="0"
             app:layout_constraintHorizontal_bias="0.482"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/imageView10"
+            app:layout_constraintRight_toLeftOf="@+id/rewardStar1"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/symbol_star" />
 
         <ImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/rewardStar1"
             android:layout_width="wrap_content"
             android:layout_height="82dp"
             android:layout_column="2"
@@ -82,22 +82,40 @@
 
     </android.support.constraint.ConstraintLayout>
 
-    <ImageView
-        android:id="@+id/rewardedAvatar"
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:contentDescription="TODO: make it change to new Avatar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView10"
-        app:layout_constraintVertical_bias="0.466"
-        app:srcCompat="@drawable/character_girl_luckycat" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:srcCompat="@drawable/box_open"
+            android:layout_marginBottom="-75dp" />
+
+        <ImageView
+            android:id="@+id/rewardedAvatar"
+            android:layout_width="256dp"
+            android:layout_height="321dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:contentDescription="TODO: make it change to new Avatar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:srcCompat="@drawable/character_girl_luckycat"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="0dp"
+            app:layout_constraintHorizontal_bias="0.495" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>

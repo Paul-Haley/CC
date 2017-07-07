@@ -43,4 +43,28 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, QRActivity.class);
         startActivity(intent);
     }
+
+    public void viewFriends(View view) {
+        //Create view profile intent
+        Intent intent = new Intent(this, FriendsActivity.class);
+        startActivity(intent);
+    }
+
+    public void viewLeaderboard(View view) {
+        //Create view QR intent
+        Intent intent = new Intent(this, leaderboardActivity.class);
+        startActivity(intent);
+    }
+
+    public void viewSettings(View view) {
+        //Create view Settings intent
+        Intent intent = new Intent(this, SettingsActivity.class);
+        startActivity(intent);
+    }
+
+    public void viewDiscounts(View view) {
+        //Create view Settings intent
+        Intent intent = new Intent(this, DiscountActivity.class);
+        startActivity(intent);
+    }
 }

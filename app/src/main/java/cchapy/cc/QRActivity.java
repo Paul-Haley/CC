@@ -18,7 +18,7 @@ public class QRActivity extends AppCompatActivity {
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
         integrator.setPrompt("Scan a CC QR code for Leaves and Avatars");
-        integrator.setOrientationLocked(false);
+        integrator.setOrientationLocked(true);
         integrator.setBeepEnabled(true);
         integrator.initiateScan(); // cause qr code scanner to start
 

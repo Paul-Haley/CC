@@ -49,4 +49,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, FriendsActivity.class);
         startActivity(intent);
     }
+
+    public void viewLeaderboard(View view) {
+        //Create view QR intent
+        Intent intent = new Intent(this, leaderboardActivity.class);
+        startActivity(intent);
+    }
 }

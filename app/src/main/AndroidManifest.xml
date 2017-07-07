@@ -49,19 +49,25 @@
             android:name=".SettingsActivity"
             android:label="Settings"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".DiscountActivity"
+        <activity
+            android:name=".DiscountActivity"
             android:label="Your Discounts"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".AvatarActivity"
+            android:label="Closet"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".ScannedActivity"
             android:parentActivityName=".MainActivity"
             android:label="Reward">
         </activity>
-
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"
-            tools:replace="screenOrientation" />
+            tools:replace="screenOrientation"></activity>
 
+        <activity android:name=".DisplayPopUpProfileActivity"
+            android:theme="@style/Theme.AppCompat.Dialog.Alert"></activity>
+        
     </application>
 
 </manifest>

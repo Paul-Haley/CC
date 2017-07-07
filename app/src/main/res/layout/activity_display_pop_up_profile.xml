@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="cchapy.cc.DisplayPopUpProfileActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="25dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="25dp" />
+
+    <ImageView
+        android:id="@+id/Image_Avatar"
+        android:layout_width="169dp"
+        android:layout_height="284dp"
+        android:layout_marginTop="2dp"
+        android:src="@drawable/character_girl_base"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <LinearLayout
+        android:layout_width="216dp"
+        android:layout_height="230dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        android:paddingLeft="16px"
+        app:layout_constraintLeft_toRightOf="@+id/Image_Avatar"
+        app:layout_constraintTop_toTopOf="@+id/guideline">
+
+        <TextView
+            android:id="@+id/usernameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.29"
+            android:paddingTop="8dp"
+            android:text="Kelly Lim"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="91dp"
+            tools:layout_editor_absoluteY="337dp" />
+
+        <TextView
+            android:id="@+id/cityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Dalian"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            tools:layout_editor_absoluteX="90dp"
+            tools:layout_editor_absoluteY="367dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.66"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/friendIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_menu_myplaces"
+                tools:layout_editor_absoluteX="90dp"
+                tools:layout_editor_absoluteY="394dp" />
+
+            <TextView
+                android:id="@+id/friendcountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:text="120" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/leavesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Leaves:"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="90dp"
+                tools:layout_editor_absoluteY="430dp" />
+
+            <TextView
+                android:id="@+id/leavecountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:text="10000"
+                app:layout_constraintLeft_toRightOf="@+id/leavesLabel"
+                tools:layout_editor_absoluteY="425dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/co2Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CO2 Saved"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="90dp"
+                tools:layout_editor_absoluteY="463dp" />
+
+            <TextView
+                android:id="@+id/co2Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:text="0"
+                app:layout_constraintLeft_toRightOf="@+id/friendIcon"
+                tools:layout_editor_absoluteY="394dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
+

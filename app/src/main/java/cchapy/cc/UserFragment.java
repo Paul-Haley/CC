@@ -73,7 +73,7 @@ public class UserFragment extends Fragment {
     }
 
 
-    /*@Override
+    @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnListFragmentInteractionListener) {
@@ -82,7 +82,7 @@ public class UserFragment extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnListFragmentInteractionListener");
         }
-    }*/
+    }
 
     @Override
     public void onDetach() {
@@ -104,4 +104,6 @@ public class UserFragment extends Fragment {
         // TODO: Update argument type and name
         void onListFragmentInteraction(User item);
     }
+
+
 }

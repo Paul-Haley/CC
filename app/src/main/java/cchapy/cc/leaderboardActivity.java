@@ -1,10 +1,17 @@
 package cchapy.cc;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TabHost;
+import android.widget.Toast;
 
-public class leaderboardActivity extends AppCompatActivity {
+import cchapy.cc.dummy.UserContent;
+
+public class leaderboardActivity extends AppCompatActivity
+    implements UserFragment.OnListFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +44,21 @@ public class leaderboardActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.friendsLeaderboardTab, new UserFragment())
                     .commit();
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.localLeaderboardTab, new UserFragment())
+                    .commit();
         }
+    }
+
+    public void viewPopUpProfile(UserContent.User user) {
+        //Create view QR intent
+        //TODO: Build user into intent to display appropiate profile
+        Intent intent = new Intent(this, DisplayPopUpProfileActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onListFragmentInteraction(UserContent.User user) {
+        viewPopUpProfile(user);
     }
 }

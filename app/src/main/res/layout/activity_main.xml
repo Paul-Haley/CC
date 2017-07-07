@@ -150,6 +150,7 @@
         android:layout_height="70dp"
         android:scaleType="fitEnd"
         android:src="@drawable/icon_avatar"
+        android:onClick="viewAvatar"
         app:layout_constraintBottom_toTopOf="@+id/Label_Avatar"
         app:layout_constraintLeft_toLeftOf="@+id/Label_Discounts"
         app:layout_constraintRight_toRightOf="@+id/Label_Discounts"

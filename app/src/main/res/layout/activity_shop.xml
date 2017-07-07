@@ -39,51 +39,6 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:id="@+id/AvatarTab"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/Avatar_Sort"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/Avatar_Popular"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <EditText
-                            android:id="@+id/Avatar_Search"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:hint="Search"
-                            android:inputType="text" />
-
-                    </LinearLayout>
-
-                    <ScrollView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        tools:layout_editor_absoluteX="8dp"
-                        tools:layout_editor_absoluteY="8dp">
-
-                    </ScrollView>
-                </LinearLayout>
-
-                <LinearLayout
                     android:id="@+id/DiscountTab"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -92,8 +47,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:focusableInTouchMode="true">
+                        android:focusableInTouchMode="true"
+                        android:orientation="horizontal">
 
                         <Button
                             android:id="@+id/Discount_Sort"
@@ -127,8 +82,57 @@
                         tools:layout_editor_absoluteX="8dp"
                         tools:layout_editor_absoluteY="8dp">
 
+                        <ListView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
                     </ScrollView>
 
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/AvatarTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:focusableInTouchMode="true">
+
+                        <Button
+                            android:id="@+id/Avatar_Sort"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Button" />
+
+                        <Button
+                            android:id="@+id/Avatar_Popular"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Button" />
+
+                        <EditText
+                            android:id="@+id/Avatar_Search"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="Search"
+                            android:inputType="text" />
+
+                    </LinearLayout>
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:layout_editor_absoluteX="8dp"
+                        tools:layout_editor_absoluteY="8dp">
+
+                    </ScrollView>
                 </LinearLayout>
 
             </FrameLayout>

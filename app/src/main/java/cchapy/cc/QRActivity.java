@@ -3,6 +3,7 @@ package cchapy.cc;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -33,11 +34,20 @@ public class QRActivity extends AppCompatActivity {
         if(result != null) {
             if(result.getContents() == null) {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
+                finish(); // Go back to the last activity
             } else {
                 Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, ScannedActivity.class);
+                startActivity(intent);
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
+    }
+
+    public void viewScanned(View view) {
+        //Create view for when QR code is scanned intent
+        Intent intent = new Intent(this, ScannedActivity.class);
+        startActivity(intent);
     }
 }

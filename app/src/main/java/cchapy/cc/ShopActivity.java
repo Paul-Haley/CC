@@ -33,8 +33,5 @@ public class ShopActivity extends AppCompatActivity {
 
         //get the intent that started this activity
         Intent intent = getIntent();
-
-
-
     }
 }

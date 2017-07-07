@@ -38,9 +38,10 @@
             android:label="Scan QR Code"
             android:parentActivityName=".MainActivity"></activity>
 
-
-        <activity android:name=".leaderboardActivity"></activity>
-
+        <activity android:name=".leaderboardActivity"
+            android:label="Leaderboard"
+            android:parentActivityName=".MainActivity"></activity>
+        
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"

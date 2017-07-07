@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Helper class for providing sample content for user interfaces created by
+ * Helper class for providing sample userName for user interfaces created by
  * Android template wizards.
  * <p>
  * TODO: Replace all uses of this class before publishing your app.
@@ -14,12 +14,12 @@ import java.util.Map;
 public class UserContent {
 
     /**
-     * An array of sample (dummy) items.
+     * An array of static users.
      */
     public static final List<User> ITEMS = new ArrayList<User>();
 
     /**
-     * A map of sample (dummy) items, by ID.
+     * A map of static users, by ID.
      */
     public static final Map<String, User> ITEM_MAP = new HashMap<String, User>();
 
@@ -28,7 +28,7 @@ public class UserContent {
     static {
         // Add some sample items.
         for (int i = 1; i <= COUNT; i++) {
-            addItem(createDummyItem(i));
+            addItem(createDummyUser(i));
         }
     }
 
@@ -37,7 +37,7 @@ public class UserContent {
         ITEM_MAP.put(item.id, item);
     }
 
-    private static User createDummyItem(int position) {
+    private static User createDummyUser(int position) {
         return new User(String.valueOf(position), "User " + position, makeDetails(position));
     }
 
@@ -51,22 +51,22 @@ public class UserContent {
     }
 
     /**
-     * A dummy item representing a piece of content.
+     * A dummy item representing a piece of userName.
      */
     public static class User {
         public final String id;
-        public final String content;
+        public final String userName;
         public final String details;
 
         public User(String id, String content, String details) {
             this.id = id;
-            this.content = content;
+            this.userName = content;
             this.details = details;
         }
 
         @Override
         public String toString() {
-            return content;
+            return userName;
         }
     }
 }

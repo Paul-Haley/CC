@@ -43,4 +43,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, QRActivity.class);
         startActivity(intent);
     }
+
+    public void viewFriends(View view) {
+        //Create view profile intent
+        Intent intent = new Intent(this, FriendsActivity.class);
+        startActivity(intent);
+    }
 }

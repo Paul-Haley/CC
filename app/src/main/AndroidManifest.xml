@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="cchapy.cc">
 
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
@@ -22,27 +23,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".DisplayProfileActivity"
-            android:parentActivityName=".MainActivity"
-            android:label="Profile">
-        </activity>
-
-        <activity android:name=".ShopActivity"
-            android:parentActivityName=".MainActivity"
-            android:label="Shop">
-        </activity>
-
-        <activity android:name=".QRActivity"
-            android:parentActivityName=".MainActivity"
-            android:label="Scan QR Code">
-        </activity>
-
+        <activity
+            android:name=".DisplayProfileActivity"
+            android:label="Profile"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".ShopActivity"
+            android:label="Shop"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".QRActivity"
+            android:label="Scan QR Code"
+            android:parentActivityName=".MainActivity"></activity>
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"
-            tools:replace="screenOrientation">
-        </activity>
+            tools:replace="screenOrientation"></activity>
+        <activity android:name=".FriendsActivity"></activity>
     </application>
 
 </manifest>

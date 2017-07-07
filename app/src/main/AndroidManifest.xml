@@ -41,12 +41,12 @@
         <activity android:name=".leaderboardActivity"
             android:label="Leaderboard"
             android:parentActivityName=".MainActivity"></activity>
-
+        
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"
-            tools:replace="screenOrientation">
-        </activity>
+            tools:replace="screenOrientation"></activity>
+        <activity android:name=".FriendsActivity"></activity>
     </application>
 
 </manifest>

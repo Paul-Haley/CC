@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">CC</string>
+    <string name="avatar">AVATAR</string>
+    <string name="shop">SHOP</string>
+    <string name="qr">QR</string>
+    <string name="friends">FRIENDS</string>
+    <string name="settings">SETTINGS</string>
+    <string name="leaderboard">LEADERBOARD</string>
+    <string name="qr_scanner">QR Scanner</string>
+    <string name="view_friends">View Friends</string>
+    <string name="username">Username</string>
+    <string name="profile">PROFILE</string>
+    <string name="discounts">DISCOUNTS</string>
 </resources>

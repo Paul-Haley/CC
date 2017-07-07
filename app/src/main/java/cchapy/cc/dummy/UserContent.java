@@ -38,16 +38,7 @@ public class UserContent {
     }
 
     private static User createDummyUser(int position) {
-        return new User(String.valueOf(position), "User " + position, makeDetails(position));
-    }
-
-    private static String makeDetails(int position) {
-        StringBuilder builder = new StringBuilder();
-        builder.append("Details about Item: ").append(position);
-        for (int i = 0; i < position; i++) {
-            builder.append("\nMore details information here.");
-        }
-        return builder.toString();
+        return new User(String.valueOf(position), "User " + position, "Dalian", 1000);
     }
 
     /**
@@ -56,12 +47,14 @@ public class UserContent {
     public static class User {
         public final String id;
         public final String userName;
-        public final String details;
+        public final String city;
+        public final int leafCount;
 
-        public User(String id, String content, String details) {
+        public User(String id, String content, String details, int leafCount) {
             this.id = id;
             this.userName = content;
-            this.details = details;
+            this.city = details;
+            this.leafCount = leafCount;
         }
 
         @Override

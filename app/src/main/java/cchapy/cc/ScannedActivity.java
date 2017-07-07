@@ -17,6 +17,7 @@ public class ScannedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scanned);
 
         TextView leaves = (TextView) findViewById(R.id.leaves);
-        leaves.setText("You received 50 Leaves!"); //TODO: make dynamic
+        int leaveCount = 50;
+        leaves.setText("You received " + leaveCount + " x "); //TODO: make dynamic
     }
 }

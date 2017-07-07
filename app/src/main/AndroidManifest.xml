@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="cchapy.cc">
 
     <uses-permission android:name="android.permission.CAMERA"/>
@@ -35,6 +36,12 @@
         <activity android:name=".QRActivity"
             android:parentActivityName=".MainActivity"
             android:label="Scan QR Code">
+        </activity>
+
+        <activity
+            android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:screenOrientation="portrait"
+            tools:replace="screenOrientation">
         </activity>
     </application>
 

@@ -3,6 +3,7 @@ package cchapy.cc;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 
 public class DisplayProfileActivity extends AppCompatActivity {
 
@@ -13,5 +14,6 @@ public class DisplayProfileActivity extends AppCompatActivity {
 
         //get the intent that started this activity
         Intent intent = getIntent();
+
     }
 }

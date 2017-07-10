@@ -4,25 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_purple"
     tools:context="cchapy.cc.DisplayProfileActivity">
 
     <android.support.constraint.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline"
-        app:layout_constraintGuide_begin="25dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteY="25dp"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintGuide_begin="25dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="25dp" />
 
     <ImageView
         android:id="@+id/Image_Avatar"
         android:layout_width="169dp"
         android:layout_height="284dp"
-        android:src="@drawable/character_girl_base"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
         android:layout_marginTop="2dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:src="@drawable/character_girl_generic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <LinearLayout
         android:layout_width="216dp"

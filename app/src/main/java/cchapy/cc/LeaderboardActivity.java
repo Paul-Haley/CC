@@ -50,7 +50,7 @@ public class LeaderboardActivity extends AppCompatActivity
         }
     }
 
-    public static void viewPopUpProfile(UserContent.User user) {
+    public void viewPopUpProfile(UserContent.User user) {
         //Create view QR intent
         //TODO: Build user into intent to display appropiate profile
         Intent intent = new Intent(this, DisplayPopUpProfileActivity.class);

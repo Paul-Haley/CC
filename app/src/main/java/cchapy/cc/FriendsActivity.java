@@ -1,5 +1,6 @@
 package cchapy.cc;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -22,6 +23,13 @@ public class FriendsActivity extends AppCompatActivity
 
     @Override
     public void onListFragmentInteraction(UserContent.User user) {
-        LeaderboardActivity.viewPopUpProfile(user);
+        viewPopUpProfile(user);
+    }
+
+    public void viewPopUpProfile(UserContent.User user) {
+        //Create view QR intent
+        //TODO: Build user into intent to display appropiate profile
+        Intent intent = new Intent(this, DisplayPopUpProfileActivity.class);
+        startActivity(intent);
     }
 }

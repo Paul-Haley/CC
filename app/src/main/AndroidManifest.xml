@@ -78,6 +78,11 @@
         <activity android:name=".DisplayPopUpProfileActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert">
         </activity>
+
+        <activity android:name=".DisplayPopUpNewAvatarActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert">
+        </activity>
         
     </application>
 

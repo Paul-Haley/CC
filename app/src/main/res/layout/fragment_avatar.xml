@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:orientation="horizontal">
@@ -10,14 +9,14 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/Discount_Image_Ex"
+        android:id="@+id/Avatar_Image_Ex"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:src="@drawable/discount_0" />
+        android:layout_weight="0.25"
+        android:src="@drawable/character_girl_cat" />
 
     <Space
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0.1" />
 
@@ -28,39 +27,35 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/Discount_Name"
+            android:id="@+id/Avatar_Name"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="Voucher Name"
-            android:textAlignment="viewStart"
+            android:text="Avatar Name"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/Discount_Desc"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="Voucher Description"
-            android:textAlignment="viewStart" />
+            android:text="Avatar Description"
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/Discount_Time"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="Days Left: 6"
-            android:textAlignment="viewStart"
-            android:textStyle="italic" />
+            android:text="Stars: 2"
+            android:textStyle="italic"
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/Discount_Price"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
             android:text="Price: 888"
-            android:textAlignment="viewStart" />
+            android:layout_weight="1" />
 
     </LinearLayout>
-    </LinearLayout>
+</LinearLayout>

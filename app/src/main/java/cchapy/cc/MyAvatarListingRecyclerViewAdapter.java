@@ -4,25 +4,24 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import cchapy.cc.FriendFragment.OnListFragmentInteractionListener;
-import cchapy.cc.dummy.UserContent;
+import cchapy.cc.AvatarListingFragment.OnListFragmentInteractionListener;
+import cchapy.cc.dummy.DummyContent.DummyItem;
 
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link UserContent.User} and makes a call to the
+ * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
  * specified {@link OnListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class MyFriendRecyclerViewAdapter extends RecyclerView.Adapter<MyFriendRecyclerViewAdapter.ViewHolder> {
+public class MyAvatarListingRecyclerViewAdapter extends RecyclerView.Adapter<MyAvatarListingRecyclerViewAdapter.ViewHolder> {
 
-    private final List<UserContent.User> mValues;
+    private final List<DummyItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyFriendRecyclerViewAdapter(List<UserContent.User> items, OnListFragmentInteractionListener listener) {
+    public MyAvatarListingRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -30,15 +29,13 @@ public class MyFriendRecyclerViewAdapter extends RecyclerView.Adapter<MyFriendRe
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_friend, parent, false);
+                .inflate(R.layout.fragment_avatar, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        //holder.mIdView.setText(mValues.get(position).id);
-        holder.mImageView.setImageResource(R.drawable.character_boy_luckycat);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,15 +56,11 @@ public class MyFriendRecyclerViewAdapter extends RecyclerView.Adapter<MyFriendRe
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView usernamestring;
-        public final ImageView mImageView;
-        public UserContent.User mItem;
+        public DummyItem mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            usernamestring = view.findViewById(R.id.usernamestring);
-            mImageView = view.findViewById(R.id.friend_avatar);
         }
 
         @Override

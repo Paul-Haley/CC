@@ -3,7 +3,6 @@ package cchapy.cc;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import cchapy.cc.dummy.DummyContent;
 import cchapy.cc.dummy.UserContent;
 
 public class FriendsActivity extends AppCompatActivity
@@ -22,7 +21,7 @@ public class FriendsActivity extends AppCompatActivity
     }
 
     @Override
-    public void onListFragmentInteraction(UserContent.User item) {
-
+    public void onListFragmentInteraction(UserContent.User user) {
+        LeaderboardActivity.viewPopUpProfile(user);
     }
 }

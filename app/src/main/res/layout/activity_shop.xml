@@ -50,23 +50,25 @@
                         android:focusableInTouchMode="true"
                         android:orientation="horizontal">
 
-                        <Button
-                            android:id="@+id/Discount_Sort"
-                            android:layout_width="wrap_content"
+                        <Spinner
+                            android:id="@+id/spinner"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:entries="@array/sorting_options_vouchers" />
 
-                        <Button
-                            android:id="@+id/Discount_Popular"
-                            android:layout_width="wrap_content"
+                        <ToggleButton
+                            android:id="@+id/toggleButton3"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
+                            android:layout_weight="0.46"
+                            android:text="ToggleButton"
+                            android:textOff="ASC"
+                            android:textOn="DESC" />
 
                         <EditText
                             android:id="@+id/Discount_Search"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:ems="10"
@@ -101,23 +103,25 @@
                         android:orientation="horizontal"
                         android:focusableInTouchMode="true">
 
-                        <Button
-                            android:id="@+id/Avatar_Sort"
-                            android:layout_width="wrap_content"
+                        <Spinner
+                            android:id="@+id/spinner2"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:entries="@array/sorting_options_avatars" />
 
-                        <Button
-                            android:id="@+id/Avatar_Popular"
-                            android:layout_width="wrap_content"
+                        <ToggleButton
+                            android:id="@+id/toggleButton4"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
+                            android:layout_weight="0.46"
+                            android:text="ToggleButton"
+                            android:textOff="ASC"
+                            android:textOn="DESC" />
 
                         <EditText
                             android:id="@+id/Avatar_Search"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:ems="10"

@@ -64,6 +64,7 @@
             android:onClick="viewNewAvatar"
             android:scaleType="centerCrop"
             android:visibility="visible"
+            android:hapticFeedbackEnabled="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintLeft_toLeftOf="parent"

@@ -8,11 +8,21 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
+import com.youth.banner.Transformer;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private Context mContext;
     private Activity mActivity;
+    private Banner banner;
+    private List<Integer> urlList = new ArrayList<>();
+    private List<String> titles = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Get self activity
         mActivity = MainActivity.this;
+        //banner
+        initData();
+        initView();
     }
 
     public void viewProfile(View view) {
@@ -73,6 +86,15 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AvatarActivity.class);
         startActivity(intent);
     }
+    //banner
+    private void initData() {
+        urlList.add(R.drawable.discount_0);
+        urlList.add(R.drawable.discount_1);
+        urlList.add(R.drawable.discount_2);
+        titles.add("discount_0");
+        titles.add("discount_1");
+        titles.add("discount_2");
+    }
 
     /**
      * Call when code is successfully scanned
@@ -82,4 +104,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ScannedActivity.class);
         startActivity(intent);
     }
+
+
+    private void initView() {
+        banner = (Banner) findViewById(R.id.banner);
+        banner.setImages(urlList).setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE).setBannerStyle(BannerConfig.NOT_INDICATOR).setDelayTime(6000)
+                .setBannerAnimation(Transformer.Tablet).setImageLoader(new GlideImageLoader()).start();
+
+    }
 }
+

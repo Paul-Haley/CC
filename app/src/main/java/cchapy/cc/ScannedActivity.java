@@ -3,6 +3,7 @@ package cchapy.cc;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.widget.TextView;
 
@@ -34,6 +35,7 @@ public class ScannedActivity extends AppCompatActivity {
      * @param view
      */
     public void viewNewAvatar(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
         Intent intent = new Intent(this, DisplayPopUpNewAvatarActivity.class);
         startActivity(intent);
     }

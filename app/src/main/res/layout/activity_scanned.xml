@@ -13,7 +13,7 @@
         android:fontFamily="cursive"
         android:text="Congratulations!"
         android:textAlignment="center"
-        android:textColor="@color/zxing_viewfinder_laser"
+        android:textColor="#FD1F25"
         android:textSize="48sp"
         android:textStyle="bold"
         tools:ignore="HardcodedText" />
@@ -28,15 +28,15 @@
             android:id="@+id/leaves"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
             android:text="You received leaves"
             android:textAlignment="textEnd"
-            android:textColor="@android:color/background_dark"
+            android:textColor="#00D67D"
             android:textSize="28sp"
             app:layout_constraintHorizontal_chainStyle="packed"
-            android:layout_marginLeft="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView3"
@@ -64,6 +64,7 @@
             android:onClick="viewNewAvatar"
             android:scaleType="centerCrop"
             android:visibility="visible"
+            android:hapticFeedbackEnabled="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintLeft_toLeftOf="parent"

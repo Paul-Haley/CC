@@ -18,7 +18,6 @@
         android:layout_weight="1"
         android:paddingTop="10dp"
         android:text="@string/username"
-        android:textAlignment="center"
-        android:textSize="30sp" />
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
 </LinearLayout>

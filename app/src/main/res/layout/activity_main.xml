@@ -9,6 +9,18 @@
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="viewScanned"
+        android:text="SCANNED"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="446dp"
@@ -16,14 +28,11 @@
         android:layout_marginRight="8dp"
         android:adjustViewBounds="true"
         android:cropToPadding="false"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/bg_clouds"
-        tools:layout_editor_absoluteY="-70dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp" />
+        tools:layout_editor_absoluteY="-58dp" />
 
     <TextView
         android:id="@+id/Label_Avatar"
@@ -102,7 +111,7 @@
         android:id="@+id/Button_Friends"
         style="?android:attr/borderlessButtonStyle"
         android:onClick="viewFriends"
-        android:layout_width="88dp"
+        android:layout_width="70dp"
         android:layout_height="70dp"
         android:contentDescription="@string/view_friends"
         android:scaleType="fitEnd"
@@ -116,7 +125,7 @@
         android:id="@+id/Button_Settings"
         style="?android:attr/borderlessButtonStyle"
         android:onClick="viewSettings"
-        android:layout_width="88dp"
+        android:layout_width="70dp"
         android:layout_height="70dp"
         android:scaleType="fitEnd"
         android:src="@drawable/icon_setting"
@@ -129,7 +138,7 @@
         android:id="@+id/Button_Leaderboard"
         android:onClick="viewLeaderboard"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="88dp"
+        android:layout_width="70dp"
         android:layout_height="70dp"
         android:scaleType="fitEnd"
         android:src="@drawable/icon_leaderboard"
@@ -142,7 +151,7 @@
     <ImageButton
         android:id="@+id/Button_Discounts"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="88dp"
+        android:layout_width="70dp"
         android:layout_height="70dp"
         android:scaleType="fitEnd"
         android:src="@drawable/icon_discount"
@@ -155,7 +164,7 @@
     <ImageButton
         android:id="@+id/Button_Shop"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="88dp"
+        android:layout_width="70dp"
         android:layout_height="70dp"
         android:onClick="viewShop"
         android:scaleType="fitEnd"
@@ -168,7 +177,7 @@
     <ImageButton
         android:id="@+id/Button_Avatar"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="88dp"
+        android:layout_width="70dp"
         android:layout_height="70dp"
         android:scaleType="fitEnd"
         android:src="@drawable/icon_avatar"
@@ -181,7 +190,7 @@
     <ImageButton
         android:id="@+id/Button_QR"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="88dp"
+        android:layout_width="70dp"
         android:layout_height="70dp"
         android:contentDescription="@string/qr_scanner"
         android:onClick="viewQR"
@@ -192,12 +201,14 @@
         app:layout_constraintRight_toLeftOf="@+id/Image_Avatar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.19999999"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        android:layout_marginLeft="16dp" />
 
     <ImageButton
         android:id="@+id/Button_Profile"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="88dp"
+        android:layout_width="70dp"
         android:layout_height="70dp"
         android:onClick="viewProfile"
         android:scaleType="fitEnd"
@@ -207,13 +218,15 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.19999999"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginRight="16dp" />
 
 
     <ImageView
         android:id="@+id/Image_Avatar"
-        android:layout_width="169dp"
-        android:layout_height="284dp"
+        android:layout_width="0dp"
+        android:layout_height="310dp"
+        android:layout_marginLeft="0dp"
         android:src="@drawable/character_girl_generic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/Button_QR"

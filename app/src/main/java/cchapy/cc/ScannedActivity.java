@@ -3,8 +3,11 @@ package cchapy.cc;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.widget.TextView;
+
+import static android.support.v4.app.NavUtils.navigateUpFromSameTask;
 
 /**
  * Created by paulhaley on 7/7/17.
@@ -12,6 +15,8 @@ import android.widget.TextView;
  * Activity for when a QR code is successfully scanned
  */
 public class ScannedActivity extends AppCompatActivity {
+
+    private boolean gotCrate = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +27,7 @@ public class ScannedActivity extends AppCompatActivity {
         int leaveCount = 50;
         leaves.setText("You received " + leaveCount + " x "); //TODO: make dynamic
         //TODO: put logic for awarding on avatars
+        gotCrate = true;
     }
 
     /**
@@ -29,7 +35,13 @@ public class ScannedActivity extends AppCompatActivity {
      * @param view
      */
     public void viewNewAvatar(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
         Intent intent = new Intent(this, DisplayPopUpNewAvatarActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        navigateUpFromSameTask(this);
     }
 }

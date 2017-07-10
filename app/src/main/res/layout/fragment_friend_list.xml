@@ -5,9 +5,10 @@
     android:id="@+id/list"
     android:name="cchapy.cc.FriendFragment"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
+    android:scrollbars="vertical"
     app:layoutManager="LinearLayoutManager"
     tools:context="cchapy.cc.FriendFragment"
     tools:listitem="@layout/fragment_friend" />

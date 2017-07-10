@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import cchapy.cc.dummy.UserContent;
 
-public class leaderboardActivity extends AppCompatActivity
+public class LeaderboardActivity extends AppCompatActivity
     implements UserFragment.OnListFragmentInteractionListener {
 
     @Override

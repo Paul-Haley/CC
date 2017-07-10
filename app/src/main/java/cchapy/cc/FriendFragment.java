@@ -10,8 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import cchapy.cc.dummy.DummyContent;
-import cchapy.cc.dummy.DummyContent.DummyItem;
 import cchapy.cc.dummy.UserContent;
 
 import java.util.List;
@@ -22,7 +20,7 @@ import java.util.List;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class VoucherListingFragment extends Fragment {
+public class FriendFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -34,13 +32,13 @@ public class VoucherListingFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public VoucherListingFragment() {
+    public FriendFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static VoucherListingFragment newInstance(int columnCount) {
-        VoucherListingFragment fragment = new VoucherListingFragment();
+    public static FriendFragment newInstance(int columnCount) {
+        FriendFragment fragment = new FriendFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -59,7 +57,7 @@ public class VoucherListingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_voucherlisting_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_friend_list, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -70,7 +68,7 @@ public class VoucherListingFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyVoucherListingRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MyFriendRecyclerViewAdapter(UserContent.ITEMS, mListener));
         }
         return view;
     }
@@ -105,6 +103,6 @@ public class VoucherListingFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(UserContent.User item);
     }
 }

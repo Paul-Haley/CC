@@ -42,7 +42,7 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".leaderboardActivity"
+            android:name=".LeaderboardActivity"
             android:label="Leaderboard"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"/>
@@ -62,7 +62,7 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".AvatarActivity"
-            android:label="Closet"
+            android:label="Avatar"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".ScannedActivity"

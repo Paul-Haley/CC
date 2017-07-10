@@ -18,12 +18,29 @@ public class UserContent {
      */
     public static final List<User> ITEMS = new ArrayList<User>();
 
+    //Dummy array of friend users
+    public static final List<User> FRIENDS = new ArrayList<User>();
+
+    //Dummy array of local users
+    public static final List<User> LOCALS = new ArrayList<User>();
+
     /**
      * A map of static users, by ID.
      */
     public static final Map<String, User> ITEM_MAP = new HashMap<String, User>();
 
+    //Dummy Map of friends, by id
+    public static final Map<String, User> FRIENDS_MAP = new HashMap<String, User>();
+
+
     private static final int COUNT = 25;
+
+    //Dummy friend count
+    private static final int FRIENDS_COUNT = 25;
+
+    //Dummy local count
+    private static final int LOCAL_COUNT = 25;
+
 
     static {
         // Add some sample items.
@@ -41,8 +58,18 @@ public class UserContent {
         return new User(String.valueOf(position), "User " + position, "Dalian", 1000);
     }
 
+    public static List<User> getFriendUsers() {
+        for(int i = 1; i <= FRIENDS_COUNT; i++){
+            
+            //Fetch friend
+            User friend = createDummyUser(i);
+            FRIENDS.add(friend);
+        }
+        return FRIENDS;
+    }
+
     /**
-     * A dummy item representing a piece of userName.
+     * A User Class
      */
     public static class User {
         public final String id;

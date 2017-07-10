@@ -38,6 +38,8 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(mValues.get(position).id);
         holder.mFriendUsernameView.setText(mValues.get(position).userName);
+        holder.mFriendCityView.setText(mValues.get(position).city);
+        holder.mFriendLeafView.setText(String.valueOf(mValues.get(position).leafCount));
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_blue_purple"
     tools:context="cchapy.cc.AvatarActivity">
 
     <ImageView
@@ -151,26 +152,26 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="@+id/imageView5"
-        app:srcCompat="@drawable/testing_left"
-        app:layout_constraintVertical_bias="0.497" />
+        app:layout_constraintVertical_bias="0.497"
+        app:srcCompat="@drawable/testing_left" />
 
     <ImageButton
         android:id="@+id/imageButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="2dp"
         android:background="@color/zxing_transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintHorizontal_bias="0.61"
         app:layout_constraintLeft_toRightOf="@+id/imageView5"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/testing_right"
         app:layout_constraintTop_toTopOf="@+id/imageView5"
-        android:layout_marginTop="2dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-        android:layout_marginBottom="2dp"
-        app:layout_constraintHorizontal_bias="0.61"
-        app:layout_constraintVertical_bias="0.497" />
+        app:layout_constraintVertical_bias="0.497"
+        app:srcCompat="@drawable/testing_right" />
 
 </android.support.constraint.ConstraintLayout>

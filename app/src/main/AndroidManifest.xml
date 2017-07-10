@@ -9,6 +9,8 @@
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- if you want to load images from a file OR from the internet -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -17,77 +19,73 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".DisplayProfileActivity"
             android:label="Profile"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ShopActivity"
             android:label="Shop"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".QRActivity"
             android:label="Scan QR Code"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".LeaderboardActivity"
             android:label="Leaderboard"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".FriendsActivity"
             android:label="Friends"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".SettingsActivity"
             android:label="Settings"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DiscountActivity"
             android:label="Your Discounts"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".AvatarActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AvatarActivity"
             android:label="Avatar"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ScannedActivity"
-            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ScannedActivity"
             android:label="Reward"
-            android:screenOrientation="portrait">
-        </activity>
-
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
+            android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
+            tools:replace="screenOrientation"></activity>
+        <activity
+            android:name=".DisplayPopUpProfileActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"></activity>
+        <activity
+            android:name=".DisplayPopUpNewAvatarActivity"
             android:parentActivityName=".MainActivity"
-            tools:replace="screenOrientation">
-        </activity>
-
-        <activity android:name=".DisplayPopUpProfileActivity"
-            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert">
-        </activity>
-
-        <activity android:name=".DisplayPopUpNewAvatarActivity"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert">
-        </activity>
-        
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"></activity>
+        <activity android:name=".checkDatabase"></activity>
     </application>
 
 </manifest>

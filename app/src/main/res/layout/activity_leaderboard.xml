@@ -35,7 +35,8 @@
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_lime_green">
 
                 <LinearLayout
                     android:id="@+id/friendsLeaderboardTab"
@@ -59,12 +60,6 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/button3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:onClick="addDummyUser"
-                        android:text="Add Dumy User to DB" />
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>

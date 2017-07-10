@@ -36,7 +36,8 @@ public class QRActivity extends AppCompatActivity {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
                 finish(); // Go back to the last activity
             } else {
-                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+                //TODO: Delete this later
+                Toast.makeText(this, "REMEMBER TO DELETE THIS\nScanned: " + result.getContents(), Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(this, ScannedActivity.class);
                 startActivity(intent);
             }

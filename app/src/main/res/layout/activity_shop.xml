@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,15 +9,13 @@
 
     <TabHost
         android:id="@+id/tabHost"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,23 +48,25 @@
                         android:focusableInTouchMode="true"
                         android:orientation="horizontal">
 
-                        <Button
-                            android:id="@+id/Discount_Sort"
-                            android:layout_width="wrap_content"
+                        <Spinner
+                            android:id="@+id/spinner"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:entries="@array/sorting_options_vouchers" />
 
-                        <Button
-                            android:id="@+id/Discount_Popular"
-                            android:layout_width="wrap_content"
+                        <ToggleButton
+                            android:id="@+id/toggleButton3"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
+                            android:layout_weight="0.46"
+                            android:text="ToggleButton"
+                            android:textOff="ASC"
+                            android:textOn="DESC" />
 
                         <EditText
                             android:id="@+id/Discount_Search"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:ems="10"
@@ -75,17 +75,11 @@
 
                     </LinearLayout>
 
-                    <ScrollView
+                    <LinearLayout
+                        android:id="@+id/voucher_shoplist"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        tools:layout_editor_absoluteX="8dp"
-                        tools:layout_editor_absoluteY="8dp">
-
-                        <ListView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                    </ScrollView>
+                        android:orientation="vertical"></LinearLayout>
 
                 </LinearLayout>
 
@@ -98,26 +92,28 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:focusableInTouchMode="true">
+                        android:focusableInTouchMode="true"
+                        android:orientation="horizontal">
 
-                        <Button
-                            android:id="@+id/Avatar_Sort"
-                            android:layout_width="wrap_content"
+                        <Spinner
+                            android:id="@+id/spinner2"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Button" />
+                            android:entries="@array/sorting_options_avatars" />
 
-                        <Button
-                            android:id="@+id/Avatar_Popular"
-                            android:layout_width="wrap_content"
+                        <ToggleButton
+                            android:id="@+id/toggleButton4"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Button" />
+                            android:layout_weight="0.46"
+                            android:text="ToggleButton"
+                            android:textOff="ASC"
+                            android:textOn="DESC" />
 
                         <EditText
                             android:id="@+id/Avatar_Search"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:ems="10"
@@ -126,13 +122,12 @@
 
                     </LinearLayout>
 
-                    <ScrollView
+                    <LinearLayout
+                        android:id="@+id/avatar_shoplist"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        tools:layout_editor_absoluteX="8dp"
-                        tools:layout_editor_absoluteY="8dp">
+                        android:orientation="vertical"></LinearLayout>
 
-                    </ScrollView>
                 </LinearLayout>
 
             </FrameLayout>
@@ -140,4 +135,4 @@
         </LinearLayout>
     </TabHost>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

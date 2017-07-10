@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/leaderboardContainer"
-    tools:context="cchapy.cc.leaderboardActivity">
+    tools:context="cchapy.cc.LeaderboardActivity">
 
     <TabHost
         android:id="@+id/leaderboardTabHost"

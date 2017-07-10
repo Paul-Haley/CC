@@ -16,7 +16,7 @@ import java.util.List;
 
 import cchapy.cc.dummy.UserContent;
 
-public class leaderboardActivity extends AppCompatActivity
+public class LeaderboardActivity extends AppCompatActivity
     implements UserFragment.OnListFragmentInteractionListener {
 
     DatabaseHelper mDbHelper = new DatabaseHelper(this);

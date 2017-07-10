@@ -42,7 +42,7 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".leaderboardActivity"
+            android:name=".LeaderboardActivity"
             android:label="Leaderboard"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"/>
@@ -62,7 +62,7 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".AvatarActivity"
-            android:label="Closet"
+            android:label="Avatar"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".ScannedActivity"
@@ -70,10 +70,13 @@
             android:label="Reward"
             android:screenOrientation="portrait">
         </activity>
+
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"
-            tools:replace="screenOrientation"></activity>
+            android:parentActivityName=".MainActivity"
+            tools:replace="screenOrientation">
+        </activity>
 
         <activity android:name=".DisplayPopUpProfileActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert">

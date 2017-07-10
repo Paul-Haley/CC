@@ -1,10 +1,15 @@
 package cchapy.cc;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import static android.support.v4.app.NavUtils.navigateUpFromSameTask;
 
 public class DisplayPopUpNewAvatarActivity extends AppCompatActivity {
 
@@ -15,6 +20,28 @@ public class DisplayPopUpNewAvatarActivity extends AppCompatActivity {
 
         //get the intent that started this activity
         Intent intent = getIntent();
+
+        final ImageView box = (ImageView) findViewById(R.id.rewardedBox);
+        final ImageView avatar = (ImageView) findViewById(R.id.rewardedAvatar);
+
+        box.setImageResource(R.drawable.box_closed);
+        avatar.setVisibility(View.INVISIBLE);
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                box.setImageResource(R.drawable.box_open);
+            }
+        }, 500);
+
+        MediaPlayer.create(this, R.raw.crate1).start();
+        //avatar
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                avatar.setVisibility(View.VISIBLE);
+            }
+        }, 1000);
     }
 
     /**
@@ -25,7 +52,6 @@ public class DisplayPopUpNewAvatarActivity extends AppCompatActivity {
 
         // Get elements
         TextView name = (TextView) findViewById(R.id.rewardAvatarName);
-        ImageView avatar = (ImageView) findViewById(R.id.rewardedAvatar);
         int rarity = 2;
         ImageView star0 = (ImageView) findViewById(R.id.rewardStar0);
         ImageView star1 = (ImageView) findViewById(R.id.rewardStar1);
@@ -40,5 +66,12 @@ public class DisplayPopUpNewAvatarActivity extends AppCompatActivity {
                 }
             }
         }
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        navigateUpFromSameTask(this);
     }
 }

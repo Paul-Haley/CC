@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
@@ -19,6 +20,7 @@ public class DisplayPopUpNewAvatarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_display_pop_up_new_avatar);
+        ((Vibrator) this.getSystemService(VIBRATOR_SERVICE)).vibrate(500);
 
         //get the intent that started this activity
         Intent intent = getIntent();

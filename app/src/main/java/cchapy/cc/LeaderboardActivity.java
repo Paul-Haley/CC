@@ -133,6 +133,8 @@ public class LeaderboardActivity extends AppCompatActivity
         } while (mCursor.moveToNext());
         mCursor.close();
 
+        mDbHelper.close();
+
     }
 }
 

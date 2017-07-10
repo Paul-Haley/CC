@@ -69,10 +69,10 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
-            mFriendUsernameView = (TextView) view.findViewById(R.id.leaderboardFriendUsername);
-            mFriendCityView  = (TextView) view.findViewById(R.id.leaderboardFriendCity);
-            mFriendLeafView = (TextView) view.findViewById(R.id.leaderboardFriendLeaves);
+            mIdView = view.findViewById(R.id.id);
+            mFriendUsernameView = view.findViewById(R.id.leaderboardFriendUsername);
+            mFriendCityView  = view.findViewById(R.id.leaderboardFriendCity);
+            mFriendLeafView = view.findViewById(R.id.leaderboardFriendLeaves);
         }
 
         @Override

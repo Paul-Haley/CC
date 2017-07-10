@@ -10,7 +10,7 @@
         android:id="@+id/Image_Avatar"
         android:layout_width="169dp"
         android:layout_height="284dp"
-        android:src="@drawable/character_girl_base"
+        android:src="@drawable/character_girl_generic"
         app:layout_constraintLeft_toLeftOf="parent"
         tools:layout_editor_absoluteY="27dp" />
 

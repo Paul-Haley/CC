@@ -3,7 +3,6 @@ package cchapy.cc;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Toast;
 
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -44,11 +43,5 @@ public class QRActivity extends AppCompatActivity {
         } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
-    }
-
-    public void viewScanned(View view) {
-        //Create view for when QR code is scanned intent
-        Intent intent = new Intent(this, ScannedActivity.class);
-        startActivity(intent);
     }
 }

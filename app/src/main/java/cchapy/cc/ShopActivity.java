@@ -5,7 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TabHost;
 
-public class ShopActivity extends AppCompatActivity {
+import cchapy.cc.dummy.DummyContent;
+
+public class ShopActivity extends AppCompatActivity
+        implements VoucherListingFragment.OnListFragmentInteractionListener,
+        AvatarListingFragment.OnListFragmentInteractionListener {
     TabHost tabs;
 
     @Override
@@ -29,9 +33,21 @@ public class ShopActivity extends AppCompatActivity {
         spec.setIndicator("Avatars");
         tabs.addTab(spec);
 
-
-
         //get the intent that started this activity
         Intent intent = getIntent();
+
+        if (savedInstanceState == null){
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.voucher_shoplist, new VoucherListingFragment())
+                    .commit();
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.avatar_shoplist, new AvatarListingFragment())
+                    .commit();
+        }
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+
     }
 }

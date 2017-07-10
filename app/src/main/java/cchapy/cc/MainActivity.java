@@ -73,4 +73,13 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AvatarActivity.class);
         startActivity(intent);
     }
+
+    /**
+     * Call when code is successfully scanned
+     */
+    public void viewScanned(View view) {//TODO: delete this when finished
+        //Create view for when QR code is scanned intent
+        Intent intent = new Intent(this, ScannedActivity.class);
+        startActivity(intent);
+    }
 }

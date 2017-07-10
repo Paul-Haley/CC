@@ -66,6 +66,7 @@ public final class DatabaseContract {
         public static final String COLUMN_NAME_CARBON= "Carbon";
         public static final String COLUMN_NAME_CITY= "City";
         public static final String COLUMN_NAME_AVATAR_EQUIPPED= "Avatar_Equipped";
+        public static final String COLUMN_NAME_LEAVES_TOTAL= "Leaves_Total";
     }
 
 }

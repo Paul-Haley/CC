@@ -1,6 +1,7 @@
 package cchapy.cc;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -31,6 +32,7 @@ public class DisplayPopUpNewAvatarActivity extends AppCompatActivity {
             }
         }, 500);
 
+        MediaPlayer.create(this, R.raw.crate1).start();
         //avatar
         handler.postDelayed(new Runnable() {
             @Override

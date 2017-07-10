@@ -38,7 +38,7 @@ public class MyFriendRecyclerViewAdapter extends RecyclerView.Adapter<MyFriendRe
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         //holder.mIdView.setText(mValues.get(position).id);
-        holder.mImageView.setImageResource(R.drawable.character_boy_luckycat);
+        //holder.mImageView.setImageResource(R.drawable.character_boy_luckycat);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override

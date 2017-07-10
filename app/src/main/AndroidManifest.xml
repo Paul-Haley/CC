@@ -29,37 +29,46 @@
         <activity
             android:name=".DisplayProfileActivity"
             android:label="Profile"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ShopActivity"
             android:label="Shop"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".QRActivity"
             android:label="Scan QR Code"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".leaderboardActivity"
             android:label="Leaderboard"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".FriendsActivity"
             android:label="Friends"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".SettingsActivity"
             android:label="Settings"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".DiscountActivity"
             android:label="Your Discounts"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".AvatarActivity"
             android:label="Closet"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".ScannedActivity"
             android:parentActivityName=".MainActivity"
-            android:label="Reward">
+            android:label="Reward"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"

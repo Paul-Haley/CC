@@ -77,17 +77,11 @@
 
                     </LinearLayout>
 
-                    <ScrollView
+                    <LinearLayout
+                        android:id="@+id/voucher_shoplist"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        tools:layout_editor_absoluteX="8dp"
-                        tools:layout_editor_absoluteY="8dp">
-
-                        <ListView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                    </ScrollView>
+                        android:orientation="vertical"></LinearLayout>
 
                 </LinearLayout>
 
@@ -130,13 +124,12 @@
 
                     </LinearLayout>
 
-                    <ScrollView
+                    <LinearLayout
+                        android:id="@+id/avatar_shoplist"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        tools:layout_editor_absoluteX="8dp"
-                        tools:layout_editor_absoluteY="8dp">
+                        android:orientation="vertical"></LinearLayout>
 
-                    </ScrollView>
                 </LinearLayout>
 
             </FrameLayout>

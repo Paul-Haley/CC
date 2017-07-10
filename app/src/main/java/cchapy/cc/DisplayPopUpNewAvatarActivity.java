@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import static android.support.v4.app.NavUtils.navigateUpFromSameTask;
+
 public class DisplayPopUpNewAvatarActivity extends AppCompatActivity {
 
     @Override
@@ -66,5 +68,10 @@ public class DisplayPopUpNewAvatarActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        navigateUpFromSameTask(this);
     }
 }

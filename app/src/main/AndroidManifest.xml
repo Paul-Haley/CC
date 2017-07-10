@@ -70,10 +70,13 @@
             android:label="Reward"
             android:screenOrientation="portrait">
         </activity>
+
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:screenOrientation="portrait"
-            tools:replace="screenOrientation"></activity>
+            android:parentActivityName=".MainActivity"
+            tools:replace="screenOrientation">
+        </activity>
 
         <activity android:name=".DisplayPopUpProfileActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert">

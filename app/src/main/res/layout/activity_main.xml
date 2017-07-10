@@ -13,15 +13,15 @@
         android:id="@+id/imageView6"
         android:layout_width="446dp"
         android:layout_height="692dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:adjustViewBounds="true"
         android:cropToPadding="false"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/bg_clouds"
-        tools:layout_editor_absoluteY="-71dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.509" />
+        tools:layout_editor_absoluteY="-58dp" />
 
     <TextView
         android:id="@+id/Label_Avatar"
@@ -187,10 +187,11 @@
         android:src="@drawable/icon_qrscan"
         app:layout_constraintBottom_toTopOf="@+id/Label_QR"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/Image_Avatar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.19999999"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        android:layout_marginLeft="16dp" />
 
     <ImageButton
         android:id="@+id/Button_Profile"
@@ -201,21 +202,20 @@
         android:scaleType="fitEnd"
         android:src="@drawable/icon_profile"
         app:layout_constraintBottom_toTopOf="@+id/Label_Profile"
-        app:layout_constraintLeft_toRightOf="@+id/Image_Avatar"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.19999999"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+        android:layout_marginRight="16dp" />
 
 
     <ImageView
         android:id="@+id/Image_Avatar"
-        android:layout_width="169dp"
-        android:layout_height="284dp"
+        android:layout_width="0dp"
+        android:layout_height="310dp"
+        android:layout_marginLeft="0dp"
         android:src="@drawable/character_girl_generic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/Button_QR"
-        app:layout_constraintRight_toLeftOf="@+id/Button_Profile"
         app:layout_constraintTop_toBottomOf="@+id/Text_Username" />
 
     <TextView

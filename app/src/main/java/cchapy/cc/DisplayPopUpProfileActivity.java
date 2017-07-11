@@ -2,6 +2,8 @@ package cchapy.cc;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
@@ -37,7 +39,12 @@ public class DisplayPopUpProfileActivity extends AppCompatActivity {
         TextView co2Text = (TextView)findViewById(R.id.co2Text);
         co2Text.setText(String.valueOf(user.getCarbon()));
 
-        //setContentView(R.layout.activity_display_pop_up_profile);
+        Resources res = this.getResources();
+        TypedArray avatars = res.obtainTypedArray(R.array.avatars);
+
+        //TODO: equipped avatar refers to avatar id NOT resource id
+        ImageView avatarView = (ImageView)findViewById(R.id.Image_Avatar);
+        avatarView.setImageResource(avatars.getResourceId(user.getEquippedAvatar() - 1, -1));
 
     }
 }

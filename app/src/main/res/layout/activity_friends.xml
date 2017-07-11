@@ -55,7 +55,8 @@
                         android:layout_weight="1"
                         android:text="@string/username"
                         android:textAlignment="center"
-                        android:textAppearance="@android:style/TextAppearance.Material.Medium" />
+                        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+                        android:textColor="@color/cardview_light_background" />
 
                     <Space
                         android:layout_width="match_parent"

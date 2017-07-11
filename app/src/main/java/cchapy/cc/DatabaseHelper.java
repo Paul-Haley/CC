@@ -11,7 +11,7 @@ import android.content.Context;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     // If you change the database schema, you must increment the database version.
-    public static final int DATABASE_VERSION = 17;
+    public static final int DATABASE_VERSION = 18;
     public static final String DATABASE_NAME = "cc.db";
     private Context context;
 
@@ -62,6 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             "CREATE TABLE `avatars` (" +
                     "  `AvatarID` int(11) PRIMARY KEY NOT NULL," +
                     "  `StarNum` int(11) NOT NULL," +
+                    "  `Price` int(11) NOT NULL," +
                     "  `Name` varchar(100) NOT NULL," +
                     "  `Image_M_Main` int(11) NOT NULL," +
                     "  `Image_M_Alt` int(11) NOT NULL," +
@@ -70,10 +71,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     ");";
 
     private static final String SQL_POPULATE_AVATAR_TABLE =
-            "INSERT INTO `avatars` (`AvatarID`, `StarNum`, `Name`, `Image_M_Main`, `Image_M_Alt`, `Image_F_Main`, `Image_F_Alt`) VALUES " +
-                    "(1, 1, 'Starter', 1, 2, 3, 4)," +
-                    "(2, 1, 'Cat', 5, 6, 7, 8)," +
-                    "(3, 3, 'Lucky Cat', 9, 10, 11, 12);";
+            "INSERT INTO `avatars` (`AvatarID`, `StarNum`, `Price`, `Name`, `Image_M_Main`, `Image_M_Alt`, `Image_F_Main`, `Image_F_Alt`) VALUES " +
+                    "(1, 1, 0, 'Starter', 1, 2, 3, 4)," +
+                    "(2, 1, 300, 'Cat', 5, 6, 7, 8)," +
+                    "(3, 3, 888, 'Lucky Cat', 9, 10, 11, 12);";
 
     private static final String SQL_CREATE_AVATAR_OWNED_TABLE =
             "CREATE TABLE `avatars_owned` (" +

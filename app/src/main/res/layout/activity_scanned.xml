@@ -15,7 +15,7 @@
         android:fontFamily="cursive"
         android:text="@string/congratulations"
         android:textAlignment="center"
-        android:textColor="#FD1F25"
+        android:textColor="#593AE6"
         android:textSize="48sp"
         android:textStyle="bold" />
 

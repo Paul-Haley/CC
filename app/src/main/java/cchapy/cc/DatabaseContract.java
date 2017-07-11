@@ -39,6 +39,7 @@ public final class DatabaseContract {
         public static final String COLUMN_NAME_TIME = "Time";
         public static final String COLUMN_NAME_IMAGE = "Image";
         public static final String COLUMN_NAME_SHOP = "Shop";
+        public static final String COLUMN_NAME_PRICE = "Price";
     }
 
     //Define discounts owned table

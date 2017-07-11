@@ -31,6 +31,8 @@ public class FriendsActivity extends AppCompatActivity
         //Create view QR intent
         //TODO: Build user into intent to display appropiate profile
         Intent intent = new Intent(this, DisplayPopUpProfileActivity.class);
+        //Always fetch user with id 1 to avoid crashing until friends activity works with user fetcher
+        intent.putExtra("USER_ID", 1);
         startActivity(intent);
     }
 }

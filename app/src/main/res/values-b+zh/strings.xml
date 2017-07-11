@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">CC</string>
+    <string name="avatar">AVATAR</string>
+    <string name="shop">SHOP</string>
+    <string name="qr">QR</string>
+    <string name="friends">FRIENDS</string>
+    <string name="settings">SETTINGS</string>
+    <string name="leaderboard">RANK</string>
+    <string name="qr_scanner">QR Scanner</string>
+    <string name="view_friends">View Friends</string>
+    <string name="username">Username</string>
+    <string name="profile">PROFILE</string>
+    <string name="discounts">DISCOUNTS</string>
+
+    <string-array name="sorting_options_vouchers">
+        <item>NEW</item>
+        <item>A-Z</item>
+        <item>TIME</item>
+        <item>PRICE</item>
+    </string-array>
+
+    <string-array name="sorting_options_avatars">
+        <item>NEW</item>
+        <item>A-Z</item>
+        <item>STARS</item>
+        <item>PRICE</item>
+    </string-array>
+</resources>

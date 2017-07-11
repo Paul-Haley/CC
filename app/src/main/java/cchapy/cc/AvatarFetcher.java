@@ -25,21 +25,44 @@ public class AvatarFetcher {
         // Setting up
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
-        Cursor mCursor = db.rawQuery("SELECT * FROM avatars", null);
-        mCursor.moveToFirst();
 
+        List<Integer> owned = getOwnedAvatars(db); // Reading owned avatars for the current user
+
+        Cursor avatarsCursor = db.rawQuery("SELECT * FROM avatars", null);
+        avatarsCursor.moveToFirst();
         do {
-            avatars.add(new Avatar(mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_ID)),
-                    mCursor.getString(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_NAME)),
-                    1,
-                    1,
-                    false,
-                    ""));
-        } while(mCursor.moveToNext());
+            int id = avatarsCursor.getInt(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_ID));
+
+            // Getting the avatars
+            avatars.add(new Avatar(id,
+                    avatarsCursor.getString(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_NAME)),
+                    avatarsCursor.getInt(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_STARNUM)),
+                    avatarsCursor.getInt(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_PRICE)),
+                    owned.contains(id),
+                    avatarsCursor.getString(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_DESCRIPTION))));
+        } while(avatarsCursor.moveToNext());
 
         // Cleaning up
-        mCursor.close();
+        avatarsCursor.close();
         mDbHelper.close();
         return avatars;
+    }
+
+    /**
+     * @param db Database
+     * @return The id of all user owned avatars
+     */
+    private List<Integer> getOwnedAvatars(SQLiteDatabase db) {
+        Cursor ownedCursor = db.rawQuery("SELECT * FROM avatars_owned WHERE user = ?",
+                new String[] {"1"}); //TODO: get userID
+        List<Integer> userOwned = new ArrayList<Integer>();
+
+        ownedCursor.moveToFirst();
+        do {
+            userOwned.add(ownedCursor.getInt(ownedCursor.getColumnIndex(DatabaseContract.AvatarOwnedTable.COLUMN_NAME_AVATAR)));
+        } while (ownedCursor.moveToNext());
+
+        ownedCursor.close();
+        return userOwned;
     }
 }

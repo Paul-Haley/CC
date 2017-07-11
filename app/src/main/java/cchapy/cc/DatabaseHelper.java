@@ -64,6 +64,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "  `StarNum` int(11) NOT NULL," +
                     "  `Price` int(11) NOT NULL," +
                     "  `Name` varchar(100) NOT NULL," +
+                    "  `Description` text NOT NULL," +
                     "  `Image_M_Main` int(11) NOT NULL," +
                     "  `Image_M_Alt` int(11) NOT NULL," +
                     "  `Image_F_Main` int(11) NOT NULL," +
@@ -72,9 +73,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String SQL_POPULATE_AVATAR_TABLE =
             "INSERT INTO `avatars` (`AvatarID`, `StarNum`, `Price`, `Name`, `Image_M_Main`, `Image_M_Alt`, `Image_F_Main`, `Image_F_Alt`) VALUES " +
-                    "(1, 1, 0, 'Starter', 1, 2, 3, 4)," +
-                    "(2, 1, 300, 'Cat', 5, 6, 7, 8)," +
-                    "(3, 3, 888, 'Lucky Cat', 9, 10, 11, 12);";
+                    "(1, 1, 0, 'Starter', 'Default starting Avatar', 1, 2, 3, 4)," +
+                    "(2, 1, 300, 'Cat', 'Purr!', 5, 6, 7, 8)," +
+                    "(3, 3, 888, 'Lucky Cat', 'The golden Lucky Cat of everyone's dreams, all will be jealous of your fortune!', 9, 10, 11, 12);";
 
     private static final String SQL_CREATE_AVATAR_OWNED_TABLE =
             "CREATE TABLE `avatars_owned` (" +

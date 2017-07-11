@@ -11,7 +11,7 @@ import android.content.Context;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     // If you change the database schema, you must increment the database version.
-    public static final int DATABASE_VERSION = 18;
+    public static final int DATABASE_VERSION = 19;
     public static final String DATABASE_NAME = "cc.db";
     private Context context;
 

@@ -1,4 +1,4 @@
-<resources>
+﻿<resources>
     <string name="app_name">CC</string>
     <string name="avatar">玩偶</string>
     <string name="shop">商城</string>
@@ -11,23 +11,24 @@
     <string name="username">用户名</string>
     <string name="profile">主页</string>
     <string name="discounts">玩偶</string>
-    <string name="all_avatars">All Avatars</string>
-    <string name="set_as_avatar">Set as Avatar</string>
-    <string name="asc">ASC</string>
-    <string name="desc">DESC</string>
-    <string name="search">Search</string>
-    <string name="you_unlocked">You unlocked:</string>
-    <string name="leaves">Leaves:</string>
-    <string name="co2_saved">CO2 Saved</string>
-    <string name="congratulations">Congratulations!</string>
-    <string name="you_received_leaves">You received leaves</string>
-    <string name="clear_all_data">Clear All Data</string>
-    <string name="clear">Clear</string>
-    <string name="language">Language</string>
-    <string name="switch_to_chinese">Switch to Chinese</string>
-    <string name="switch_to_english">Switch to English</string>
-    <string name="login_as_new_user">Login as New User</string>
-    <string name="login">Login</string>
+
+    <string name="all_avatars">我的玩偶</string>
+    <string name="set_as_avatar">设为主页玩偶</string>
+    <string name="asc">升序</string>
+    <string name="desc">降序</string>
+    <string name="search">搜索</string>
+    <string name="you_unlocked">你解锁了:</string>
+    <string name="leaves">叶子:</string>
+    <string name="co2_saved">CO2节省量</string>
+    <string name="congratulations">恭喜你</string>
+    <string name="you_received_leaves">你获得了叶子</string>
+    <string name="clear_all_data">清除数据</string>
+    <string name="clear">清除</string>
+    <string name="language">语言</string>
+    <string name="switch_to_chinese">切换为中文</string>
+    <string name="switch_to_english">切换为英文</string>
+    <string name="login_as_new_user">注册新用户</string>
+    <string name="login">登陆</string>
 
 
     <string-array name="sorting_options_vouchers">

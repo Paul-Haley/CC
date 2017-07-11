@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name = "avatars">
+        <item>"@drawable/character_boy_generic"</item>
+        <item>"@drawable/character_boy_generic_icon"</item>
+        <item>"@drawable/character_girl_generic"</item>
+        <item>"@drawable/character_girl_generic_icon"</item>
+        <item>"@drawable/character_boy_cat"</item>
+        <item>"@drawable/character_boy_cat_icon"</item>
+        <item>"@drawable/character_girl_cat"</item>
+        <item>"@drawable/character_girl_cat_icon"</item>
+        <item>"@drawable/character_boy_luckycat"</item>
+        <item>"@drawable/character_boy_luckycat_icon"</item>
+        <item>"@drawable/character_girl_luckycat"</item>
+        <item>"@drawable/character_girl_luckycat_icon"</item>
+    </array>
+</resources>

@@ -1,9 +1,17 @@
 package cchapy.cc.dummy;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import cchapy.cc.DatabaseContract;
+import cchapy.cc.DatabaseHelper;
+import cchapy.cc.R;
 
 /**
  * Helper class for providing sample userName for user interfaces created by
@@ -33,7 +41,7 @@ public class UserContent {
     public static final Map<String, User> FRIENDS_MAP = new HashMap<String, User>();
 
 
-    private static final int COUNT = 25;
+    private static final int COUNT = 5;
 
     //Dummy friend count
     private static final int FRIENDS_COUNT = 25;
@@ -57,6 +65,7 @@ public class UserContent {
     private static User createDummyUser(int position) {
         return new User(String.valueOf(position), "User " + position, "Dalian", 1000);
     }
+
 
     public static List<User> getFriendUsers() {
         for(int i = 1; i <= FRIENDS_COUNT; i++){

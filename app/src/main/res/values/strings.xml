@@ -28,6 +28,7 @@
     <string name="switch_to_english">Switch to English</string>
     <string name="login_as_new_user">Login as New User</string>
     <string name="login">Login</string>
+    <string name="reward">Reward</string>
 
     <string-array name="sorting_options_vouchers">
         <item>NEW</item>

@@ -30,12 +30,12 @@
         </activity>
         <activity
             android:name=".DisplayProfileActivity"
-            android:label="Profile"
+            android:label="@string/profile"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ShopActivity"
-            android:label="Shop"
+            android:label="@string/shop"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -45,47 +45,47 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".LeaderboardActivity"
-            android:label="Leaderboard"
+            android:label="@string/leaderboard"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".FriendsActivity"
-            android:label="Friends"
+            android:label="@string/friends"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".SettingsActivity"
-            android:label="Settings"
+            android:label="@string/settings"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".DiscountActivity"
-            android:label="Your Discounts"
+            android:label="@string/discounts"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".AvatarActivity"
-            android:label="Avatar"
+            android:label="@string/avatar"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ScannedActivity"
-            android:label="Reward"
+            android:label="@string/reward"
             android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.journeyapps.barcodescanner.CaptureActivity"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait"
-            tools:replace="screenOrientation"></activity>
+            tools:replace="screenOrientation" />
         <activity
             android:name=".DisplayPopUpProfileActivity"
-            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"></activity>
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
         <activity
             android:name=".DisplayPopUpNewAvatarActivity"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"></activity>
-        <activity android:name=".checkDatabase"></activity>
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
+        <activity android:name=".checkDatabase" />
     </application>
 
 </manifest>

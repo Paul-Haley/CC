@@ -3,8 +3,6 @@ package cchapy.cc;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import cchapy.cc.dummy.DummyContent;
-
 public class DiscountActivity extends AppCompatActivity
         implements VoucherListingFragment.OnListFragmentInteractionListener{
 
@@ -21,7 +19,7 @@ public class DiscountActivity extends AppCompatActivity
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+    public void onListFragmentInteraction(Voucher item) {
 
     }
 }

@@ -16,6 +16,7 @@ public final class DatabaseContract {
         public static final String TABLE_NAME = "avatar";
         public static final String COLUMN_NAME_ID = "AvatarID";
         public static final String COLUMN_NAME_STARNUM = "StarNum";
+        public static final String COLUMN_NAME_PRICE = "Price";
         public static final String COLUMN_NAME_NAME = "Name";
         public static final String COLUMN_NAME_IMAGE_M_MAIN = "Image_M_Main";
         public static final String COLUMN_NAME_IMAGE_M_ALT = "Image_M_Alt";
@@ -39,6 +40,7 @@ public final class DatabaseContract {
         public static final String COLUMN_NAME_TIME = "Time";
         public static final String COLUMN_NAME_IMAGE = "Image";
         public static final String COLUMN_NAME_SHOP = "Shop";
+        public static final String COLUMN_NAME_PRICE = "Price";
     }
 
     //Define discounts owned table

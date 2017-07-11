@@ -14,7 +14,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import cchapy.cc.dummy.UserContent;
+import cchapy.cc.User;
 
 public class LeaderboardActivity extends AppCompatActivity
     implements UserFragment.OnListFragmentInteractionListener {
@@ -60,10 +60,11 @@ public class LeaderboardActivity extends AppCompatActivity
         }
     }
 
-    public void viewPopUpProfile(UserContent.User user) {
+    public void viewPopUpProfile(User user) {
         //Create view QR intent
         //TODO: Build user into intent to display appropiate profile
         Intent intent = new Intent(this, DisplayPopUpProfileActivity.class);
+        intent.putExtra("USER_ID", user.getId());
         startActivity(intent);
     }
 
@@ -107,7 +108,7 @@ public class LeaderboardActivity extends AppCompatActivity
     }*/
 
     @Override
-    public void onListFragmentInteraction(UserContent.User user) {
+    public void onListFragmentInteraction(User user) {
         viewPopUpProfile(user);
     }
 

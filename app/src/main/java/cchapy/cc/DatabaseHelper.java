@@ -11,11 +11,13 @@ import android.content.Context;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     // If you change the database schema, you must increment the database version.
-    public static final int DATABASE_VERSION = 12;
+    public static final int DATABASE_VERSION = 19;
     public static final String DATABASE_NAME = "cc.db";
+    private Context context;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
     public void onCreate(SQLiteDatabase db) {
@@ -47,7 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // This database is only a cache for online data, so its upgrade policy is
         // to simply to discard the data and start over
-        db.execSQL(SQL_DELETE_ENTRIES);
+        context.deleteDatabase("cc.db");
         onCreate(db);
     }
 
@@ -60,6 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             "CREATE TABLE `avatars` (" +
                     "  `AvatarID` int(11) PRIMARY KEY NOT NULL," +
                     "  `StarNum` int(11) NOT NULL," +
+                    "  `Price` int(11) NOT NULL," +
                     "  `Name` varchar(100) NOT NULL," +
                     "  `Image_M_Main` int(11) NOT NULL," +
                     "  `Image_M_Alt` int(11) NOT NULL," +
@@ -68,10 +71,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     ");";
 
     private static final String SQL_POPULATE_AVATAR_TABLE =
-            "INSERT INTO `avatars` (`AvatarID`, `StarNum`, `Name`, `Image_M_Main`, `Image_M_Alt`, `Image_F_Main`, `Image_F_Alt`) VALUES " +
-                    "(1, 1, 'Starter', 1, 2, 3, 4)," +
-                    "(2, 1, 'Cat', 5, 6, 7, 8)," +
-                    "(3, 3, 'Lucky Cat', 9, 10, 11, 12);";
+            "INSERT INTO `avatars` (`AvatarID`, `StarNum`, `Price`, `Name`, `Image_M_Main`, `Image_M_Alt`, `Image_F_Main`, `Image_F_Alt`) VALUES " +
+                    "(1, 1, 0, 'Starter', 1, 2, 3, 4)," +
+                    "(2, 1, 300, 'Cat', 5, 6, 7, 8)," +
+                    "(3, 3, 888, 'Lucky Cat', 9, 10, 11, 12);";
 
     private static final String SQL_CREATE_AVATAR_OWNED_TABLE =
             "CREATE TABLE `avatars_owned` (" +
@@ -101,14 +104,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "  `Description` text NOT NULL," +
                     "  `Time` datetime NOT NULL," +
                     "  `Image` int(11) NOT NULL," +
-                    "  `Shop` varchar(100) NOT NULL" +
+                    "  `Shop` varchar(100) NOT NULL," +
+                    "  `Price` int(11) NOT NULL" +
                     ");";
 
     private static final String SQL_POPULATE_DISCOUNT_TABLE =
-            "INSERT INTO `discounts` (`DiscountID`, `Name`, `Description`, `Time`, `Image`, `Shop`) VALUES" +
-                    "(1, 'Starbucks 60% OFF (Dalian)', '60% off of ALL Starbucks drinks! This offer is only available to purchase for today (14/07/2017), and can be redeemed until 14/08/17. Only available at Starbucks in Dalian.', '2017-07-15 00:00:00', 1, 'Starbucks')," +
-                    "(2, 'HALF PRICE Big Macs!', 'Big Macs at all Liaoning McDonald''s restaurants are half price for one week! This voucher can be purchased until 19/07/17 and can be redeemed until 31/08/17.', '2017-09-01 00:00:00', 2, 'McDonald''s')," +
-                    "(3, 'New Red Rooster Store Opening Sale! (Dalian)', 'We are opening our first Chinese store in Dalian, Lianoning, and want you to come try our delicious chicken! For all of August you can redeem this voucher once to receive a free Red Rooster ''Try It'' box. This voucher is only available to be purchased before 16/07/17.', '2017-09-01 00:00:00', 3, 'Red Rooster');";
+            "INSERT INTO `discounts` (`DiscountID`, `Name`, `Description`, `Time`, `Image`, `Shop`, `Price`) VALUES" +
+                    "(1, 'Starbucks 60% OFF (Dalian)', '60% off of ALL Starbucks drinks! This offer is only available to purchase for today (14/07/2017), and can be redeemed until 14/08/17. Only available at Starbucks in Dalian.', '2017-07-15 00:00:00', 1, 'Starbucks', 100)," +
+                    "(2, 'HALF PRICE Big Macs!', 'Big Macs at all Liaoning McDonald''s restaurants are half price for one week! This voucher can be purchased until 19/07/17 and can be redeemed until 31/08/17.', '2017-09-01 00:00:00', 2, 'McDonald''s', 200)," +
+                    "(3, 'New Red Rooster Store Opening Sale! (Dalian)', 'We are opening our first Chinese store in Dalian, Lianoning, and want you to come try our delicious chicken! For all of August you can redeem this voucher once to receive a free Red Rooster ''Try It'' box. This voucher is only available to be purchased before 16/07/17.', '2017-09-01 00:00:00', 3, 'Red Rooster', 300);";
 
     private static final String SQL_CREATE_DISCOUNTS_OWNED_TABLE =
             "CREATE TABLE `discounts_owned` (" +
@@ -213,10 +217,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     " ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`Avatar_Equipped`) REFERENCES `avatars` (`AvatarID`);";
 
     private static final String SQL_DELETE_ENTRIES =
-            "DROP TABLE IF EXISTS " + DatabaseContract.UsersTable.TABLE_NAME + ";" +
             "DROP TABLE IF EXISTS " + DatabaseContract.AvatarOwnedTable.TABLE_NAME + ";" +
             "DROP TABLE IF EXISTS " + DatabaseContract.DiscountsOwnedTable.TABLE_NAME + ";"+
-            "DROP TABLE IF EXISTS " + DatabaseContract.AvatarTable.TABLE_NAME + ";" +
             "DROP TABLE IF EXISTS " + DatabaseContract.FriendsTable.TABLE_NAME + ";" +
-            "DROP TABLE IF EXISTS " + DatabaseContract.DiscountsTable.TABLE_NAME + ";";
+            "DROP TABLE IF EXISTS " + DatabaseContract.DiscountsTable.TABLE_NAME + ";" +
+            "DROP TABLE IF EXISTS " + DatabaseContract.UsersTable.TABLE_NAME + ";" +
+            "DROP TABLE IF EXISTS " + DatabaseContract.AvatarTable.TABLE_NAME + ";";
 }

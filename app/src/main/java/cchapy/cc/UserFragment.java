@@ -10,8 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import cchapy.cc.dummy.UserContent;
-import cchapy.cc.dummy.UserContent.User;
+import cchapy.cc.User;
+
 
 /**
  * A fragment representing a list of Items.
@@ -58,6 +58,8 @@ public class UserFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_user_list, container, false);
 
+        UserFetcher fetcher = new UserFetcher(getContext());
+
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -67,7 +69,7 @@ public class UserFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyUserRecyclerViewAdapter(UserContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MyUserRecyclerViewAdapter(fetcher.fetchAllUsers(), mListener));
         }
         return view;
     }
@@ -103,6 +105,7 @@ public class UserFragment extends Fragment {
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
         void onListFragmentInteraction(User item);
+
     }
 
 

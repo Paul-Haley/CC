@@ -48,16 +48,7 @@
                     android:layout_weight="1"
                     android:text="Voucher Name"
                     android:textAlignment="viewStart"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/Discount_Desc"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:text="Voucher Description"
-                    android:textAlignment="viewStart" />
+                    android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
                 <TextView
                     android:id="@+id/Discount_Time"
@@ -75,6 +66,13 @@
                     android:layout_weight="1"
                     android:text="Price: 888"
                     android:textAlignment="viewStart" />
+
+                <TextView
+                    android:id="@+id/Discount_Shop"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text="Shop: Starbucks" />
 
             </LinearLayout>
         </LinearLayout>

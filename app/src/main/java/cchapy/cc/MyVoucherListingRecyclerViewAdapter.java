@@ -1,9 +1,14 @@
 package cchapy.cc;
 
+import android.content.Context;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import cchapy.cc.VoucherListingFragment.OnListFragmentInteractionListener;
@@ -18,11 +23,11 @@ import java.util.List;
  */
 public class MyVoucherListingRecyclerViewAdapter extends RecyclerView.Adapter<MyVoucherListingRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
+    private final List<Voucher> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyVoucherListingRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
-        mValues = items;
+    public MyVoucherListingRecyclerViewAdapter(List<Voucher> vouchers, OnListFragmentInteractionListener listener) {
+        mValues = vouchers;
         mListener = listener;
     }
 
@@ -30,12 +35,22 @@ public class MyVoucherListingRecyclerViewAdapter extends RecyclerView.Adapter<My
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_voucherlisting, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, parent.getContext());
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
+
+        Resources res = holder.context.getResources();
+        TypedArray vouchers = res.obtainTypedArray(R.array.vouchers);
+
+        holder.mNameView.setText(holder.mItem.getName());
+        holder.mLogoView.setImageResource(vouchers.getResourceId(holder.mItem.getId() - 1, -1));
+        holder.mPriceView.setText("Price: " + Integer.toString(holder.mItem.getPrice()));
+        holder.mShopView.setText(holder.mItem.getShop());
+        holder.mTimeView.setText(holder.mItem.getTime());
+
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,11 +71,23 @@ public class MyVoucherListingRecyclerViewAdapter extends RecyclerView.Adapter<My
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public DummyItem mItem;
+        public final TextView mNameView;
+        public final TextView mPriceView;
+        public final TextView mTimeView;
+        public final ImageView mLogoView;
+        public final TextView mShopView;
+        public Voucher mItem;
+        public Context context;
 
-        public ViewHolder(View view) {
+        public ViewHolder(View view, Context context) {
             super(view);
             mView = view;
+            mNameView = view.findViewById(R.id.Discount_Name);
+            mPriceView = view.findViewById(R.id.Discount_Price);
+            mTimeView = view.findViewById(R.id.Discount_Time);
+            mLogoView = view.findViewById(R.id.Discount_Image_Ex);
+            mShopView = view.findViewById(R.id.Discount_Shop);
+            this.context = context;
         }
 
         @Override

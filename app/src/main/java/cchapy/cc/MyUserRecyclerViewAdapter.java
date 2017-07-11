@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import cchapy.cc.UserFragment.OnListFragmentInteractionListener;
-import cchapy.cc.dummy.UserContent.User;
+import cchapy.cc.User;
 
 import java.util.List;
 
@@ -36,10 +36,10 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mFriendUsernameView.setText(mValues.get(position).userName);
-        holder.mFriendCityView.setText(mValues.get(position).city);
-        holder.mFriendLeafView.setText(String.valueOf(mValues.get(position).leafCount));
+        holder.mIdView.setText(Integer.toString(mValues.get(position).getId()));
+        holder.mFriendUsernameView.setText(mValues.get(position).getUserName());
+        holder.mFriendCityView.setText(mValues.get(position).getCity());
+        holder.mFriendLeafView.setText(String.valueOf(mValues.get(position).getTotalLeafCount()));
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override

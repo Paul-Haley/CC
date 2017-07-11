@@ -1,16 +1,16 @@
 <resources>
     <string name="app_name">CC</string>
-    <string name="avatar">AVATAR</string>
-    <string name="shop">SHOP</string>
-    <string name="qr">QR</string>
-    <string name="friends">FRIENDS</string>
-    <string name="settings">SETTINGS</string>
-    <string name="leaderboard">RANK</string>
-    <string name="qr_scanner">QR Scanner</string>
-    <string name="view_friends">View Friends</string>
-    <string name="username">Username</string>
-    <string name="profile">PROFILE</string>
-    <string name="discounts">DISCOUNTS</string>
+    <string name="avatar">玩偶</string>
+    <string name="shop">商城</string>
+    <string name="qr">扫码</string>
+    <string name="friends">好友</string>
+    <string name="settings">设置</string>
+    <string name="leaderboard">排行</string>
+    <string name="qr_scanner">扫码框</string>
+    <string name="view_friends">好友主页</string>
+    <string name="username">用户名</string>
+    <string name="profile">主页</string>
+    <string name="discounts">玩偶</string>
     <string name="all_avatars">All Avatars</string>
     <string name="set_as_avatar">Set as Avatar</string>
     <string name="asc">ASC</string>
@@ -28,6 +28,7 @@
     <string name="switch_to_english">Switch to English</string>
     <string name="login_as_new_user">Login as New User</string>
     <string name="login">Login</string>
+
 
     <string-array name="sorting_options_vouchers">
         <item>NEW</item>

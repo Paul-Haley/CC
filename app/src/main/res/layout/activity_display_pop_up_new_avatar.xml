@@ -13,7 +13,7 @@
         android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="49dp"
-        android:text="You unlocked:"
+        android:text="@string/you_unlocked"
         android:textAlignment="center"
         android:textSize="24sp" />
 

@@ -33,7 +33,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="#D5CAF3"
-        android:text="All Avatars"
+        android:text="@string/all_avatars"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -72,7 +72,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Shop"
+        android:text="@string/shop"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@+id/Button_Shop_Closet"
         app:layout_constraintHorizontal_bias="0.5"
@@ -84,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
-        android:text="Set as Avatar"
+        android:text="@string/set_as_avatar"
         app:layout_constraintBottom_toTopOf="@+id/imageButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintLeft_toLeftOf="@+id/imageButton"

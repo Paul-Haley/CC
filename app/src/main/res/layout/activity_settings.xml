@@ -19,7 +19,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Clear All Data"
+            android:text="@string/clear_all_data"
             android:textAlignment="center"
             android:textSize="18sp" />
 
@@ -29,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Clear" />
+            android:text="@string/clear" />
 
     </LinearLayout>
 
@@ -43,7 +43,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Language"
+            android:text="@string/language"
             android:textAlignment="center"
             android:textSize="18sp" />
 
@@ -53,8 +53,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="ToggleButton"
-            android:textOff="Switch to Chinese"
-            android:textOn="Switch to English" />
+            android:textOff="@string/switch_to_chinese"
+            android:textOn="@string/switch_to_english" />
 
     </LinearLayout>
 
@@ -68,7 +68,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Login as New User"
+            android:text="@string/login_as_new_user"
             android:textAlignment="center"
             android:textSize="18sp" />
 
@@ -78,7 +78,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Login" />
+            android:text="@string/login" />
 
     </LinearLayout>
 

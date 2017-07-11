@@ -12,12 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="cursive"
-        android:text="Congratulations!"
+        android:text="@string/congratulations"
         android:textAlignment="center"
         android:textColor="#FD1F25"
         android:textSize="48sp"
-        android:textStyle="bold"
-        tools:ignore="HardcodedText" />
+        android:textStyle="bold" />
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -31,7 +30,7 @@
             android:layout_height="48dp"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
-            android:text="You received leaves"
+            android:text="@string/you_received_leaves"
             android:textAlignment="viewEnd"
             android:textColor="@android:color/white"
             android:textSize="28sp"

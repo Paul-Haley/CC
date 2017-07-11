@@ -82,7 +82,7 @@
                 android:id="@+id/leavesLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Leaves:"
+                android:text="@string/leaves"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="90dp"
@@ -109,7 +109,7 @@
                 android:id="@+id/co2Label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CO2 Saved"
+                android:text="@string/co2_saved"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="90dp"
                 tools:layout_editor_absoluteY="463dp" />

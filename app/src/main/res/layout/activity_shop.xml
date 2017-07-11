@@ -64,8 +64,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.46"
                             android:text="ToggleButton"
-                            android:textOff="ASC"
-                            android:textOn="DESC" />
+                            android:textOff="@string/asc"
+                            android:textOn="@string/desc" />
 
                         <EditText
                             android:id="@+id/Discount_Search"
@@ -73,7 +73,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:ems="10"
-                            android:hint="Search"
+                            android:hint="@string/search"
                             android:inputType="text" />
 
                     </LinearLayout>
@@ -111,8 +111,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0.46"
                             android:text="ToggleButton"
-                            android:textOff="ASC"
-                            android:textOn="DESC" />
+                            android:textOff="@string/asc"
+                            android:textOn="@string/desc" />
 
                         <EditText
                             android:id="@+id/Avatar_Search"
@@ -120,7 +120,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:ems="10"
-                            android:hint="Search"
+                            android:hint="@string/search"
                             android:inputType="text" />
 
                     </LinearLayout>

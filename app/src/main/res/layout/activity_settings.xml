@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_blue"
+    android:background="@drawable/bg_leaves_white"
     android:orientation="vertical"
     tools:context="cchapy.cc.SettingsActivity">
 
@@ -21,6 +21,7 @@
             android:layout_weight="1"
             android:text="@string/clear_all_data"
             android:textAlignment="center"
+            android:textColor="@color/cardview_dark_background"
             android:textSize="18sp" />
 
         <Button
@@ -46,6 +47,7 @@
             android:layout_weight="1"
             android:text="@string/login_as_new_user"
             android:textAlignment="center"
+            android:textColor="@color/cardview_dark_background"
             android:textSize="18sp" />
 
         <Button
@@ -70,6 +72,7 @@
                 android:layout_weight="1"
                 android:text="View Db"
                 android:textAlignment="center"
+                android:textColor="@color/cardview_dark_background"
                 android:textSize="18sp" />
 
             <Button

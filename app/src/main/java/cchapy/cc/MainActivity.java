@@ -108,11 +108,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         banner = (Banner) findViewById(R.id.banner);
-        banner.setImages(urlList).setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE)
-                .setBannerStyle(BannerConfig.NOT_INDICATOR)
+        banner.setImages(urlList)
+                .setBannerStyle(BannerConfig.CIRCLE_INDICATOR)
                 .setDelayTime(6000)
                 .setIndicatorGravity(BannerConfig.CENTER)
-                .setBannerAnimation(Transformer.Tablet)
+                .setBannerAnimation(Transformer.Default)
                 .setImageLoader(new GlideImageLoader())
                 .start();
     }

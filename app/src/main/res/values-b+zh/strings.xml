@@ -1,4 +1,4 @@
-<resources>
+﻿<resources>
     <string name="app_name">CC</string>
     <string name="avatar">玩偶</string>
     <string name="shop">商城</string>
@@ -11,6 +11,7 @@
     <string name="username">用户名</string>
     <string name="profile">主页</string>
     <string name="discounts">玩偶</string>
+
     <string name="all_avatars">我的玩偶</string>
     <string name="set_as_avatar">设为主页玩偶</string>
     <string name="asc">升序</string>

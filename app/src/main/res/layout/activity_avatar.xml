@@ -101,7 +101,7 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/icon_closet_select" />
+        app:srcCompat="@drawable/icon_avatar_setavatar" />
 
     <ImageButton
         android:id="@+id/Button_Shop_Closet"
@@ -114,7 +114,7 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:srcCompat="@drawable/icon_closet_shop" />
+        app:srcCompat="@drawable/icon_shop_avatar" />
 
     <TextView
         android:id="@+id/avatar_avatarName"

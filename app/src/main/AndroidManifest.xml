@@ -22,11 +22,7 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".DisplayProfileActivity"
@@ -86,6 +82,14 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
         <activity android:name=".checkDatabase" />
+        <activity android:name=".SplashActivity" android:theme="@style/Splash" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

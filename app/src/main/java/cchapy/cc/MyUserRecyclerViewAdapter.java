@@ -41,6 +41,10 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
         holder.mFriendCityView.setText(mValues.get(position).getCity());
         holder.mFriendLeafView.setText(String.valueOf(mValues.get(position).getTotalLeafCount()));
 
+        if (mValues.get(position).getId() == 1) {
+            //Decoration for first place
+        }
+
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

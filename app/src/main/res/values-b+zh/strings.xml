@@ -29,6 +29,11 @@
     <string name="switch_to_english">切换为英文</string>
     <string name="login_as_new_user">注册新用户</string>
     <string name="login">登陆</string>
+    <string name="rank">排行榜</string>
+    <string name="city">城市</string>
+    <string name="local">附近</string>
+    <string name="cities">城市</string>
+    <string name="avatars">玩偶</string>
 
 
     <string-array name="sorting_options_vouchers">

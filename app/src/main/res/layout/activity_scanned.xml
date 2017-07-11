@@ -11,6 +11,7 @@
         android:id="@+id/congratulations"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:fontFamily="cursive"
         android:text="@string/congratulations"
         android:textAlignment="center"
@@ -36,28 +37,27 @@
             android:textSize="28sp"
             app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="16dp" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="58dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
             android:layout_marginRight="32dp"
             android:layout_marginTop="8dp"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toRightOf="@+id/leaves"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/symbol_leaf" />
+            app:srcCompat="@drawable/symbol_leaf"
+            android:layout_marginEnd="32dp" />
 
         <ImageButton
             android:id="@+id/crate"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginTop="16dp"
             android:background="@color/zxing_transparent"
             android:contentDescription="TODO: finish this"
@@ -66,12 +66,12 @@
             android:scaleType="centerCrop"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/leaves"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/box_closed" />
+            app:srcCompat="@drawable/box_closed"
+            app:layout_constraintHorizontal_bias="0.0" />
 
     </android.support.constraint.ConstraintLayout>
 

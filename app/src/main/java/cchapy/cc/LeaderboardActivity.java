@@ -64,6 +64,7 @@ public class LeaderboardActivity extends AppCompatActivity
         //Create view QR intent
         //TODO: Build user into intent to display appropiate profile
         Intent intent = new Intent(this, DisplayPopUpProfileActivity.class);
+        intent.putExtra("USER_ID", user.getId());
         startActivity(intent);
     }
 

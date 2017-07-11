@@ -60,6 +60,7 @@ public class VoucherListingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_voucherlisting_list, container, false);
+        VoucherFetcher fetcher = new VoucherFetcher(getContext());
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -70,7 +71,7 @@ public class VoucherListingFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyVoucherListingRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MyVoucherListingRecyclerViewAdapter(fetcher.fetchAllVouchers(), mListener));
         }
         return view;
     }
@@ -105,6 +106,6 @@ public class VoucherListingFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(Voucher item);
     }
 }

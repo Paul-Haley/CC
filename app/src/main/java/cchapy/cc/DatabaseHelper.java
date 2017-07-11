@@ -11,11 +11,13 @@ import android.content.Context;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     // If you change the database schema, you must increment the database version.
-    public static final int DATABASE_VERSION = 12;
+    public static final int DATABASE_VERSION = 17;
     public static final String DATABASE_NAME = "cc.db";
+    private Context context;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
     public void onCreate(SQLiteDatabase db) {
@@ -47,7 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // This database is only a cache for online data, so its upgrade policy is
         // to simply to discard the data and start over
-        db.execSQL(SQL_DELETE_ENTRIES);
+        context.deleteDatabase("cc.db");
         onCreate(db);
     }
 
@@ -101,14 +103,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "  `Description` text NOT NULL," +
                     "  `Time` datetime NOT NULL," +
                     "  `Image` int(11) NOT NULL," +
-                    "  `Shop` varchar(100) NOT NULL" +
+                    "  `Shop` varchar(100) NOT NULL," +
+                    "  `Price` int(11) NOT NULL" +
                     ");";
 
     private static final String SQL_POPULATE_DISCOUNT_TABLE =
-            "INSERT INTO `discounts` (`DiscountID`, `Name`, `Description`, `Time`, `Image`, `Shop`) VALUES" +
-                    "(1, 'Starbucks 60% OFF (Dalian)', '60% off of ALL Starbucks drinks! This offer is only available to purchase for today (14/07/2017), and can be redeemed until 14/08/17. Only available at Starbucks in Dalian.', '2017-07-15 00:00:00', 1, 'Starbucks')," +
-                    "(2, 'HALF PRICE Big Macs!', 'Big Macs at all Liaoning McDonald''s restaurants are half price for one week! This voucher can be purchased until 19/07/17 and can be redeemed until 31/08/17.', '2017-09-01 00:00:00', 2, 'McDonald''s')," +
-                    "(3, 'New Red Rooster Store Opening Sale! (Dalian)', 'We are opening our first Chinese store in Dalian, Lianoning, and want you to come try our delicious chicken! For all of August you can redeem this voucher once to receive a free Red Rooster ''Try It'' box. This voucher is only available to be purchased before 16/07/17.', '2017-09-01 00:00:00', 3, 'Red Rooster');";
+            "INSERT INTO `discounts` (`DiscountID`, `Name`, `Description`, `Time`, `Image`, `Shop`, `Price`) VALUES" +
+                    "(1, 'Starbucks 60% OFF (Dalian)', '60% off of ALL Starbucks drinks! This offer is only available to purchase for today (14/07/2017), and can be redeemed until 14/08/17. Only available at Starbucks in Dalian.', '2017-07-15 00:00:00', 1, 'Starbucks', 100)," +
+                    "(2, 'HALF PRICE Big Macs!', 'Big Macs at all Liaoning McDonald''s restaurants are half price for one week! This voucher can be purchased until 19/07/17 and can be redeemed until 31/08/17.', '2017-09-01 00:00:00', 2, 'McDonald''s', 200)," +
+                    "(3, 'New Red Rooster Store Opening Sale! (Dalian)', 'We are opening our first Chinese store in Dalian, Lianoning, and want you to come try our delicious chicken! For all of August you can redeem this voucher once to receive a free Red Rooster ''Try It'' box. This voucher is only available to be purchased before 16/07/17.', '2017-09-01 00:00:00', 3, 'Red Rooster', 300);";
 
     private static final String SQL_CREATE_DISCOUNTS_OWNED_TABLE =
             "CREATE TABLE `discounts_owned` (" +
@@ -213,10 +216,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     " ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`Avatar_Equipped`) REFERENCES `avatars` (`AvatarID`);";
 
     private static final String SQL_DELETE_ENTRIES =
-            "DROP TABLE IF EXISTS " + DatabaseContract.UsersTable.TABLE_NAME + ";" +
             "DROP TABLE IF EXISTS " + DatabaseContract.AvatarOwnedTable.TABLE_NAME + ";" +
             "DROP TABLE IF EXISTS " + DatabaseContract.DiscountsOwnedTable.TABLE_NAME + ";"+
-            "DROP TABLE IF EXISTS " + DatabaseContract.AvatarTable.TABLE_NAME + ";" +
             "DROP TABLE IF EXISTS " + DatabaseContract.FriendsTable.TABLE_NAME + ";" +
-            "DROP TABLE IF EXISTS " + DatabaseContract.DiscountsTable.TABLE_NAME + ";";
+            "DROP TABLE IF EXISTS " + DatabaseContract.DiscountsTable.TABLE_NAME + ";" +
+            "DROP TABLE IF EXISTS " + DatabaseContract.UsersTable.TABLE_NAME + ";" +
+            "DROP TABLE IF EXISTS " + DatabaseContract.AvatarTable.TABLE_NAME + ";";
 }

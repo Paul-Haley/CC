@@ -11,6 +11,23 @@
     <string name="username">Username</string>
     <string name="profile">PROFILE</string>
     <string name="discounts">DISCOUNTS</string>
+    <string name="all_avatars">All Avatars</string>
+    <string name="set_as_avatar">Set as Avatar</string>
+    <string name="asc">ASC</string>
+    <string name="desc">DESC</string>
+    <string name="search">Search</string>
+    <string name="you_unlocked">You unlocked:</string>
+    <string name="leaves">Leaves:</string>
+    <string name="co2_saved">CO2 Saved</string>
+    <string name="congratulations">Congratulations!</string>
+    <string name="you_received_leaves">You received leaves</string>
+    <string name="clear_all_data">Clear All Data</string>
+    <string name="clear">Clear</string>
+    <string name="language">Language</string>
+    <string name="switch_to_chinese">Switch to Chinese</string>
+    <string name="switch_to_english">Switch to English</string>
+    <string name="login_as_new_user">Login as New User</string>
+    <string name="login">Login</string>
 
     <string-array name="sorting_options_vouchers">
         <item>NEW</item>

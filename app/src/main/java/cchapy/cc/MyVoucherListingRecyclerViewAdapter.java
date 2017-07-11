@@ -46,7 +46,6 @@ public class MyVoucherListingRecyclerViewAdapter extends RecyclerView.Adapter<My
         TypedArray vouchers = res.obtainTypedArray(R.array.vouchers);
 
         holder.mNameView.setText(holder.mItem.getName());
-        holder.mDescView.setText(holder.mItem.getDescription());
         holder.mLogoView.setImageResource(vouchers.getResourceId(holder.mItem.getId() - 1, -1));
         holder.mPriceView.setText("Price: " + Integer.toString(holder.mItem.getPrice()));
         holder.mShopView.setText(holder.mItem.getShop());
@@ -74,7 +73,6 @@ public class MyVoucherListingRecyclerViewAdapter extends RecyclerView.Adapter<My
         public final View mView;
         public final TextView mNameView;
         public final TextView mPriceView;
-        public final TextView mDescView;
         public final TextView mTimeView;
         public final ImageView mLogoView;
         public final TextView mShopView;
@@ -86,7 +84,6 @@ public class MyVoucherListingRecyclerViewAdapter extends RecyclerView.Adapter<My
             mView = view;
             mNameView = view.findViewById(R.id.Discount_Name);
             mPriceView = view.findViewById(R.id.Discount_Price);
-            mDescView = view.findViewById(R.id.Discount_Desc);
             mTimeView = view.findViewById(R.id.Discount_Time);
             mLogoView = view.findViewById(R.id.Discount_Image_Ex);
             mShopView = view.findViewById(R.id.Discount_Shop);

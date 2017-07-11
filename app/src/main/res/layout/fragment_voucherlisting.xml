@@ -51,14 +51,6 @@
                     android:textAppearance="@android:style/TextAppearance.Material.Medium" />
 
                 <TextView
-                    android:id="@+id/Discount_Desc"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:text="Voucher Description"
-                    android:textAlignment="viewStart" />
-
-                <TextView
                     android:id="@+id/Discount_Time"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"

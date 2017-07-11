@@ -29,6 +29,11 @@
     <string name="login_as_new_user">Login as New User</string>
     <string name="login">Login</string>
     <string name="reward">Reward</string>
+    <string name="rank">Rank</string>
+    <string name="city">City</string>
+    <string name="local">Local</string>
+    <string name="cities">Cities</string>
+    <string name="avatars">Avatars</string>
 
     <string-array name="sorting_options_vouchers">
         <item>NEW</item>

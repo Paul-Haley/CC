@@ -24,13 +24,13 @@ public class ShopActivity extends AppCompatActivity
         //discounts
         TabHost.TabSpec spec = tabs.newTabSpec("discounts");
         spec.setContent(R.id.DiscountTab);
-        spec.setIndicator("Discounts");
+        spec.setIndicator(getString(R.string.discounts));
         tabs.addTab(spec);
 
         //avatars
         spec = tabs.newTabSpec("avatars");
         spec.setContent(R.id.AvatarTab);
-        spec.setIndicator("Avatars");
+        spec.setIndicator(getString(R.string.avatars));
         tabs.addTab(spec);
 
         //get the intent that started this activity

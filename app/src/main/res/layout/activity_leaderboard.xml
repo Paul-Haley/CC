@@ -45,7 +45,7 @@
                     android:layout_margin="@dimen/text_margin"
                     android:layout_weight="0.4"
                     android:background="@color/zxing_transparent"
-                    android:text="Rank"
+                    android:text="@string/rank"
                     android:textAppearance="?attr/textAppearanceListItem"
                     android:textStyle="bold" />
 
@@ -56,7 +56,7 @@
                     android:layout_margin="@dimen/text_margin"
                     android:layout_weight="1"
                     android:background="@color/zxing_transparent"
-                    android:text="Username"
+                    android:text="@string/username"
                     android:textAppearance="?attr/textAppearanceListItem"
                     android:textStyle="bold" />
 
@@ -67,7 +67,7 @@
                     android:layout_margin="@dimen/text_margin"
                     android:layout_weight="0.7"
                     android:background="@color/zxing_transparent"
-                    android:text="City"
+                    android:text="@string/city"
                     android:textAppearance="?attr/textAppearanceListItem"
                     android:textStyle="bold" />
 
@@ -78,7 +78,7 @@
                     android:layout_margin="@dimen/text_margin"
                     android:layout_weight="0.5"
                     android:background="@color/zxing_transparent"
-                    android:text="Leaves"
+                    android:text="@string/leaves"
                     android:textAppearance="?attr/textAppearanceListItem"
                     android:textStyle="bold" />
             </LinearLayout>

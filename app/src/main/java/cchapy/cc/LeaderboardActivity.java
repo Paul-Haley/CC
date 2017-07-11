@@ -35,19 +35,19 @@ public class LeaderboardActivity extends AppCompatActivity
         //friend tab
         TabHost.TabSpec spec = tabs.newTabSpec("friends");
         spec.setContent(R.id.friendsLeaderboardTab);
-        spec.setIndicator("Friends");
+        spec.setIndicator(getString(R.string.friends));
         tabs.addTab(spec);
 
         //leaderboard tab
         spec = tabs.newTabSpec("local");
         spec.setContent(R.id.localLeaderboardTab);
-        spec.setIndicator("Local");
+        spec.setIndicator(getString(R.string.local));
         tabs.addTab(spec);
 
         //city tab
         spec = tabs.newTabSpec("cities");
         spec.setContent(R.id.citiesLeaderboardTab);
-        spec.setIndicator("Cities");
+        spec.setIndicator(getString(R.string.cities));
         tabs.addTab(spec);
 
         if (savedInstanceState == null){

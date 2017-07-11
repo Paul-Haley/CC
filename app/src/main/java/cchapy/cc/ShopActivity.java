@@ -47,6 +47,11 @@ public class ShopActivity extends AppCompatActivity
     }
 
     @Override
+    public void onListFragmentInteraction(Voucher item) {
+
+    }
+
+    @Override
     public void onListFragmentInteraction(DummyContent.DummyItem item) {
 
     }

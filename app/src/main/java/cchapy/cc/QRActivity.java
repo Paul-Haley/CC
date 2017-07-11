@@ -36,9 +36,18 @@ public class QRActivity extends AppCompatActivity {
                 finish(); // Go back to the last activity
             } else {
                 //TODO: Delete this later
-                Toast.makeText(this, "REMEMBER TO DELETE THIS\nScanned: " + result.getContents(), Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(this, ScannedActivity.class);
-                startActivity(intent);
+                //verification of QR code
+                String scannedResult = result.getContents();
+                if (scannedResult.startsWith("CCHAPY_")) {
+                    //valid
+                    //TODO: add check for numbers after CCHAPY_
+                    Toast.makeText(this, "REMEMBER TO DELETE THIS\nScanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(this, ScannedActivity.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(this, "Invalid QR Code", Toast.LENGTH_LONG).show();
+                    finish(); // Go back to the last activity
+                }
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

@@ -85,13 +85,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
         android:text="@string/set_as_avatar"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton"
+        app:layout_constraintBottom_toTopOf="@+id/Button_Set_Avatar"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton"
-        app:layout_constraintRight_toRightOf="@+id/imageButton" />
+        app:layout_constraintLeft_toLeftOf="@+id/Button_Set_Avatar"
+        app:layout_constraintRight_toRightOf="@+id/Button_Set_Avatar" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/Button_Set_Avatar"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginBottom="8dp"
@@ -101,7 +101,8 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/icon_avatar_setavatar" />
+        app:srcCompat="@drawable/icon_avatar_setavatar"
+        android:onClick="setAvatar"/>
 
     <ImageButton
         android:id="@+id/Button_Shop_Closet"
@@ -132,7 +133,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/Button_Shop_Closet"
-        app:layout_constraintRight_toLeftOf="@+id/imageButton"
+        app:layout_constraintRight_toLeftOf="@+id/Button_Set_Avatar"
         app:layout_constraintTop_toBottomOf="@+id/avatar_avatarImage" />
 
     <ImageButton

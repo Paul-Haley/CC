@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -150,5 +151,16 @@ public class AvatarActivity extends AppCompatActivity {
         //Create view shop intent
         Intent intent = new Intent(this, ShopActivity.class);
         startActivity(intent);
+    }
+
+    public void setAvatar(View view) {
+        Avatar toChange = ownedAvatars.get(index);
+
+        int userID = UserInfoHelper.getLoggedInId(getApplicationContext());
+        UserFetcher uFetch = new UserFetcher(getApplicationContext());
+
+        uFetch.setAvatarByUserID(toChange.getId(), userID);
+
+        Toast.makeText(this, "Avatar Updated", Toast.LENGTH_LONG).show();
     }
 }

@@ -41,27 +41,12 @@ public class DisplayPopUpProfileActivity extends AppCompatActivity {
         TextView co2Text = (TextView)findViewById(R.id.co2Text);
         co2Text.setText(String.valueOf(user.getCarbon()));
 
-        //Obtain user gender
-        String gender = user.getGender();
-
-        //Obtain avatar which the user has equipped
-        Avatar avatar = avatarFetcher.fetchAvatarById(user.getEquippedAvatar());
-        int avatarResId;
-
-        //Obtain male/female avatar resource id
-        if (gender.equals("M")) {
-            //male
-            //TODO:
-            avatarResId = 4;
-        } else {
-            //female
-            avatarResId = 6;
-        }
+        int avatarImageID = UserInfoHelper.getUserAvatarMain(this, user.getId());
 
         //Obtain avatar resources
         Resources res = this.getResources();
         TypedArray avatars = res.obtainTypedArray(R.array.avatars);
         ImageView avatarView = (ImageView)findViewById(R.id.Image_Avatar);
-        avatarView.setImageResource(avatars.getResourceId(avatarResId - 1, -1));
+        avatarView.setImageResource(avatars.getResourceId(avatarImageID, -1));
     }
 }

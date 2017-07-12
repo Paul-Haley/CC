@@ -58,16 +58,19 @@ public class MyAvatarListingRecyclerViewAdapter extends RecyclerView.Adapter<MyA
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
 
-
-
-
-
-
-
         holder.mName.setText(holder.mItem.getName());
-        holder.mPicture.setImageResource(getAvatarImage(holder));//TODO // FIXME: 12/7/17
-        holder.mPrice.setText(Integer.toString(holder.mItem.getPrice()) + " Leaves"); //TODO: Leaf icon
-        holder.mRarity.setText("Stars: " + holder.mItem.getRarity()); //TODO: Stars with changing visibility should be used
+        holder.mPicture.setImageResource(getAvatarImage(holder));
+        holder.mPrice.setText(Integer.toString(holder.mItem.getPrice()));
+
+        int rarity = holder.mItem.getRarity(); // Setting rarity stars displayed
+        holder.mRarity.setText("Stars: " + rarity);
+        if (rarity < 3) {
+            holder.mStar3.setVisibility(View.INVISIBLE);
+            if (rarity < 2) {
+                holder.mStar2.setVisibility(View.INVISIBLE);
+            }
+        }
+
         holder.mDescription.setText(holder.mItem.getDescription());
 
 
@@ -94,6 +97,7 @@ public class MyAvatarListingRecyclerViewAdapter extends RecyclerView.Adapter<MyA
         public final TextView mPrice;
         public final TextView mDescription;
         public final ImageView mPicture;
+        public final ImageView mStar2, mStar3;
         public final View mView;
         public Avatar mItem;
         public Context context;
@@ -106,6 +110,8 @@ public class MyAvatarListingRecyclerViewAdapter extends RecyclerView.Adapter<MyA
             mPrice = view.findViewById(R.id.Avatar_Price);
             mDescription = view.findViewById(R.id.Avatar_Desc);
             mPicture = view.findViewById(R.id.Avatar_Image_Ex);
+            mStar2 = view.findViewById(R.id.Avatar_Star2);
+            mStar3 = view.findViewById(R.id.Avatar_Star3);
             this.context = context;
         }
 

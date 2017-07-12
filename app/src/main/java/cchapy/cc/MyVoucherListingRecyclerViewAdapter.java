@@ -3,7 +3,6 @@ package cchapy.cc;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.List;
+
 import cchapy.cc.VoucherListingFragment.OnListFragmentInteractionListener;
 import cchapy.cc.dummy.DummyContent.DummyItem;
-
-import java.util.List;
 
 /**
  * {@link RecyclerView.Adapter} that can display a {@link DummyItem} and makes a call to the
@@ -47,7 +46,7 @@ public class MyVoucherListingRecyclerViewAdapter extends RecyclerView.Adapter<My
 
         holder.mNameView.setText(holder.mItem.getName());
         holder.mLogoView.setImageResource(vouchers.getResourceId(holder.mItem.getId() - 1, -1));
-        holder.mPriceView.setText("Price: " + Integer.toString(holder.mItem.getPrice()));
+        holder.mPriceView.setText(Integer.toString(holder.mItem.getPrice()));
         holder.mShopView.setText(holder.mItem.getShop());
         holder.mTimeView.setText(holder.mItem.getTime());
 

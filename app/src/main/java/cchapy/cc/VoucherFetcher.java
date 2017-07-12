@@ -51,6 +51,36 @@ public class VoucherFetcher {
         return voucherList;
     }
 
+    public List<Voucher> fetchVouchersByUserId(int userId) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        List<Voucher> voucherList = new ArrayList<>();
+
+        String q = "SELECT * FROM discounts WHERE DiscountID IN (SELECT discount FROM discounts_owned" +
+                " WHERE User = " + userId + ")";
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.moveToFirst();
+        do {
+            int voucherID = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.DiscountsTable.COLUMN_NAME_ID));
+            String voucherName = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.DiscountsTable.COLUMN_NAME_NAME));
+            int price = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.DiscountsTable.COLUMN_NAME_PRICE));
+            String description = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.DiscountsTable.COLUMN_NAME_DESCRIPTION));
+            String time = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.DiscountsTable.COLUMN_NAME_TIME));
+            int image = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.DiscountsTable.COLUMN_NAME_IMAGE));
+            String shop = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.DiscountsTable.COLUMN_NAME_SHOP));
+
+
+            Voucher voucher = new Voucher(voucherID, voucherName, price, description, time, image, shop);
+            voucherList.add(voucher);
+
+        } while (mCursor.moveToNext());
+
+        mCursor.close();
+        mDbHelper.close();
+        return voucherList;
+    }
 }
 
 

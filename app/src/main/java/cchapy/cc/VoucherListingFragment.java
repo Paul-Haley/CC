@@ -29,6 +29,7 @@ public class VoucherListingFragment extends Fragment {
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
+    private int userID = -1;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -71,7 +72,12 @@ public class VoucherListingFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyVoucherListingRecyclerViewAdapter(fetcher.fetchAllVouchers(), mListener));
+            if (getArguments() != null) {
+                recyclerView.setAdapter(new MyVoucherListingRecyclerViewAdapter(fetcher.fetchVouchersByUserId(
+                        (int)getArguments().getFloat("userID")), mListener));
+            } else {
+                recyclerView.setAdapter(new MyVoucherListingRecyclerViewAdapter(fetcher.fetchAllVouchers(), mListener));
+            }
         }
         return view;
     }

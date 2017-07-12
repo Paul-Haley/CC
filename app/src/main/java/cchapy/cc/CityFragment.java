@@ -10,11 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import cchapy.cc.dummy.DummyContent;
-import cchapy.cc.dummy.DummyContent.DummyItem;
-import cchapy.cc.dummy.UserContent;
+import cchapy.cc.User;
 
-import java.util.List;
 
 /**
  * A fragment representing a list of Items.
@@ -22,26 +19,25 @@ import java.util.List;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class VoucherListingFragment extends Fragment {
+public class CityFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
+
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
-    private int userID = -1;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public VoucherListingFragment() {
+    public CityFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static VoucherListingFragment newInstance(int columnCount) {
-        VoucherListingFragment fragment = new VoucherListingFragment();
+    public static UserFragment newInstance(int columnCount) {
+        UserFragment fragment = new UserFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -60,8 +56,10 @@ public class VoucherListingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_voucherlisting_list, container, false);
-        VoucherFetcher fetcher = new VoucherFetcher(getContext());
+
+        View view = inflater.inflate(R.layout.fragment_user_list, container, false);
+
+        CityFetcher fetcher = new CityFetcher(getContext());
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -72,12 +70,12 @@ public class VoucherListingFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            if (getArguments() != null) {
-                recyclerView.setAdapter(new MyVoucherListingRecyclerViewAdapter(fetcher.fetchVouchersByUserId(
-                        (int)getArguments().getFloat("userID")), mListener));
-            } else {
-                recyclerView.setAdapter(new MyVoucherListingRecyclerViewAdapter(fetcher.fetchAllVouchers(), mListener));
+
+            int loggedInId = UserInfoHelper.getLoggedInId(getContext());
+            if (loggedInId > 0) {
+                recyclerView.setAdapter(new MyCityRecyclerViewAdapter(fetcher.fetchAllCities(), mListener));
             }
+
         }
         return view;
     }
@@ -112,6 +110,9 @@ public class VoucherListingFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(Voucher item);
+        void onListFragmentInteraction(City item);
+
     }
+
+
 }

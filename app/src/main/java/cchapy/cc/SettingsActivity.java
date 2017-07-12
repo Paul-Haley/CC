@@ -15,10 +15,15 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
     }
 
-
     public void viewDb(View view) {
         //Create view shop intent
         Intent intent = new Intent(this, checkDatabase.class);
+        startActivity(intent);
+    }
+
+    public void promptLogin(View view) {
+        //Create view Settings intent
+        Intent intent = new Intent(this, LoginPromptActivity.class);
         startActivity(intent);
     }
 }

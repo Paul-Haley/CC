@@ -23,6 +23,28 @@ public class UserFetcher {
         this.context = context;
     }
 
+    public boolean checkUserLogin(String username, String password) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        String q = "SELECT Password FROM users WHERE Username = '" + username + "' COLLATE NOCASE";
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.moveToFirst();
+
+        String returnedPassword = "";
+
+        try {
+            do {
+                returnedPassword = mCursor.getString((mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_PASSWORD)));
+            } while (mCursor.moveToNext());
+        } catch (IndexOutOfBoundsException e) {
+            return false;
+        }
+
+        return (returnedPassword.equals(password));
+    }
+
     public List<User> fetchAllUsers(){
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();

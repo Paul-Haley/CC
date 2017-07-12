@@ -12,8 +12,12 @@ public class DiscountActivity extends AppCompatActivity
         setContentView(R.layout.activity_discount);
 
         if (savedInstanceState == null) {
+            Bundle arguments = new Bundle();
+            arguments.putFloat("userID", UserInfoHelper.getLoggedInId(getApplicationContext()));
+            VoucherListingFragment voucherListing = new VoucherListingFragment();
+            voucherListing.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.discount_inventory_contents, new VoucherListingFragment())
+                    .add(R.id.discount_inventory_contents, voucherListing)
                     .commit();
         }
     }

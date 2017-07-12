@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         if (userID == -1) {
             //no user logged in
             TextView userText = (TextView)findViewById(R.id.Text_Username);
-            userText.setText("PLEASE LOG IN");
+            userText.setText("LOG IN");
 
             ImageView avatar = (ImageView)findViewById(R.id.Image_Avatar);
             avatar.setVisibility(View.INVISIBLE);
@@ -75,12 +75,11 @@ public class MainActivity extends AppCompatActivity {
             userText.setText(uNameString);
             ImageView avatar = (ImageView)findViewById(R.id.Image_Avatar);
             avatar.setVisibility(View.VISIBLE);
-            int avatarID = uFetch.getAvatarByUserId(userID);
-            String gender = uFetch.getGenderByUserId(userID);
-            int avatarImageID = aFetch.getAvatarMainByAvatarId(avatarID, gender);
+
+            int avatarImageID = UserInfoHelper.getUserAvatarMain(mContext, userID);
             Resources res = mContext.getResources();
             TypedArray avatarIndex = res.obtainTypedArray(R.array.avatars);
-            avatar.setImageResource(avatarIndex.getResourceId(avatarImageID - 1, -1));
+            avatar.setImageResource(avatarIndex.getResourceId(avatarImageID, -1));
         }
     }
 

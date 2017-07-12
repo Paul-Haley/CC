@@ -27,7 +27,7 @@ public class DisplayPopUpProfileActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int id = intent.getIntExtra("USER_ID", 0);
 
-        User user = fetcher.fetchUserbyId(id);
+        User user = fetcher.fetchUserById(id);
 
         TextView unText = (TextView)findViewById(R.id.usernameText);
         unText.setText(user.getUserName());

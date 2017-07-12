@@ -75,7 +75,7 @@ public class UserFetcher {
         return userList;
     }
 
-    public User fetchUserbyId(int id){
+    public User fetchUserById(int id){
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
@@ -99,6 +99,42 @@ public class UserFetcher {
         mCursor.close();
         mDbHelper.close();
         return user;
+    }
+
+    public List<User> fetchUserFriendsById(int id){
+
+        //set up
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        List<User> friendList = new ArrayList<>();
+
+        String q = "SELECT * FROM users WHERE " +
+                DatabaseContract.UsersTable.COLUMN_NAME_USERID + " IN " +
+                "(SELECT `User2` FROM friends WHERE `User1` = " + String.valueOf(id) + ")";
+
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.moveToFirst();
+        do {
+            int userID = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_USERID));
+            String username = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_USERNAME));
+            int leaves = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_LEAVES));
+            String gender = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_GENDER));
+            int carbon = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_CARBON));
+            String city = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_CITY));
+            int avatarEquipped = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_AVATAR_EQUIPPED));
+            int leavesTotal = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_LEAVES_TOTAL));
+
+            User user = new User(userID, username, leaves, gender, carbon, city, avatarEquipped, leavesTotal);
+            friendList.add(user);
+
+        } while (mCursor.moveToNext());
+
+        //Clean up
+        mCursor.close();
+        mDbHelper.close();
+        return friendList;
     }
 
 }

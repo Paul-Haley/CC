@@ -69,7 +69,7 @@ public class UserFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyUserRecyclerViewAdapter(fetcher.fetchAllUsers(), mListener));
+            recyclerView.setAdapter(new MyUserRecyclerViewAdapter(fetcher.fetchUserFriendsById(1), mListener));
         }
         return view;
     }

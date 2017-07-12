@@ -54,10 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getUserDetails() {
         //check for stored userID
-        SharedPreferences userData = mContext.getSharedPreferences(
-                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-
-        int userID = userData.getInt(getString(R.string.saved_user_id), -1);
+        int userID = UserInfoHelper.getLoggedInId(mContext);
 
         if (userID == -1) {
             //no user logged in

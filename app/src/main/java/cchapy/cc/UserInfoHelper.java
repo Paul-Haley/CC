@@ -1,6 +1,7 @@
 package cchapy.cc;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 
@@ -9,6 +10,15 @@ import android.content.res.TypedArray;
  */
 
 public class UserInfoHelper {
+
+    public static int getLoggedInId(Context context) {
+        SharedPreferences userData = context.getSharedPreferences(
+                context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+        int userID = userData.getInt(context.getString(R.string.saved_user_id), -1);
+
+        return userID;
+    }
 
     /**
      * Returns the index of the relevant image to display as the MAIN avatar of the user.

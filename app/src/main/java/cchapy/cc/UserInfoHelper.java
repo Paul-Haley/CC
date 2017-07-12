@@ -11,6 +11,29 @@ import android.content.res.TypedArray;
 
 public class UserInfoHelper {
 
+    public static void addLeaves(Context context, int userID, int leaves) {
+        UserFetcher uFetch = new UserFetcher(context);
+
+        //update current count
+        int currentLeafCount = uFetch.getCurrentLeavesById(userID);
+        int newLeafCount = currentLeafCount + leaves;
+        uFetch.setCurrentLeaves(newLeafCount, userID);
+
+        //update historical total
+        int totalLeafCount = uFetch.getTotalLeavesById(userID);
+        int newTotalLeafCount = totalLeafCount + leaves;
+        uFetch.setTotalLeaves(newTotalLeafCount, userID);
+    }
+
+    public static void spendLeaves(Context context, int userID, int leaves) {
+        UserFetcher uFetch = new UserFetcher(context);
+
+        //update current count
+        int currentLeafCount = uFetch.getCurrentLeavesById(userID);
+        int newLeafCount = currentLeafCount - leaves;
+        uFetch.setCurrentLeaves(newLeafCount, userID);
+    }
+
     public static int getLoggedInId(Context context) {
         SharedPreferences userData = context.getSharedPreferences(
                 context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);

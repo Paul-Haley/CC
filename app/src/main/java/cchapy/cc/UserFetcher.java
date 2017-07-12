@@ -189,6 +189,73 @@ public class UserFetcher {
         return user;
     }
 
+    public int getCurrentLeavesById(int userID) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        String q = "SELECT Leaves FROM users WHERE UserID = " + userID;
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.moveToFirst();
+
+        int leaves = 0;
+
+        try {
+            do {
+                leaves = mCursor.getInt((mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_LEAVES)));
+            } while (mCursor.moveToNext());
+        } catch (IndexOutOfBoundsException e) {
+            return 0;
+        }
+
+        return leaves;
+    }
+
+    public void setCurrentLeaves(int currentLeaves, int userID) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        String q = "UPDATE users SET Leaves = " + currentLeaves + " WHERE UserID = " + userID;
+
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.close();
+        mDbHelper.close();
+    }
+
+    public int getTotalLeavesById(int userID) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        String q = "SELECT Leaves_Total FROM users WHERE UserID = " + userID;
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.moveToFirst();
+
+        int leaves = 0;
+
+        try {
+            do {
+                leaves = mCursor.getInt((mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_LEAVES_TOTAL)));
+            } while (mCursor.moveToNext());
+        } catch (IndexOutOfBoundsException e) {
+            return 0;
+        }
+
+        return leaves;
+    }
+
+    public void setTotalLeaves(int totalLeaves, int userID) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        String q = "UPDATE users SET Leaves_Total = " + totalLeaves + " WHERE UserID = " + userID;
+
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.close();
+        mDbHelper.close();
+    }
 }
 
 

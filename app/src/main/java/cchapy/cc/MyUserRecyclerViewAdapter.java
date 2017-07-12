@@ -36,7 +36,7 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(Integer.toString(mValues.get(position).getId()));
+        holder.mIdView.setText(Integer.toString(position + 1));
         holder.mFriendUsernameView.setText(mValues.get(position).getUserName());
         holder.mFriendCityView.setText(mValues.get(position).getCity());
         holder.mFriendLeafView.setText(String.valueOf(mValues.get(position).getTotalLeafCount()));

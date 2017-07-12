@@ -10,9 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import cchapy.cc.dummy.DummyContent;
-import cchapy.cc.dummy.DummyContent.DummyItem;
-
 /**
  * A fragment representing a list of Items.
  * <p/>
@@ -57,6 +54,7 @@ public class AvatarListingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_avatar_list, container, false);
+        AvatarFetcher fetcher = new AvatarFetcher(getContext());
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -67,7 +65,7 @@ public class AvatarListingFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyAvatarListingRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MyAvatarListingRecyclerViewAdapter(fetcher.fetchAllAvatars(), mListener));
         }
         return view;
     }
@@ -102,6 +100,6 @@ public class AvatarListingFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(Avatar item);
     }
 }

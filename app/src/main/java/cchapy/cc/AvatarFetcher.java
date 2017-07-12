@@ -19,6 +19,34 @@ public class AvatarFetcher {
         this.context = context;
     }
 
+    public int getAvatarAltByAvatarId(int avatarID, String gender) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        String q = "SELECT Image_M_Alt, Image_F_Alt FROM avatars WHERE AvatarID = " + avatarID;
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.moveToFirst();
+
+        int mAvatar = -1;
+        int fAvatar = -1;
+
+        try {
+            do {
+                mAvatar = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_M_ALT));
+                fAvatar = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_F_ALT));
+            } while (mCursor.moveToNext());
+        } catch (IndexOutOfBoundsException e) {
+            return -1;
+        }
+
+        if (gender.equals("M")) {
+            return mAvatar;
+        } else {
+            return fAvatar;
+        }
+    }
+
     public int getAvatarMainByAvatarId(int avatarID, String gender) {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();

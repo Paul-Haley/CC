@@ -27,4 +27,22 @@ public class UserInfoHelper {
 
         return avatarImageID - 1;
     }
+
+    /**
+     * Returns the index of the relevant image to display as the ALT avatar of the user.
+     *
+     * @param context context of the activity running this method
+     * @param userID userID of the user requiring an avatar
+     * @return index for avatars.xml to get the avatar resource image
+     */
+    public static int getUserAvatarAlt(Context context, int userID) {
+        UserFetcher uFetch = new UserFetcher(context);
+        AvatarFetcher aFetch = new AvatarFetcher(context);
+
+        int avatarID = uFetch.getAvatarByUserId(userID);
+        String gender = uFetch.getGenderByUserId(userID);
+        int avatarImageID = aFetch.getAvatarAltByAvatarId(avatarID, gender);
+
+        return avatarImageID - 1;
+    }
 }

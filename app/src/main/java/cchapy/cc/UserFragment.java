@@ -56,8 +56,8 @@ public class UserFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_user_list, container, false);
 
+        View view = inflater.inflate(R.layout.fragment_user_list, container, false);
         UserFetcher fetcher = new UserFetcher(getContext());
 
         // Set the adapter
@@ -69,7 +69,12 @@ public class UserFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyUserRecyclerViewAdapter(fetcher.fetchAllUsers(), mListener));
+
+            int loggedInId = UserInfoHelper.getLoggedInId(getContext());
+            if (loggedInId > 0) {
+                recyclerView.setAdapter(new MyUserRecyclerViewAdapter(fetcher.fetchUserFriendsById(loggedInId), mListener));
+            }
+
         }
         return view;
     }

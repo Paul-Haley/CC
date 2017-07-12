@@ -82,6 +82,9 @@
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert" />
         <activity android:name=".checkDatabase" />
+        <activity android:name=".LoginPromptActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"
+            android:parentActivityName=".SettingsActivity"/>
         <activity android:name=".SplashActivity" android:theme="@style/Splash" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

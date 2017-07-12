@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.support.annotation.StringDef;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
@@ -20,12 +21,13 @@ public class DisplayPopUpProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_pop_up_profile);
 
         UserFetcher fetcher = new UserFetcher(this);
+        AvatarFetcher avatarFetcher = new AvatarFetcher(this);
 
         //get the intent that started this activity
         Intent intent = getIntent();
         int id = intent.getIntExtra("USER_ID", 0);
 
-        User user = fetcher.fetchUserbyId(id);
+        User user = fetcher.fetchUserById(id);
 
         TextView unText = (TextView)findViewById(R.id.usernameText);
         unText.setText(user.getUserName());
@@ -39,12 +41,12 @@ public class DisplayPopUpProfileActivity extends AppCompatActivity {
         TextView co2Text = (TextView)findViewById(R.id.co2Text);
         co2Text.setText(String.valueOf(user.getCarbon()));
 
+        int avatarImageID = UserInfoHelper.getUserAvatarMain(this, user.getId());
+
+        //Obtain avatar resources
         Resources res = this.getResources();
         TypedArray avatars = res.obtainTypedArray(R.array.avatars);
-
-        //TODO: equipped avatar refers to avatar id NOT resource id
         ImageView avatarView = (ImageView)findViewById(R.id.Image_Avatar);
-        avatarView.setImageResource(avatars.getResourceId(user.getEquippedAvatar() - 1, -1));
-
+        avatarView.setImageResource(avatars.getResourceId(avatarImageID, -1));
     }
 }

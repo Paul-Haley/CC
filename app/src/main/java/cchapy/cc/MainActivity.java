@@ -4,9 +4,14 @@ package cchapy.cc;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
@@ -37,6 +42,42 @@ public class MainActivity extends AppCompatActivity {
         //banner
         initData();
         initView();
+
+        getUserDetails();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getUserDetails();
+    }
+
+    private void getUserDetails() {
+        //check for stored userID
+        int userID = UserInfoHelper.getLoggedInId(mContext);
+
+        if (userID == -1) {
+            //no user logged in
+            TextView userText = (TextView)findViewById(R.id.Text_Username);
+            userText.setText("LOG IN");
+
+            ImageView avatar = (ImageView)findViewById(R.id.Image_Avatar);
+            avatar.setVisibility(View.INVISIBLE);
+        } else {
+            UserFetcher uFetch = new UserFetcher(mContext);
+            AvatarFetcher aFetch = new AvatarFetcher(mContext);
+            //user logged in
+            String uNameString = uFetch.getUsernameById(userID);
+            TextView userText = (TextView)findViewById(R.id.Text_Username);
+            userText.setText(uNameString);
+            ImageView avatar = (ImageView)findViewById(R.id.Image_Avatar);
+            avatar.setVisibility(View.VISIBLE);
+
+            int avatarImageID = UserInfoHelper.getUserAvatarMain(mContext, userID);
+            Resources res = mContext.getResources();
+            TypedArray avatarIndex = res.obtainTypedArray(R.array.avatars);
+            avatar.setImageResource(avatarIndex.getResourceId(avatarImageID, -1));
+        }
     }
 
     public void viewProfile(View view) {

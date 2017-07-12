@@ -51,14 +51,14 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/Discount_Desc"
+                    android:id="@+id/Avatar_Desc"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:text="Avatar Description" />
 
                 <TextView
-                    android:id="@+id/Discount_Time"
+                    android:id="@+id/Avatar_Rating"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
@@ -66,7 +66,7 @@
                     android:textStyle="italic" />
 
                 <TextView
-                    android:id="@+id/Discount_Price"
+                    android:id="@+id/Avatar_Price"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"

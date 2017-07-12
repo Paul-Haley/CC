@@ -10,17 +10,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import cchapy.cc.User;
+
+
 /**
  * A fragment representing a list of Items.
  * <p/>
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class AvatarListingFragment extends Fragment {
+public class LocalUserFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
+
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
 
@@ -28,13 +31,13 @@ public class AvatarListingFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public AvatarListingFragment() {
+    public LocalUserFragment() {
     }
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static AvatarListingFragment newInstance(int columnCount) {
-        AvatarListingFragment fragment = new AvatarListingFragment();
+    public static UserFragment newInstance(int columnCount) {
+        UserFragment fragment = new UserFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         fragment.setArguments(args);
@@ -53,8 +56,9 @@ public class AvatarListingFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_avatar_list, container, false);
-        AvatarFetcher fetcher = new AvatarFetcher(getContext());
+
+        View view = inflater.inflate(R.layout.fragment_user_list, container, false);
+        UserFetcher fetcher = new UserFetcher(getContext());
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -65,7 +69,12 @@ public class AvatarListingFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyAvatarListingRecyclerViewAdapter(fetcher.fetchAllAvatars(), mListener));
+
+            int loggedInId = UserInfoHelper.getLoggedInId(getContext());
+            if (loggedInId > 0) {
+                recyclerView.setAdapter(new MyLocalUserRecyclerViewAdapter(fetcher.fetchLocalUserById(loggedInId), mListener));
+            }
+
         }
         return view;
     }
@@ -100,6 +109,9 @@ public class AvatarListingFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(Avatar item);
+        void onListFragmentInteraction(User item);
+
     }
+
+
 }

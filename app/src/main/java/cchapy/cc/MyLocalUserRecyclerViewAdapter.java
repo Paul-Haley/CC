@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import cchapy.cc.UserFragment.OnListFragmentInteractionListener;
+import cchapy.cc.LocalUserFragment.OnListFragmentInteractionListener;
 import cchapy.cc.User;
 
 import java.util.List;
@@ -16,12 +16,12 @@ import java.util.List;
  * specified {@link OnListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecyclerViewAdapter.ViewHolder> {
+public class MyLocalUserRecyclerViewAdapter extends RecyclerView.Adapter<MyLocalUserRecyclerViewAdapter.ViewHolder> {
 
     private final List<User> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyUserRecyclerViewAdapter(List<User> items, OnListFragmentInteractionListener listener) {
+    public MyLocalUserRecyclerViewAdapter(List<User> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }

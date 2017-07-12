@@ -9,8 +9,9 @@
     </style>
     <style name="Splash" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/bg_launchpage</item>
         <item name="android:windowFullscreen">true</item>
-        <item name="android:windowIsTranslucent">true</item>
+        <!--<item name="android:windowIsTranslucent">true</item>-->
     </style>
 
 

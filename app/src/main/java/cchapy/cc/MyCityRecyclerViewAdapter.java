@@ -18,10 +18,10 @@ import java.util.List;
  */
 public class MyCityRecyclerViewAdapter extends RecyclerView.Adapter<MyCityRecyclerViewAdapter.ViewHolder> {
 
-    private final List<User> mValues;
+    private final List<City> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyCityRecyclerViewAdapter(List<User> items, OnListFragmentInteractionListener listener) {
+    public MyCityRecyclerViewAdapter(List<City> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -29,7 +29,7 @@ public class MyCityRecyclerViewAdapter extends RecyclerView.Adapter<MyCityRecycl
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_user, parent, false);
+                .inflate(R.layout.fragment_city, parent, false);
         return new ViewHolder(view);
     }
 
@@ -37,11 +37,11 @@ public class MyCityRecyclerViewAdapter extends RecyclerView.Adapter<MyCityRecycl
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
         holder.mIdView.setText(Integer.toString(position + 1));
-        holder.mFriendUsernameView.setText(mValues.get(position).getUserName());
-        holder.mFriendCityView.setText(mValues.get(position).getCity());
-        holder.mFriendLeafView.setText(String.valueOf(mValues.get(position).getTotalLeafCount()));
+        holder.mCitynameView.setText(mValues.get(position).getCityName());
+        holder.mTotalUsersView.setText(Integer.toString(mValues.get(position).getUserCount()));
+        holder.mTotalLeavesView.setText(String.valueOf(mValues.get(position).getLeafCount()));
 
-        if (mValues.get(position).getId() == 1) {
+        if (position == 1) {
             //Decoration for first place
         }
 
@@ -65,23 +65,23 @@ public class MyCityRecyclerViewAdapter extends RecyclerView.Adapter<MyCityRecycl
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
         public final TextView mIdView;
-        public final TextView mFriendUsernameView;
-        public final TextView mFriendCityView;
-        public final TextView mFriendLeafView;
-        public User mItem;
+        public final TextView mCitynameView;
+        public final TextView mTotalUsersView;
+        public final TextView mTotalLeavesView;
+        public City mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = view.findViewById(R.id.id);
-            mFriendUsernameView = view.findViewById(R.id.leaderboardFriendUsername);
-            mFriendCityView  = view.findViewById(R.id.leaderboardFriendCity);
-            mFriendLeafView = view.findViewById(R.id.leaderboardFriendLeaves);
+            mIdView = view.findViewById(R.id.leaderboardCityRank);
+            mCitynameView = view.findViewById(R.id.leaderboardCityName);
+            mTotalUsersView  = view.findViewById(R.id.leaderboardTotalUsers);
+            mTotalLeavesView = view.findViewById(R.id.leaderboardTotalLeaves);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mFriendUsernameView.getText() + "'";
+            return super.toString() + " '" + mCitynameView.getText() + "'";
         }
     }
 }

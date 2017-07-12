@@ -99,6 +99,11 @@ public class LeaderboardActivity extends AppCompatActivity
         viewPopUpProfile(user);
     }
 
+    @Override
+    public void onListFragmentInteraction(City city) {
+
+    }
+
 
     public void readDatabase() {
         SQLiteDatabase db = mDbHelper.getReadableDatabase();

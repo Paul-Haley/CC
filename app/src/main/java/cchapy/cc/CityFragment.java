@@ -58,7 +58,8 @@ public class CityFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_user_list, container, false);
-        UserFetcher fetcher = new UserFetcher(getContext());
+
+        CityFetcher fetcher = new CityFetcher(getContext());
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -72,7 +73,7 @@ public class CityFragment extends Fragment {
 
             int loggedInId = UserInfoHelper.getLoggedInId(getContext());
             if (loggedInId > 0) {
-                recyclerView.setAdapter(new MyCityRecyclerViewAdapter(fetcher.fetchLocalUserById(loggedInId), mListener));
+                recyclerView.setAdapter(new MyCityRecyclerViewAdapter(fetcher.fetchAllCities(), mListener));
             }
 
         }
@@ -109,7 +110,7 @@ public class CityFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(User item);
+        void onListFragmentInteraction(City item);
 
     }
 

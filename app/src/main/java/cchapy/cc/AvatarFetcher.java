@@ -19,6 +19,12 @@ public class AvatarFetcher {
         this.context = context;
     }
 
+    /**
+     *
+     * @param avatarID
+     * @param gender M for male or F for Female
+     * @return Resource for full size avatar
+     */
     public int getAvatarAltByAvatarId(int avatarID, String gender) {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
@@ -47,6 +53,12 @@ public class AvatarFetcher {
         }
     }
 
+    /**
+     *
+     * @param avatarID
+     * @param gender M for male or F for Female
+     * @return Resource for full size avatar
+     */
     public int getAvatarMainByAvatarId(int avatarID, String gender) {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
@@ -75,6 +87,10 @@ public class AvatarFetcher {
         }
     }
 
+    /**
+     *
+     * @return The list of all avatars
+     */
     public List<Avatar> fetchAllAvatars() {
         List<Avatar> avatars = new ArrayList<Avatar>();
 
@@ -128,6 +144,11 @@ public class AvatarFetcher {
         return userOwned;
     }
 
+    /**
+     *
+     * @param id
+     * @return The avatar object with matching ID
+     */
     public Avatar fetchAvatarById(int id) {
         // Setting up
         DatabaseHelper mDbHelper = new DatabaseHelper(context);

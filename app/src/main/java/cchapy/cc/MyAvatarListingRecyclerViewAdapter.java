@@ -36,15 +36,36 @@ public class MyAvatarListingRecyclerViewAdapter extends RecyclerView.Adapter<MyA
         return new ViewHolder(view, parent.getContext());
     }
 
+    /**
+     * Given the holder, can find the correct image for the Avatar based off the current logged in
+     * user and their gender. The image will be the smaller profile picture
+     * @param holder
+     * @return Image resource id
+     */
+    private int getAvatarImage(ViewHolder holder) {
+        Resources res = holder.context.getResources();
+        TypedArray avatars = res.obtainTypedArray(R.array.avatars); // Access avatars.xml array
+
+        UserFetcher uFetch = new UserFetcher(holder.context);
+        AvatarFetcher aFetch = new AvatarFetcher(holder.context);
+
+        // Find the image by look up of database id found through user id and their gender
+        return avatars.getResourceId(aFetch.getAvatarMainByAvatarId(holder.mItem.getId(),
+                uFetch.getGenderByUserId(UserInfoHelper.getLoggedInId(holder.context))), -1);
+    }
+
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
 
-        Resources res = holder.context.getResources();
-        TypedArray vouchers = res.obtainTypedArray(R.array.avatars);
+
+
+
+
+
 
         holder.mName.setText(holder.mItem.getName());
-        holder.mPicture.setImageResource(R.drawable.character_girl_base);//TODO // FIXME: 12/7/17
+        holder.mPicture.setImageResource(getAvatarImage(holder));//TODO // FIXME: 12/7/17
         holder.mPrice.setText(Integer.toString(holder.mItem.getPrice()) + " Leaves"); //TODO: Leaf icon
         holder.mRarity.setText("Stars: " + holder.mItem.getRarity()); //TODO: Stars with changing visibility should be used
         holder.mDescription.setText(holder.mItem.getDescription());

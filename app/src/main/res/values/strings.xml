@@ -34,6 +34,8 @@
     <string name="local">Local</string>
     <string name="cities">Cities</string>
     <string name="avatars">Avatars</string>
+    <string name="preference_file_key">com.cchapy.cc.USER_DATA</string>
+    <string name="saved_user_id">saved_user_id</string>
 
     <string-array name="sorting_options_vouchers">
         <item>NEW</item>

@@ -23,6 +23,94 @@ public class UserFetcher {
         this.context = context;
     }
 
+    public String getGenderByUserId(int userID) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        String q = "SELECT Gender FROM users WHERE UserID = '" + userID + "'";
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.moveToFirst();
+
+        String avatar = "";
+
+        try {
+            do {
+                avatar = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_GENDER));
+            } while (mCursor.moveToNext());
+        } catch (IndexOutOfBoundsException e) {
+            return "";
+        }
+
+        return avatar;
+    }
+
+    public int getAvatarByUserId(int userID) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        String q = "SELECT Avatar_Equipped FROM users WHERE UserID = '" + userID + "'";
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.moveToFirst();
+
+        int avatar = -1;
+
+        try {
+            do {
+                avatar = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_AVATAR_EQUIPPED));
+            } while (mCursor.moveToNext());
+        } catch (IndexOutOfBoundsException e) {
+            return -1;
+        }
+
+        return avatar;
+    }
+
+    public int getUserIdByUsername(String username) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        String q = "SELECT UserID FROM users WHERE Username = '" + username + "'";
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.moveToFirst();
+
+        int userID = -1;
+
+        try {
+            do {
+                userID = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_USERID));
+            } while (mCursor.moveToNext());
+        } catch (IndexOutOfBoundsException e) {
+            return -1;
+        }
+
+        return userID;
+    }
+
+    public String getUsernameById(int UserID) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        String q = "SELECT Username FROM users WHERE UserID = " + UserID;
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.moveToFirst();
+
+        String username = "NULL";
+
+        try {
+            do {
+                username = mCursor.getString((mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_USERNAME)));
+            } while (mCursor.moveToNext());
+        } catch (IndexOutOfBoundsException e) {
+            return "NULL";
+        }
+
+        return username;
+    }
+
     public boolean checkUserLogin(String username, String password) {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();

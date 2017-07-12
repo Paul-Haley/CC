@@ -1,6 +1,8 @@
 package cchapy.cc;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -38,6 +40,13 @@ public class LoginPromptActivity extends AppCompatActivity {
         UserFetcher uFetch = new UserFetcher(view.getContext());
         if (uFetch.checkUserLogin(uNameString, pWordString)) {
             Toast.makeText(this, "Login Successful", Toast.LENGTH_LONG).show();
+            SharedPreferences userData = view.getContext().getSharedPreferences(
+                    getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+
+            SharedPreferences.Editor editor = userData.edit();
+            int userID = uFetch.getUserIdByUsername(uNameString);
+            editor.putInt(getString(R.string.saved_user_id), userID);
+            editor.commit();
             finish();
         } else {
             Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();

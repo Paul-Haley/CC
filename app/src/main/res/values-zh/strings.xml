@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="reward">奖励</string>
+    <string name="saved_user_id">记住账号</string>
+    <string name="preference_file_key">com.cchapy.cc.USER_DATA</string>
 </resources>

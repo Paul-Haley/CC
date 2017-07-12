@@ -59,6 +59,8 @@ public class FriendFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_friend_list, container, false);
 
+        UserFetcher fetcher = new UserFetcher(getContext());
+
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
@@ -68,7 +70,10 @@ public class FriendFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyFriendRecyclerViewAdapter(UserContent.ITEMS, mListener));
+            int loggedInId = UserInfoHelper.getLoggedInId(getContext());
+            if (loggedInId > 0) {
+                recyclerView.setAdapter(new MyFriendRecyclerViewAdapter((fetcher.fetchUserFriendsById(loggedInId)), mListener));
+            }
         }
         return view;
     }
@@ -103,6 +108,6 @@ public class FriendFragment extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(UserContent.User item);
+        void onListFragmentInteraction(User item);
     }
 }

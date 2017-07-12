@@ -84,22 +84,28 @@ public class AvatarFetcher {
 
         List<Integer> owned = getOwnedAvatars(db); // Reading owned avatars for the current user
 
-        Cursor avatarsCursor = db.rawQuery("SELECT * FROM avatars", null);
-        avatarsCursor.moveToFirst();
+        Cursor mCursor = db.rawQuery("SELECT * FROM avatars", null);
+        mCursor.moveToFirst();
         do {
-            int id = avatarsCursor.getInt(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_ID));
 
             // Getting the avatars
-            avatars.add(new Avatar(id,
-                    avatarsCursor.getString(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_NAME)),
-                    avatarsCursor.getInt(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_STARNUM)),
-                    avatarsCursor.getInt(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_PRICE)),
-                    owned.contains(id),
-                    avatarsCursor.getString(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_DESCRIPTION))));
-        } while(avatarsCursor.moveToNext());
+            int AvatarID = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_ID));
+            int StarNum = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_STARNUM));
+            int Price = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_PRICE));
+            String Name = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_NAME));
+            String Desc = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_DESCRIPTION));
+            int IMM = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_M_MAIN));
+            int IMA = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_M_ALT));
+            int IFM = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_F_MAIN));
+            int IFA = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_F_ALT));
+
+            Avatar avatar = new Avatar(AvatarID, StarNum, Price, Name, Desc, IMM, IMA, IFM, IFA);
+            avatars.add(avatar);
+
+        } while(mCursor.moveToNext());
 
         // Cleaning up
-        avatarsCursor.close();
+        mCursor.close();
         mDbHelper.close();
         return avatars;
     }
@@ -129,20 +135,25 @@ public class AvatarFetcher {
 
         List<Integer> owned = getOwnedAvatars(db); // Reading owned avatars for the current user
 
-        Cursor avatarsCursor = db.rawQuery("SELECT * FROM avatars WHERE " +
+        Cursor mCursor = db.rawQuery("SELECT * FROM avatars WHERE " +
                 DatabaseContract.AvatarTable.COLUMN_NAME_ID + " = " + String.valueOf(id) , null);
 
-        avatarsCursor.moveToFirst();
+        mCursor.moveToFirst();
 
-        Avatar avatar = new Avatar(id,
-            avatarsCursor.getString(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_NAME)),
-            avatarsCursor.getInt(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_STARNUM)),
-            avatarsCursor.getInt(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_PRICE)),
-            owned.contains(id),
-            avatarsCursor.getString(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_DESCRIPTION)));
+        int AvatarID = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_ID));
+        int StarNum = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_STARNUM));
+        int Price = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_PRICE));
+        String Name = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_NAME));
+        String Desc = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_DESCRIPTION));
+        int IMM = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_M_MAIN));
+        int IMA = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_M_ALT));
+        int IFM = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_F_MAIN));
+        int IFA = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_F_ALT));
+
+        Avatar avatar = new Avatar(AvatarID, StarNum, Price, Name, Desc, IMM, IMA, IFM, IFA);
 
         // Cleaning up
-        avatarsCursor.close();
+        mCursor.close();
         mDbHelper.close();
         return avatar;
     }

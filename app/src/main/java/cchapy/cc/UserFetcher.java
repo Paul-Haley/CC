@@ -3,8 +3,6 @@ package cchapy.cc;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.provider.ContactsContract;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +21,11 @@ public class UserFetcher {
         this.context = context;
     }
 
+    /**
+     *
+     * @param userID
+     * @return M for Male and F for Female, empty string on failure
+     */
     public String getGenderByUserId(int userID) {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();

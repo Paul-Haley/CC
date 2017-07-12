@@ -34,16 +34,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_POPULATE_FRIENDS_TABLE);
         db.execSQL(SQL_CREATE_AVATAR_OWNED_TABLE);
         db.execSQL(SQL_POPULATE_AVATAR_OWNED_TABLE);
-        //db.execSQL(SQL_INDEXES_AVATARS);
-        //db.execSQL(SQL_INDEXES_AVATARS_OWNED);
-        //db.execSQL(SQL_INDEXES_DISCOUNTS);
-        //db.execSQL(SQL_INDEXES_DISCOUNTS_OWNED);
-        //db.execSQL(SQL_INDEXES_FRIENDS);
-        //db.execSQL(SQL_INDEXES_USERS);
-        //db.execSQL(SQL_CONSTRAINTS_OWNED);
-        //db.execSQL(SQL_CONSTRAINTS_DISCOUNTS_OWNED);
-        //db.execSQL(SQL_CONSTRAINTS_FRIENDS);
-        //db.execSQL(SQL_CONSTRAINTS_USERS);
     }
 
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -174,48 +164,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     "(3, 'Bus6', 'takethebus', 1100, 'M', 2100, 'Dalian', 3, 1760)," +
                     "(4, 'FallenLeaves', 'leaves868', 50, 'M', 60, 'Beijing', 1, 150)," +
                     "(5, 'CarbonDioxide', 'CO2', 350, 'F', 603, 'Shanghai', 2, 1530);";
-
-    private static final String SQL_INDEXES_AVATARS =
-            "ALTER TABLE `avatars`" +
-                    "ADD PRIMARY KEY (`AvatarID`);";
-    private static final String SQL_INDEXES_AVATARS_OWNED =
-            "ALTER TABLE `avatars_owned`" +
-                    " ADD PRIMARY KEY (`User`,`Avatar`)," +
-                    " ADD KEY `Avatar` (`Avatar`);";
-    private static final String SQL_INDEXES_DISCOUNTS =
-            "ALTER TABLE `discounts`" +
-                    " ADD PRIMARY KEY (`DiscountID`);";
-    private static final String SQL_INDEXES_DISCOUNTS_OWNED =
-            "ALTER TABLE `discounts_owned`" +
-                    " ADD PRIMARY KEY (`User`,`Discount`)," +
-                    " ADD KEY `Discount` (`Discount`);";
-    private static final String SQL_INDEXES_FRIENDS =
-            "ALTER TABLE `friends`" +
-                    " ADD PRIMARY KEY (`User1`,`User2`)," +
-                    " ADD KEY `User2` (`User2`);";
-    private static final String SQL_INDEXES_USERS =
-            "ALTER TABLE `users`" +
-                    " ADD PRIMARY KEY (`UserID`)," +
-                    " ADD KEY `Avatar_Equipped` (`Avatar_Equipped`);";
-
-    private static final String SQL_CONSTRAINTS_OWNED =
-            "ALTER TABLE `avatars_owned`" +
-                    " ADD CONSTRAINT `avatars_owned_ibfk_1` FOREIGN KEY (`Avatar`) REFERENCES `avatars` (`AvatarID`)," +
-                    " ADD CONSTRAINT `avatars_owned_ibfk_2` FOREIGN KEY (`User`) REFERENCES `users` (`UserID`);";
-
-    private static final String SQL_CONSTRAINTS_DISCOUNTS_OWNED =
-            "ALTER TABLE `discounts_owned`" +
-                    " ADD CONSTRAINT `discounts_owned_ibfk_1` FOREIGN KEY (`User`) REFERENCES `users` (`UserID`)," +
-                    " ADD CONSTRAINT `discounts_owned_ibfk_2` FOREIGN KEY (`Discount`) REFERENCES `discounts` (`DiscountID`);";
-
-    private static final String SQL_CONSTRAINTS_FRIENDS =
-            "ALTER TABLE `friends`" +
-                    " ADD CONSTRAINT `friends_ibfk_1` FOREIGN KEY (`User1`) REFERENCES `users` (`UserID`)," +
-                    " ADD CONSTRAINT `friends_ibfk_2` FOREIGN KEY (`User2`) REFERENCES `users` (`UserID`);";
-
-    private static final String SQL_CONSTRAINTS_USERS =
-            "ALTER TABLE `users`" +
-                    " ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`Avatar_Equipped`) REFERENCES `avatars` (`AvatarID`);";
 
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + DatabaseContract.AvatarOwnedTable.TABLE_NAME + ";" +

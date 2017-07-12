@@ -65,4 +65,29 @@ public class AvatarFetcher {
         ownedCursor.close();
         return userOwned;
     }
+
+    public Avatar fetchAvatarById(int id) {
+        // Setting up
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        List<Integer> owned = getOwnedAvatars(db); // Reading owned avatars for the current user
+
+        Cursor avatarsCursor = db.rawQuery("SELECT * FROM avatars WHERE " +
+                DatabaseContract.AvatarTable.COLUMN_NAME_ID + " = " + String.valueOf(id) , null);
+
+        avatarsCursor.moveToFirst();
+
+        Avatar avatar = new Avatar(id,
+            avatarsCursor.getString(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_NAME)),
+            avatarsCursor.getInt(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_STARNUM)),
+            avatarsCursor.getInt(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_PRICE)),
+            owned.contains(id),
+            avatarsCursor.getString(avatarsCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_DESCRIPTION)));
+
+        // Cleaning up
+        avatarsCursor.close();
+        mDbHelper.close();
+        return avatar;
+    }
 }

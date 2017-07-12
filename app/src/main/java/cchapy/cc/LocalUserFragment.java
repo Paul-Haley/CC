@@ -19,7 +19,7 @@ import cchapy.cc.User;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class UserFragment extends Fragment {
+public class LocalUserFragment extends Fragment {
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -31,7 +31,7 @@ public class UserFragment extends Fragment {
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public UserFragment() {
+    public LocalUserFragment() {
     }
 
     // TODO: Customize parameter initialization
@@ -72,7 +72,7 @@ public class UserFragment extends Fragment {
 
             int loggedInId = UserInfoHelper.getLoggedInId(getContext());
             if (loggedInId > 0) {
-                recyclerView.setAdapter(new MyUserRecyclerViewAdapter(fetcher.fetchUserFriendsById(loggedInId), mListener));
+                recyclerView.setAdapter(new MyLocalUserRecyclerViewAdapter(fetcher.fetchLocalUserById(loggedInId), mListener));
             }
 
         }

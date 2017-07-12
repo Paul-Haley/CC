@@ -17,13 +17,12 @@ import java.util.List;
 import cchapy.cc.User;
 
 public class LeaderboardActivity extends AppCompatActivity
-    implements UserFragment.OnListFragmentInteractionListener {
+    implements UserFragment.OnListFragmentInteractionListener, LocalUserFragment.OnListFragmentInteractionListener {
 
     DatabaseHelper mDbHelper = new DatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
@@ -55,14 +54,13 @@ public class LeaderboardActivity extends AppCompatActivity
                     .add(R.id.friendsLeaderboardTab, new UserFragment())
                     .commit();
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.localLeaderboardTab, new UserFragment())
+                    .add(R.id.localLeaderboardTab, new LocalUserFragment())
                     .commit();
         }
     }
 
     public void viewPopUpProfile(User user) {
         //Create view QR intent
-        //TODO: Build user into intent to display appropiate profile
         Intent intent = new Intent(this, DisplayPopUpProfileActivity.class);
         intent.putExtra("USER_ID", user.getId());
         startActivity(intent);

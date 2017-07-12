@@ -17,7 +17,8 @@ import java.util.List;
 import cchapy.cc.User;
 
 public class LeaderboardActivity extends AppCompatActivity
-    implements UserFragment.OnListFragmentInteractionListener, LocalUserFragment.OnListFragmentInteractionListener {
+    implements UserFragment.OnListFragmentInteractionListener, LocalUserFragment.OnListFragmentInteractionListener,
+    CityFragment.OnListFragmentInteractionListener {
 
     DatabaseHelper mDbHelper = new DatabaseHelper(this);
 
@@ -51,10 +52,13 @@ public class LeaderboardActivity extends AppCompatActivity
 
         if (savedInstanceState == null){
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.friendsLeaderboardTab, new UserFragment())
+                    .add(R.id.friendsLeaderboardRecycler, new UserFragment())
                     .commit();
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.localLeaderboardTab, new LocalUserFragment())
+                    .add(R.id.localLeaderboardRecycler, new LocalUserFragment())
+                    .commit();
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.cityLeaderboardRecycler, new CityFragment())
                     .commit();
         }
     }
@@ -89,21 +93,6 @@ public class LeaderboardActivity extends AppCompatActivity
 
         readDatabase();
     }
-
-    /*public void addDummyUser(View view){
-        // Gets the data repository in write mode
-        SQLiteDatabase db = mDbHelper.getWritableDatabase();
-
-        // Create a new map of values, where column names are the keys
-        ContentValues values = new ContentValues();
-        values.put(DatabaseContract.UsersTable.COLUMN_NAME_USERNAME, "from the database");
-        values.put(DatabaseContract.UsersTable.COLUMN_NAME_CITY, "Cityyy");
-
-        // Insert the new row, returning the primary key value of the new row
-        long newRowId = db.insert(DatabaseContract.UsersTable.TABLE_NAME, null, values);
-
-        readDatabase();
-    }*/
 
     @Override
     public void onListFragmentInteraction(User user) {

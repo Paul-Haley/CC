@@ -163,6 +163,39 @@ public class UserFetcher {
         return userList;
     }
 
+    public List<Avatar> getOwnedAvatarsByUserId(int userID){
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        List<Avatar> avatarList = new ArrayList<>();
+
+        String q = "SELECT * FROM avatars WHERE avatarID in (SELECT Avatar FROM avatars_owned WHERE User = " +
+                userID + ")";
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.moveToFirst();
+
+        do {
+            int AvatarID = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_ID));
+            int StarNum = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_STARNUM));
+            int Price = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_PRICE));
+            String Name = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_NAME));
+            String Desc = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_DESCRIPTION));
+            int IMM = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_M_MAIN));
+            int IMA = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_M_ALT));
+            int IFM = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_F_MAIN));
+            int IFA = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_F_ALT));
+
+            Avatar avatar = new Avatar(AvatarID, StarNum, Price, Name, Desc, IMM, IMA, IFM, IFA);
+            avatarList.add(avatar);
+
+        } while (mCursor.moveToNext());
+
+        mCursor.close();
+        mDbHelper.close();
+        return avatarList;
+    }
+
     public User fetchUserById(int id){
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();

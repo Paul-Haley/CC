@@ -71,7 +71,7 @@ public class UserFetcher {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
-        String q = "SELECT UserID FROM users WHERE Username = '" + username + "'";
+        String q = "SELECT UserID FROM users WHERE Username = '" + username + "' COLLATE NOCASE";
         Cursor mCursor = db.rawQuery(q, null);
 
         mCursor.moveToFirst();
@@ -246,7 +246,7 @@ public class UserFetcher {
 
     public void setCurrentLeaves(int currentLeaves, int userID) {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
-        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         String q = "UPDATE users SET Leaves = " + currentLeaves + " WHERE UserID = " + userID;
 
@@ -280,7 +280,7 @@ public class UserFetcher {
 
     public void setTotalLeaves(int totalLeaves, int userID) {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
-        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         String q = "UPDATE users SET Leaves_Total = " + totalLeaves + " WHERE UserID = " + userID;
 
@@ -399,6 +399,16 @@ public class UserFetcher {
         return localList;
     }
 
+    public void setAvatarByUserID(int avatarID, int userID) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        String q = "UPDATE users SET Avatar_Equipped = " + avatarID + " WHERE UserID = " + userID;
+
+        db.execSQL(q);
+
+        mDbHelper.close();
+    }
 }
 
 

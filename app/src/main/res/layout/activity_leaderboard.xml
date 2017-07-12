@@ -32,57 +32,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/zxing_transparent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/id"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/text_margin"
-                    android:layout_weight="0.4"
-                    android:background="@color/zxing_transparent"
-                    android:text="@string/rank"
-                    android:textAppearance="?attr/textAppearanceListItem"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/leaderboardFriendUsername"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/text_margin"
-                    android:layout_weight="1"
-                    android:background="@color/zxing_transparent"
-                    android:text="@string/username"
-                    android:textAppearance="?attr/textAppearanceListItem"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/leaderboardFriendCity"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/text_margin"
-                    android:layout_weight="0.7"
-                    android:background="@color/zxing_transparent"
-                    android:text="@string/city"
-                    android:textAppearance="?attr/textAppearanceListItem"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/leaderboardFriendLeaves"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/text_margin"
-                    android:layout_weight="0.5"
-                    android:background="@color/zxing_transparent"
-                    android:text="@string/leaves"
-                    android:textAppearance="?attr/textAppearanceListItem"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
@@ -95,6 +44,63 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/zxing_transparent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/id"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:layout_weight="0.4"
+                            android:background="@color/zxing_transparent"
+                            android:text="@string/rank"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/leaderboardFriendUsername"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:layout_weight="1"
+                            android:background="@color/zxing_transparent"
+                            android:text="@string/username"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/leaderboardFriendCity"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:layout_weight="0.7"
+                            android:background="@color/zxing_transparent"
+                            android:text="@string/city"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/leaderboardFriendLeaves"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:layout_weight="0.5"
+                            android:background="@color/zxing_transparent"
+                            android:text="@string/leaves"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/friendsLeaderboardRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"></LinearLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -103,14 +109,127 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/zxing_transparent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/id"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:layout_weight="0.4"
+                            android:background="@color/zxing_transparent"
+                            android:text="@string/rank"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/leaderboardFriendUsername"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:layout_weight="1"
+                            android:background="@color/zxing_transparent"
+                            android:text="@string/username"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/leaderboardFriendCity"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:layout_weight="0.7"
+                            android:background="@color/zxing_transparent"
+                            android:text="@string/city"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/leaderboardFriendLeaves"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:layout_weight="0.5"
+                            android:background="@color/zxing_transparent"
+                            android:text="@string/leaves"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/localLeaderboardRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"></LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/citiesLeaderboardTab"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/zxing_transparent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/id"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:layout_weight="0.4"
+                            android:background="@color/zxing_transparent"
+                            android:text="@string/rank"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/leaderboardCityName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:layout_weight="1"
+                            android:background="@color/zxing_transparent"
+                            android:text="@string/city_name"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/leaderboardCityUserCount"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:layout_weight="0.7"
+                            android:background="@color/zxing_transparent"
+                            android:text="@string/total_users"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/leaderboardFriendLeaves"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:layout_weight="0.5"
+                            android:background="@color/zxing_transparent"
+                            android:text="@string/total_points"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/cityLeaderboardRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"></LinearLayout>
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>

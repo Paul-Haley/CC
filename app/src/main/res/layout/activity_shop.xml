@@ -39,6 +39,54 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
+                    android:id="@+id/AvatarTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
+                        android:focusableInTouchMode="true"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/spinner2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:entries="@array/sorting_options_avatars" />
+
+                        <ToggleButton
+                            android:id="@+id/toggleButton4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.46"
+                            android:text="ToggleButton"
+                            android:textOff="@string/asc"
+                            android:textOn="@string/desc" />
+
+                        <EditText
+                            android:id="@+id/Avatar_Search"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="@string/search"
+                            android:inputType="text" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/avatar_shoplist"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"></LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:id="@+id/DiscountTab"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -80,54 +128,6 @@
 
                     <LinearLayout
                         android:id="@+id/voucher_shoplist"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"></LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/AvatarTab"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:focusableInTouchMode="true"
-                        android:orientation="horizontal"
-                        android:background="#FFFFFF">
-
-                        <Spinner
-                            android:id="@+id/spinner2"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:entries="@array/sorting_options_avatars" />
-
-                        <ToggleButton
-                            android:id="@+id/toggleButton4"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.46"
-                            android:text="ToggleButton"
-                            android:textOff="@string/asc"
-                            android:textOn="@string/desc" />
-
-                        <EditText
-                            android:id="@+id/Avatar_Search"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:hint="@string/search"
-                            android:inputType="text" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/avatar_shoplist"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"></LinearLayout>

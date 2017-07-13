@@ -43,6 +43,10 @@
     <string name="total_users">全部用户</string>
     <string name="Stars_Label">星星:</string>
 
+    <string name="Beijing">北京</string>
+    <string name="Dalian">大连</string>
+    <string name="Shanghai">上海</string>
+
 
     <string-array name="sorting_options_vouchers">
         <item>NEW</item>

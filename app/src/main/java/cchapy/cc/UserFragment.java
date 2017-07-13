@@ -72,7 +72,7 @@ public class UserFragment extends Fragment {
             }
             int loggedInId = UserInfoHelper.getLoggedInId(getContext());
             if (loggedInId > 0) {
-                recyclerView.setAdapter(new MyUserRecyclerViewAdapter(fetcher.fetchUserFriendsById(loggedInId), mListener));
+                recyclerView.setAdapter(new MyUserRecyclerViewAdapter(fetcher.fetchUserFriendsAndYouById(loggedInId), mListener));
             }
 
         }

@@ -87,7 +87,7 @@ public class LeaderboardActivity extends AppCompatActivity
         int loggedInId = UserInfoHelper.getLoggedInId(this);
         if (loggedInId > 0) {
             UserFetcher fetcher = new UserFetcher(this);
-            List<User> friends = fetcher.fetchUserFriendsById(loggedInId);
+            List<User> friends = fetcher.fetchUserFriendsAndYouById(loggedInId);
 
             User topUser = friends.get(0);
             viewPopUpProfile(topUser);
@@ -110,7 +110,7 @@ public class LeaderboardActivity extends AppCompatActivity
         int loggedInId = UserInfoHelper.getLoggedInId(this);
         if (loggedInId > 0) {
             UserFetcher fetcher = new UserFetcher(this);
-            List<User> friends = fetcher.fetchUserFriendsById(loggedInId);
+            List<User> friends = fetcher.fetchUserFriendsAndYouById(loggedInId);
 
             User topUser = friends.get(0);
 

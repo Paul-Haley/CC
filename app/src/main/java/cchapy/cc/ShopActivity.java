@@ -180,11 +180,8 @@ public class ShopActivity extends AppCompatActivity
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        if (view.equals(findViewById(R.id.sort_avatar_select))) {
-            displayAvatars();
-        } else {
-            displayDiscounts();
-        }
+        displayAvatars();
+        displayDiscounts();
     }
 
     @Override

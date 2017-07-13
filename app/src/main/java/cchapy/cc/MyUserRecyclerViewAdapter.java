@@ -41,8 +41,10 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
         holder.mFriendCityView.setText(mValues.get(position).getCity());
         holder.mFriendLeafView.setText(String.valueOf(mValues.get(position).getTotalLeafCount()));
 
-        if (mValues.get(position).getId() == 1) {
-            //Decoration for first place
+        if (position == 0) {
+            holder.mView.findViewById(R.id.defaultLeaderboardRow).setVisibility(View.GONE);
+
+
         }
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +72,7 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
         public final TextView mFriendLeafView;
         public User mItem;
 
+
         public ViewHolder(View view) {
             super(view);
             mView = view;
@@ -77,6 +80,7 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
             mFriendUsernameView = view.findViewById(R.id.leaderboardFriendUsername);
             mFriendCityView  = view.findViewById(R.id.leaderboardFriendCity);
             mFriendLeafView = view.findViewById(R.id.leaderboardFriendLeaves);
+
         }
 
         @Override

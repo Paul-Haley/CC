@@ -128,6 +128,21 @@ public class LeaderboardActivity extends AppCompatActivity
             Resources res = this.getResources();
             TypedArray avatarIndex = res.obtainTypedArray(R.array.avatars);
             mTopUserAvatar.setImageResource(avatarIndex.getResourceId(avatarImageID, -1));
+
+        } else {
+            TextView mTopUsername = view.findViewById(R.id.TopUsername);
+            TextView mTopUserCity = view.findViewById(R.id.TopUserCity);
+            TextView mTopUserLeaves = view.findViewById(R.id.TopUserLeaves);
+            ImageView mTopUserAvatar = view.findViewById(R.id.TopUserAvatar);
+            ImageView mLeafIcon = view.findViewById(R.id.leafIcon);
+            TextView mRankNum = view.findViewById(R.id.rankNum);
+
+            mTopUsername.setText("LOG IN");
+            mTopUserCity.setVisibility(View.GONE);
+            mTopUserLeaves.setVisibility(View.GONE);
+            mTopUserAvatar.setVisibility(View.GONE);
+            mLeafIcon.setVisibility(View.GONE);
+            mRankNum.setVisibility(View.GONE);
         }
     }
 
@@ -154,6 +169,20 @@ public class LeaderboardActivity extends AppCompatActivity
             Resources res = this.getResources();
             TypedArray avatarIndex = res.obtainTypedArray(R.array.avatars);
             mTopUserAvatar.setImageResource(avatarIndex.getResourceId(avatarImageID, -1));
+        } else {
+            TextView mTopUsername = view.findViewById(R.id.TopUsernameLocal);
+            TextView mTopUserCity = view.findViewById(R.id.TopUserCityLocal);
+            TextView mTopUserLeaves = view.findViewById(R.id.TopUserLeavesLocal);
+            ImageView mTopUserAvatar = view.findViewById(R.id.TopUserAvatarLocal);
+            ImageView mLeafIcon = view.findViewById(R.id.leafIconLocal);
+            TextView mRankNum = view.findViewById(R.id.rankNumLocal);
+
+            mTopUsername.setText("LOG IN");
+            mTopUserCity.setVisibility(View.GONE);
+            mTopUserLeaves.setVisibility(View.GONE);
+            mTopUserAvatar.setVisibility(View.GONE);
+            mLeafIcon.setVisibility(View.GONE);
+            mRankNum.setVisibility(View.GONE);
         }
     }
 

@@ -54,7 +54,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/id"
+                            android:id="@+id/rankNum"
                             android:layout_width="8dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/text_margin"
@@ -113,7 +113,7 @@
                                     android:textAppearance="?attr/textAppearanceListItem" />
 
                                 <ImageView
-                                    android:id="@+id/imageView4"
+                                    android:id="@+id/leafIcon"
                                     android:layout_width="23dp"
                                     android:layout_height="22dp"
                                     android:adjustViewBounds="false"
@@ -203,7 +203,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/id"
+                            android:id="@+id/rankNumLocal"
                             android:layout_width="8dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/text_margin"
@@ -262,7 +262,7 @@
                                     android:textAppearance="?attr/textAppearanceListItem" />
 
                                 <ImageView
-                                    android:id="@+id/imageView4"
+                                    android:id="@+id/leafIconLocal"
                                     android:layout_width="23dp"
                                     android:layout_height="22dp"
                                     android:adjustViewBounds="false"

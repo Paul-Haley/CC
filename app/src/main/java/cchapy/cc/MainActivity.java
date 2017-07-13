@@ -9,6 +9,7 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -41,14 +42,38 @@ public class MainActivity extends AppCompatActivity {
         //banner
         initData();
         initView();
-
+        
+        unlockOnLogin();
         getUserDetails();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        unlockOnLogin();
         getUserDetails();
+    }
+
+    /**
+     * Check if the user is logged in and disable the interface if not.
+     */
+    private void unlockOnLogin() {
+        boolean enable = UserInfoHelper.getLoggedInId(mContext) != -1;
+        float alpha = enable ? 1f : 0.3f;
+
+        List<ImageButton> buttons = new ArrayList<ImageButton>();
+        buttons.add((ImageButton) findViewById(R.id.Button_QR));
+        buttons.add((ImageButton) findViewById(R.id.Button_Shop));
+        buttons.add((ImageButton) findViewById(R.id.Button_Discounts));
+        buttons.add((ImageButton) findViewById(R.id.Button_Avatar));
+        buttons.add((ImageButton) findViewById(R.id.Button_Profile));
+        buttons.add((ImageButton) findViewById(R.id.Button_Friends));
+        buttons.add((ImageButton) findViewById(R.id.Button_Leaderboard));
+
+        for (ImageButton button : buttons) {
+            button.setEnabled(enable);
+            button.setAlpha(alpha);
+        }
     }
 
     private void getUserDetails() {

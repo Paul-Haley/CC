@@ -45,7 +45,7 @@
                     android:id="@+id/Avatar_Name"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_weight="1.2"
                     android:text="Avatar Name"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -53,7 +53,7 @@
                 <TextView
                     android:id="@+id/Avatar_Desc"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Avatar Description" />
 

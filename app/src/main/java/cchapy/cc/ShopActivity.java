@@ -168,14 +168,26 @@ public class ShopActivity extends AppCompatActivity
         discountLeafCount.setText(Integer.toString(leafCount));
     }
 
+    private void viewPopUpDiscount(Voucher voucher) {
+        Intent intent = new Intent(this, DiscountPopup.class);
+        intent.putExtra("DISCOUNT", voucher.getId());
+        startActivity(intent);
+    }
+
+    private void viewPopUpAvatar(Avatar avatar) {
+        Intent intent = new Intent(this, DisplayPopUpProfileActivity.class);
+        intent.putExtra("AVATAR", avatar.getId());
+        startActivity(intent);
+    }
+
     @Override
     public void onListFragmentInteraction(Voucher item) {
-
+        viewPopUpDiscount(item);
     }
 
     @Override
     public void onListFragmentInteraction(Avatar item) {
-
+        viewPopUpAvatar(item);
     }
 
     @Override

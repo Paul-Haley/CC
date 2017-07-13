@@ -43,8 +43,6 @@ public class MyUserRecyclerViewAdapter extends RecyclerView.Adapter<MyUserRecycl
 
         if (position == 0) {
             holder.mView.findViewById(R.id.defaultLeaderboardRow).setVisibility(View.GONE);
-
-
         }
 
         holder.mView.setOnClickListener(new View.OnClickListener() {

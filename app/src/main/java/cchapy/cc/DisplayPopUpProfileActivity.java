@@ -21,7 +21,6 @@ public class DisplayPopUpProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_pop_up_profile);
 
         UserFetcher fetcher = new UserFetcher(this);
-        AvatarFetcher avatarFetcher = new AvatarFetcher(this);
 
         //get the intent that started this activity
         Intent intent = getIntent();

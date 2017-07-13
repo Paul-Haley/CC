@@ -57,12 +57,21 @@ public class LeaderboardActivity extends AppCompatActivity
         }
 
         fillTopFriendsUser(this.findViewById(android.R.id.content));
+        fillTopLocalUser(this.findViewById(android.R.id.content));
 
         LinearLayout topUserLayout = (LinearLayout) findViewById(R.id.topLeaderboardRow);
         topUserLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 viewTopPopUpProfile();
+            }
+        });
+
+        LinearLayout topLocalUserLayout = (LinearLayout) findViewById(R.id.topLeaderboardRowLocal);
+        topLocalUserLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewTopLocalPopUpProfile();
             }
         });
     }
@@ -75,13 +84,23 @@ public class LeaderboardActivity extends AppCompatActivity
     }
 
     public void viewTopPopUpProfile() {
-
         int loggedInId = UserInfoHelper.getLoggedInId(this);
         if (loggedInId > 0) {
             UserFetcher fetcher = new UserFetcher(this);
             List<User> friends = fetcher.fetchUserFriendsById(loggedInId);
 
             User topUser = friends.get(0);
+            viewPopUpProfile(topUser);
+        }
+    }
+
+    public void viewTopLocalPopUpProfile() {
+        int loggedInId = UserInfoHelper.getLoggedInId(this);
+        if (loggedInId > 0) {
+            UserFetcher fetcher = new UserFetcher(this);
+            List<User> locals = fetcher.fetchLocalUserById(loggedInId);
+
+            User topUser = locals.get(0);
             viewPopUpProfile(topUser);
         }
     }
@@ -99,6 +118,32 @@ public class LeaderboardActivity extends AppCompatActivity
             TextView mTopUserCity = view.findViewById(R.id.TopUserCity);
             TextView mTopUserLeaves = view.findViewById(R.id.TopUserLeaves);
             ImageView mTopUserAvatar = view.findViewById(R.id.TopUserAvatar);
+
+            mTopUsername.setText(topUser.getUserName());
+            mTopUserCity.setText(topUser.getCity());
+            mTopUserLeaves.setText(String.valueOf(topUser.getTotalLeafCount()));
+
+            int avatarImageID = UserInfoHelper.getUserAvatarAlt(this, topUser.getId());
+
+            Resources res = this.getResources();
+            TypedArray avatarIndex = res.obtainTypedArray(R.array.avatars);
+            mTopUserAvatar.setImageResource(avatarIndex.getResourceId(avatarImageID, -1));
+        }
+    }
+
+    private void fillTopLocalUser(View view) {
+
+        int loggedInId = UserInfoHelper.getLoggedInId(this);
+        if (loggedInId > 0) {
+            UserFetcher fetcher = new UserFetcher(this);
+            List<User> locals = fetcher.fetchLocalUserById(loggedInId);
+
+            User topUser = locals.get(0);
+
+            TextView mTopUsername = view.findViewById(R.id.TopUsernameLocal);
+            TextView mTopUserCity = view.findViewById(R.id.TopUserCityLocal);
+            TextView mTopUserLeaves = view.findViewById(R.id.TopUserLeavesLocal);
+            ImageView mTopUserAvatar = view.findViewById(R.id.TopUserAvatarLocal);
 
             mTopUsername.setText(topUser.getUserName());
             mTopUserCity.setText(topUser.getCity());

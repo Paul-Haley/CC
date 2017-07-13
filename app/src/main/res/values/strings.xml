@@ -42,6 +42,8 @@
     <string name="Stars_Label">Stars:</string>
     <string name="location">Location:</string>
     <string name="expires">Expires</string>
+    <string name="owned">Already owned</string>
+    <string name="insufficient_funds">Insufficient Leaves</string>
 
     <string-array name="sorting_options_vouchers">
         <item>NEW</item>

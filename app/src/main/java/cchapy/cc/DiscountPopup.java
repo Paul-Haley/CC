@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,7 +26,7 @@ public class DiscountPopup extends AppCompatActivity {
      */
     private void updatePopup(int id) {
         VoucherFetcher vFetch = new VoucherFetcher(getApplicationContext());
-        Voucher voucher = vFetch.fetchVoucherById(id);
+        Voucher voucher = vFetch.fetchVoucherByVoucherId(id);
 
         TextView title = (TextView)findViewById(R.id.shop_pop_disc_title);
         title.setText(voucher.getName());
@@ -47,9 +48,25 @@ public class DiscountPopup extends AppCompatActivity {
         Resources res = this.getResources();
         TypedArray vouchers = res.obtainTypedArray(R.array.vouchers);
         image.setImageResource(vouchers.getResourceId(voucher.getImage() - 1, -1));
+
+        setBuyButton(voucher);
     }
 
-    private void setBuyButton() {
-        
+    private void setBuyButton(Voucher voucher) {
+        Button buy = (Button)findViewById(R.id.shop_pop_disc_purchase);
+
+        int userId = UserInfoHelper.getLoggedInId(getApplicationContext());
+        UserFetcher uFetcher = new UserFetcher(getApplicationContext());
+        int leaves = uFetcher.getCurrentLeavesById(userId);
+
+        VoucherFetcher vFetcher = new VoucherFetcher(getApplicationContext());
+
+        if (vFetcher.fetchVouchersByUserId(userId).contains(voucher)) {
+            buy.setText(R.string.owned);
+            buy.setEnabled(false);
+        } else if (leaves < voucher.getPrice()) {
+            buy.setText(R.string.insufficient_funds);
+            buy.setEnabled(false);
+        }
     }
 }

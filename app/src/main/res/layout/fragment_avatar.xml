@@ -65,10 +65,9 @@
 
                     <TextView
                         android:id="@+id/Avatar_Rating"
-                        android:layout_width="match_parent"
+                        android:layout_width="48dp"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="Stars: 2"
+                        android:text="@string/Stars_Label"
                         android:textStyle="italic" />
 
                     <ImageView

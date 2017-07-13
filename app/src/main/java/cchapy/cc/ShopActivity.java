@@ -2,12 +2,10 @@ package cchapy.cc;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TabHost;
 import android.widget.TextView;
-
-import cchapy.cc.dummy.DummyContent;
 
 public class ShopActivity extends AppCompatActivity
         implements VoucherListingFragment.OnListFragmentInteractionListener,
@@ -73,8 +71,8 @@ public class ShopActivity extends AppCompatActivity
         TextView avatarLeafCount = (TextView)findViewById(R.id.shop_leaves_avatar);
         TextView discountLeafCount = (TextView)findViewById(R.id.shop_leaves_discount);
 
-        avatarLeafCount.setText("Leaves: " + leafCount);
-        discountLeafCount.setText("Leaves: " + leafCount);
+        avatarLeafCount.setText(Integer.toString(leafCount));
+        discountLeafCount.setText(Integer.toString(leafCount));
     }
 
     @Override

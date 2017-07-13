@@ -4,9 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,6 +13,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static cchapy.cc.Avatar.FADED_STAR;
 
 public class AvatarActivity extends AppCompatActivity {
     List<Avatar> ownedAvatars = new ArrayList<>();
@@ -149,28 +150,14 @@ public class AvatarActivity extends AppCompatActivity {
         ImageView rarity3 = (ImageView)findViewById(R.id.avatar_rarity3);
         ImageView rarity2 = (ImageView)findViewById(R.id.avatar_rarity2);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            rarity2.setImageAlpha(255);
-            rarity3.setImageAlpha(255);
-        } else {
-            rarity2.setVisibility(View.VISIBLE);
-            rarity3.setVisibility(View.VISIBLE);
-        }
+        rarity2.setAlpha(1f);
+        rarity3.setAlpha(1f);
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-            if (rarity < 3) {
-                rarity3.setImageAlpha(30);
-            }
-            if (rarity < 2) {
-                rarity2.setImageAlpha(30);
-            }
-        } else {
-            if (rarity < 3) {
-                rarity3.setVisibility(View.INVISIBLE);
-            }
-            if (rarity < 2) {
-                rarity2.setVisibility(View.INVISIBLE);
-            }
+        if (rarity < 3) {
+            rarity3.setAlpha(FADED_STAR);
+        }
+        if (rarity < 2) {
+            rarity2.setAlpha(FADED_STAR);
         }
     }
 

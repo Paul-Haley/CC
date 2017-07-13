@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static cchapy.cc.Avatar.FADED_STAR;
+
 public class AvatarPopup extends AppCompatActivity {
 
     private Avatar avatar;
@@ -54,9 +56,9 @@ public class AvatarPopup extends AppCompatActivity {
         //Setting rating
         int rarity = avatar.getRarity();
         if (rarity < 3) {
-            findViewById(R.id.shop_pop_ava_star3).setVisibility(View.INVISIBLE);
+            findViewById(R.id.shop_pop_ava_star3).setAlpha(FADED_STAR);
             if (rarity < 2) {
-                findViewById(R.id.shop_pop_ava_star2).setVisibility(View.INVISIBLE);
+                findViewById(R.id.shop_pop_ava_star2).setAlpha(FADED_STAR);
             }
         }
 

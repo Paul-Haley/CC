@@ -5,6 +5,7 @@ package cchapy.cc;
  */
 public class Avatar {
     public static final String MALE = "M", FEMALE = "F";
+    public static final float FADED_STAR = 0.25f;
 
     private final int id;
     private final int rarity; // 1 <= rarity <= 3

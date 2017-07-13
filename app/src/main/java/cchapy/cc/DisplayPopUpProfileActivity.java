@@ -47,5 +47,8 @@ public class DisplayPopUpProfileActivity extends AppCompatActivity {
         TypedArray avatars = res.obtainTypedArray(R.array.avatars);
         ImageView avatarView = (ImageView)findViewById(R.id.Image_Avatar);
         avatarView.setImageResource(avatars.getResourceId(avatarImageID, -1));
+
+        TextView friendCount = (TextView)findViewById(R.id.friendcountText);
+        friendCount.setText(Integer.toString(fetcher.getFriendCountById(user.getId())));
     }
 }

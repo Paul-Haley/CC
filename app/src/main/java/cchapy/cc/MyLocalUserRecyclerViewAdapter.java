@@ -1,5 +1,6 @@
 package cchapy.cc;
 
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,6 +44,13 @@ public class MyLocalUserRecyclerViewAdapter extends RecyclerView.Adapter<MyLocal
 
         if (position == 0) {
             holder.mView.findViewById(R.id.defaultLeaderboardRow).setVisibility(View.GONE);
+        }
+
+        if (mValues.get(position).getId() == UserInfoHelper.getLoggedInId(holder.mView.getContext())){
+            holder.mIdView.setTypeface(null, Typeface.BOLD);
+            holder.mFriendUsernameView.setTypeface(null, Typeface.BOLD);
+            holder.mFriendCityView.setTypeface(null, Typeface.BOLD);
+            holder.mFriendLeafView.setTypeface(null, Typeface.BOLD);
         }
 
         holder.mView.setOnClickListener(new View.OnClickListener() {

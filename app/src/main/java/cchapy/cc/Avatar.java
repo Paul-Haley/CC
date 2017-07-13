@@ -4,6 +4,8 @@ package cchapy.cc;
  * Class for internal representation of Avatars
  */
 public class Avatar {
+    public static final String MALE = "M", FEMALE = "F";
+
     private final int id;
     private final int rarity; // 1 <= rarity <= 3
     private final int price; // 0 <= price
@@ -43,6 +45,40 @@ public class Avatar {
 
     public String getDescription() {
         return description;
+    }
+
+    public int getImage_M_Main() {
+        return image_M_Main;
+    }
+
+    public int getImage_M_Alt() {
+        return image_M_Alt;
+    }
+
+    public int getImage_F_Main() {
+        return image_F_Main;
+    }
+
+    public int getImage_F_Alt() {
+        return image_F_Alt;
+    }
+
+    /**
+     * Gender avatar for mains
+     * @param gender M for male, F for female (anything but M is also female)
+     * @return gender specific avatar
+     */
+    public int getImageMainByGender(String gender) {
+        return gender.equals(MALE) ? getImage_M_Main() : getImage_F_Main();
+    }
+
+    /**
+     * Gender avatar for alts
+     * @param gender M for male, F for female (anything but M is also female)
+     * @return gender specific avatar
+     */
+    public int getImageAltByGender(String gender) {
+        return gender.equals(MALE) ? getImage_M_Alt() : getImage_F_Alt();
     }
 
     @Override

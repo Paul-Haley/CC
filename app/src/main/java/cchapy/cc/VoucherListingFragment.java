@@ -10,12 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import cchapy.cc.dummy.DummyContent;
-import cchapy.cc.dummy.DummyContent.DummyItem;
-import cchapy.cc.dummy.UserContent;
-
-import java.util.List;
-
 /**
  * A fragment representing a list of Items.
  * <p/>
@@ -23,10 +17,8 @@ import java.util.List;
  * interface.
  */
 public class VoucherListingFragment extends Fragment {
-
-    // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
-    // TODO: Customize parameters
+
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
     private int userID = -1;
@@ -115,7 +107,6 @@ public class VoucherListingFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnListFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onListFragmentInteraction(Voucher item);
     }
 }

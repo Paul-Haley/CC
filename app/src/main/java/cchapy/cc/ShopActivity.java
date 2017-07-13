@@ -193,7 +193,7 @@ public class ShopActivity extends AppCompatActivity
     }
 
     private void viewPopUpAvatar(Avatar avatar) {
-        Intent intent = new Intent(this, DisplayPopUpProfileActivity.class);
+        Intent intent = new Intent(this, AvatarPopup.class);
         intent.putExtra("AVATAR", avatar.getId());
         startActivity(intent);
     }

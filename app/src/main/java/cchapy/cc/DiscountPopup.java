@@ -97,7 +97,7 @@ public class DiscountPopup extends AppCompatActivity {
         uFetcher.giveUserVoucherbyId(userId, voucher.getId());
 
 
-        Toast.makeText(getApplicationContext(), getString(R.string.purchase_successful), Toast.LENGTH_SHORT);
+        Toast.makeText(getApplicationContext(), getString(R.string.purchase_successful), Toast.LENGTH_SHORT).show();
         finish();
     }
 }

@@ -94,8 +94,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".DiscountPopup"
-            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"
-        ></activity>
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"/>
+        <activity android:name=".AvatarPopup"
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"/>
+
     </application>
 
 </manifest>

@@ -52,20 +52,21 @@
                         android:orientation="horizontal">
 
                         <Spinner
-                            android:id="@+id/spinner2"
+                            android:id="@+id/sort_avatar_select"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/sorting_options_avatars" />
 
                         <ToggleButton
-                            android:id="@+id/toggleButton4"
+                            android:id="@+id/avatar_sort_toggle"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.46"
                             android:text="ToggleButton"
                             android:textOff="@string/asc"
-                            android:textOn="@string/desc" />
+                            android:textOn="@string/desc"
+                            android:onClick="updateAvatars"/>
 
                         <LinearLayout
                             android:layout_width="40dp"
@@ -114,20 +115,21 @@
                         android:orientation="horizontal">
 
                         <Spinner
-                            android:id="@+id/spinner"
+                            android:id="@+id/sort_discount_select"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/sorting_options_vouchers" />
 
                         <ToggleButton
-                            android:id="@+id/toggleButton3"
+                            android:id="@+id/discount_sort_toggle"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="0.46"
                             android:text="ToggleButton"
                             android:textOff="@string/asc"
-                            android:textOn="@string/desc" />
+                            android:textOn="@string/desc"
+                            android:onClick="updateDiscounts"/>
 
                         <LinearLayout
                             android:layout_width="40dp"

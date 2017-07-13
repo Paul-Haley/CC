@@ -19,7 +19,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/clear_all_data"
+            android:text="Log Out User"
             android:textAlignment="center"
             android:textColor="@color/cardview_dark_background"
             android:textSize="18sp" />
@@ -30,8 +30,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/clear"
-            android:onClick="clearLogin"/>
+            android:onClick="clearLogin"
+            android:text="Logout" />
 
 
     </LinearLayout>

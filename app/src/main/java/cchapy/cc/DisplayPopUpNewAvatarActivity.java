@@ -105,6 +105,8 @@ public class DisplayPopUpNewAvatarActivity extends AppCompatActivity {
         if (ownedAvatars.contains(awardedAvatar)) {
             Toast.makeText(this, "Avatar Already Owned, +50 Leaves", Toast.LENGTH_LONG).show();
             UserInfoHelper.addLeaves(getApplicationContext(), userID, 50);
+        } else {
+            uFetch.addAvatarToUserById(userID, awardedAvatar.getId());
         }
 
 

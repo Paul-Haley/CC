@@ -340,6 +340,17 @@ public class UserFetcher {
         mDbHelper.close();
     }
 
+    public void addAvatarToUserById(int userId, int avatarId) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        String q = "INSERT INTO avatars_owned VALUES (" + userId + ", " + avatarId + ")";
+
+        db.execSQL(q);
+
+        mDbHelper.close();
+    }
+
     public List<User> fetchUserFriendsById(int id){
 
         //set up

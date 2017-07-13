@@ -2,9 +2,9 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/leaderboardContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/leaderboardContainer"
     tools:context="cchapy.cc.LeaderboardActivity">
 
     <TabHost
@@ -44,10 +44,12 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
+
                     <LinearLayout
                         android:id="@+id/topLeaderboardRow"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/topUser"
                         android:clickable="true"
                         android:orientation="horizontal">
 
@@ -58,7 +60,7 @@
                             android:layout_margin="@dimen/text_margin"
                             android:text="1"
                             android:textAppearance="?attr/textAppearanceListItem"
-                            android:textSize="14sp"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <ImageView
@@ -77,30 +79,198 @@
 
                             <TextView
                                 android:id="@+id/TopUsername"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
                                 android:layout_weight="1"
                                 android:text="@string/username"
-                                android:textAlignment="center"
-                                android:textAppearance="?attr/textAppearanceListItem" />
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textStyle="bold" />
 
                             <TextView
                                 android:id="@+id/TopUserCity"
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
                                 android:layout_weight="1"
                                 android:text="City"
-                                android:textAlignment="center"
-                                android:textAppearance="?attr/textAppearanceListItem" />
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textStyle="italic" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/TopUserLeaves"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="Leaves"
+                                    android:textAlignment="center"
+                                    android:textAppearance="?attr/textAppearanceListItem" />
+
+                                <ImageView
+                                    android:id="@+id/imageView4"
+                                    android:layout_width="23dp"
+                                    android:layout_height="22dp"
+                                    android:adjustViewBounds="false"
+                                    android:cropToPadding="false"
+                                    android:scaleType="fitXY"
+                                    app:srcCompat="@drawable/symbol_leaf" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/cardview_light_background"
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp">
+
+                        <TextView
+                            android:id="@+id/rankLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/text_margin"
+                            android:layout_weight="0.6"
+                            android:text="@string/rank"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/friendUsernameLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/text_margin"
+                            android:layout_weight="1"
+                            android:text="@string/username"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/friendCityLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:layout_weight="0.7"
+                            android:text="@string/city"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/friendLeavesLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:layout_weight="0.5"
+                            android:text="@string/leaves"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/friendsLeaderboardRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"></LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/localLeaderboardTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/topLeaderboardRowLocal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/topUser"
+                        android:clickable="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/id"
+                            android:layout_width="8dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="1"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/TopUserAvatarLocal"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:padding="4dp"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/character_girl_cat_icon" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
 
                             <TextView
-                                android:id="@+id/TopUserLeaves"
-                                android:layout_width="match_parent"
+                                android:id="@+id/TopUsernameLocal"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
                                 android:layout_weight="1"
-                                android:text="Leaves"
-                                android:textAlignment="center"
-                                android:textAppearance="?attr/textAppearanceListItem" />
+                                android:text="@string/username"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/TopUserCityLocal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_alignParentLeft="true"
+                                android:layout_weight="1"
+                                android:text="City"
+                                android:textAppearance="?attr/textAppearanceListItem"
+                                android:textStyle="italic" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/TopUserLeavesLocal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="Leaves"
+                                    android:textAlignment="center"
+                                    android:textAppearance="?attr/textAppearanceListItem" />
+
+                                <ImageView
+                                    android:id="@+id/imageView4"
+                                    android:layout_width="23dp"
+                                    android:layout_height="22dp"
+                                    android:adjustViewBounds="false"
+                                    android:cropToPadding="false"
+                                    android:scaleType="fitXY"
+                                    app:srcCompat="@drawable/symbol_leaf" />
+
+                            </LinearLayout>
 
                         </LinearLayout>
                     </LinearLayout>
@@ -133,7 +303,7 @@
                             android:text="@string/username"
                             android:textAppearance="?attr/textAppearanceListItem"
                             android:textSize="14sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/friendCityLabel"
@@ -142,80 +312,11 @@
                             android:layout_margin="@dimen/text_margin"
                             android:layout_weight="0.7"
                             android:text="@string/city"
-                            android:textAppearance="?attr/textAppearanceListItem"
-                            android:textStyle="bold"
-                            android:textSize="14sp"
-                            />
-
-                        <TextView
-                            android:id="@+id/friendLeavesLabel"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/text_margin"
-                            android:layout_weight="0.5"
-                            android:text="@string/leaves"
-                            android:textAppearance="?attr/textAppearanceListItem"
-                            android:textSize="14sp"
-                            android:textStyle="bold"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/friendsLeaderboardRecycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"></LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/localLeaderboardTab"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/cardview_light_background"
-                        android:orientation="horizontal"
-                        android:paddingLeft="16dp"
-                        android:paddingRight="16dp">
-
-                        <TextView
-                            android:id="@+id/rankLabel"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/text_margin"
-                            android:layout_weight="0.6"
-                            android:text="@string/rank"
                             android:textAppearance="?attr/textAppearanceListItem"
                             android:textSize="14sp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/friendUsernameLabel"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/text_margin"
-                            android:layout_weight="1"
-                            android:text="@string/username"
-                            android:textAppearance="?attr/textAppearanceListItem"
-                            android:textSize="14sp"
-                            android:textStyle="bold"/>
-
-                        <TextView
-                            android:id="@+id/friendCityLabel"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/text_margin"
-                            android:layout_weight="0.7"
-                            android:text="@string/city"
-                            android:textAppearance="?attr/textAppearanceListItem"
-                            android:textStyle="bold"
-                            android:textSize="14sp"
-                            />
-
-                        <TextView
                             android:id="@+id/friendLeavesLabel"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -224,7 +325,7 @@
                             android:text="@string/leaves"
                             android:textAppearance="?attr/textAppearanceListItem"
                             android:textSize="14sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -241,6 +342,13 @@
                     android:orientation="vertical">
 
 
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        app:srcCompat="@drawable/banner_leaderboard_hong_kong" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -270,7 +378,7 @@
                             android:text="@string/city_name"
                             android:textAppearance="?attr/textAppearanceListItem"
                             android:textSize="14sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/totalUsersLabel"
@@ -280,9 +388,8 @@
                             android:layout_weight="0.4"
                             android:text="@string/total_users"
                             android:textAppearance="?attr/textAppearanceListItem"
-                            android:textStyle="bold"
                             android:textSize="14sp"
-                            />
+                            android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/totalPointsLabel"
@@ -293,7 +400,7 @@
                             android:text="@string/total_points"
                             android:textAppearance="?attr/textAppearanceListItem"
                             android:textSize="14sp"
-                            android:textStyle="bold"/>
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <LinearLayout

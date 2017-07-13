@@ -41,8 +41,8 @@ public class MyLocalUserRecyclerViewAdapter extends RecyclerView.Adapter<MyLocal
         holder.mFriendCityView.setText(mValues.get(position).getCity());
         holder.mFriendLeafView.setText(String.valueOf(mValues.get(position).getTotalLeafCount()));
 
-        if (mValues.get(position).getId() == 1) {
-            //Decoration for first place
+        if (position == 0) {
+            holder.mView.findViewById(R.id.defaultLeaderboardRow).setVisibility(View.GONE);
         }
 
         holder.mView.setOnClickListener(new View.OnClickListener() {

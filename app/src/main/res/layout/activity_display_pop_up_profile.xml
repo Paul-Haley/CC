@@ -30,7 +30,7 @@
             android:layout_marginTop="36dp"
             android:layout_weight="0.29"
             android:paddingTop="8dp"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="91dp"
             tools:layout_editor_absoluteY="337dp" />
@@ -54,9 +54,9 @@
 
             <ImageView
                 android:id="@+id/friendIcon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_menu_myplaces"
+                android:layout_width="27dp"
+                android:layout_height="28dp"
+                app:srcCompat="@drawable/icon_leaderboard_friend"
                 tools:layout_editor_absoluteX="90dp"
                 tools:layout_editor_absoluteY="394dp" />
 

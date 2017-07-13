@@ -34,7 +34,7 @@ public class QRActivity extends AppCompatActivity {
         IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if(result != null) {
             if(result.getContents() == null) {
-                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getString(R.string.cancelled), Toast.LENGTH_LONG).show();
                 finish(); // Go back to the last activity
             } else {
                 //verification of QR code
@@ -44,7 +44,7 @@ public class QRActivity extends AppCompatActivity {
                     Intent intent = new Intent(this, ScannedActivity.class);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(this, "Invalid QR Code", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, getString(R.string.invalid_QR), Toast.LENGTH_LONG).show();
                     finish(); // Go back to the last activity
                 }
             }

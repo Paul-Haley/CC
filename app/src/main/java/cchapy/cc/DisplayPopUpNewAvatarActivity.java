@@ -3,7 +3,6 @@ package cchapy.cc;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.media.Image;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -15,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static android.support.v4.app.NavUtils.navigateUpFromSameTask;
@@ -103,7 +101,7 @@ public class DisplayPopUpNewAvatarActivity extends AppCompatActivity {
 
         //check if avatar is already owned
         if (ownedAvatars.contains(awardedAvatar)) {
-            Toast.makeText(this, "Avatar Already Owned, +50 Leaves", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.avatar_already_owned) + " , +50 " + getString(R.string.leaves), Toast.LENGTH_LONG).show();
             UserInfoHelper.addLeaves(getApplicationContext(), userID, 50);
         } else {
             uFetch.addAvatarToUserById(userID, awardedAvatar.getId());

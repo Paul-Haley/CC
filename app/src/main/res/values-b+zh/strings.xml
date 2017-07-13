@@ -46,6 +46,8 @@
     <string name="Beijing">北京</string>
     <string name="Dalian">大连</string>
     <string name="Shanghai">上海</string>
+    <string name="location">Location:</string>
+    <string name="expires">Expires</string>
 
 
     <string-array name="sorting_options_vouchers">

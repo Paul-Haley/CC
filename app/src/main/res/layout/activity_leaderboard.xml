@@ -45,6 +45,67 @@
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/topLeaderboardRow"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/id"
+                            android:layout_width="8dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/text_margin"
+                            android:text="1"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/TopUserAvatar"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:padding="4dp"
+                            android:scaleType="fitXY"
+                            app:srcCompat="@drawable/character_girl_cat_icon" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/TopUsername"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="@string/username"
+                                android:textAlignment="center"
+                                android:textAppearance="?attr/textAppearanceListItem" />
+
+                            <TextView
+                                android:id="@+id/TopUserCity"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="City"
+                                android:textAlignment="center"
+                                android:textAppearance="?attr/textAppearanceListItem" />
+
+                            <TextView
+                                android:id="@+id/TopUserLeaves"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="Leaves"
+                                android:textAlignment="center"
+                                android:textAppearance="?attr/textAppearanceListItem" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/cardview_light_background"
@@ -178,6 +239,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
+
 
                     <LinearLayout
                         android:layout_width="match_parent"

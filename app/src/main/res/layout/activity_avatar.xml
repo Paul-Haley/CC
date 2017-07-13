@@ -25,32 +25,17 @@
         app:layout_constraintTop_toTopOf="@+id/avatar_rarity1"
         app:srcCompat="@drawable/symbol_star" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#D5CAF3"
-        android:text="@string/all_avatars"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/avatar_rarity1"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/button"
-        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintLeft_toRightOf="@+id/button"
         app:layout_constraintRight_toLeftOf="@+id/avatar_rarity2"
-        app:layout_constraintTop_toTopOf="@+id/button"
-        app:layout_constraintVertical_bias="0.38"
-        app:srcCompat="@drawable/symbol_star" />
+        app:srcCompat="@drawable/symbol_star"
+        tools:layout_editor_absoluteY="7dp"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <ImageView
         android:id="@+id/avatar_avatarImage"

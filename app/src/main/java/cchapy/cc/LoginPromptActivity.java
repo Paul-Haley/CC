@@ -39,7 +39,7 @@ public class LoginPromptActivity extends AppCompatActivity {
 
         UserFetcher uFetch = new UserFetcher(view.getContext());
         if (uFetch.checkUserLogin(uNameString, pWordString)) {
-            Toast.makeText(this, "Login Successful", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.login_success, Toast.LENGTH_LONG).show();
             SharedPreferences userData = view.getContext().getSharedPreferences(
                     getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
@@ -50,7 +50,7 @@ public class LoginPromptActivity extends AppCompatActivity {
             editor.commit();
             finish();
         } else {
-            Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.login_fail, Toast.LENGTH_LONG).show();
             password.setText("");
         }
     }

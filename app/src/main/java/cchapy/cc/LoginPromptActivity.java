@@ -45,6 +45,7 @@ public class LoginPromptActivity extends AppCompatActivity {
 
             SharedPreferences.Editor editor = userData.edit();
             int userID = uFetch.getUserIdByUsername(uNameString);
+            editor.clear();
             editor.putInt(getString(R.string.saved_user_id), userID);
             editor.commit();
             finish();

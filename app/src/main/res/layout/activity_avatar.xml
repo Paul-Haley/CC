@@ -8,21 +8,21 @@
     tools:context="cchapy.cc.AvatarActivity">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/avatar_rarity3"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:layout_constraintLeft_toRightOf="@+id/imageView3"
+        app:layout_constraintLeft_toRightOf="@+id/avatar_rarity2"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/avatar_rarity2"
         app:srcCompat="@drawable/symbol_star" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/avatar_rarity2"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:layout_constraintLeft_toRightOf="@+id/imageView2"
-        app:layout_constraintRight_toLeftOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView2"
+        app:layout_constraintLeft_toRightOf="@+id/avatar_rarity1"
+        app:layout_constraintRight_toLeftOf="@+id/avatar_rarity3"
+        app:layout_constraintTop_toTopOf="@+id/avatar_rarity1"
         app:srcCompat="@drawable/symbol_star" />
 
     <Button
@@ -38,7 +38,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/avatar_rarity1"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="8dp"
@@ -47,13 +47,13 @@
         app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintLeft_toRightOf="@+id/button"
-        app:layout_constraintRight_toLeftOf="@+id/imageView3"
+        app:layout_constraintRight_toLeftOf="@+id/avatar_rarity2"
         app:layout_constraintTop_toTopOf="@+id/button"
         app:layout_constraintVertical_bias="0.38"
         app:srcCompat="@drawable/symbol_star" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/avatar_avatarImage"
         android:layout_width="226dp"
         android:layout_height="321dp"
         android:layout_marginBottom="8dp"
@@ -63,7 +63,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/imageView5"
+        app:layout_constraintLeft_toRightOf="@+id/avatar_avatarImage"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/character_girl_generic" />
@@ -85,13 +85,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"
         android:text="@string/set_as_avatar"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton"
+        app:layout_constraintBottom_toTopOf="@+id/Button_Set_Avatar"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="@+id/imageButton"
-        app:layout_constraintRight_toRightOf="@+id/imageButton" />
+        app:layout_constraintLeft_toLeftOf="@+id/Button_Set_Avatar"
+        app:layout_constraintRight_toRightOf="@+id/Button_Set_Avatar" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/Button_Set_Avatar"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginBottom="8dp"
@@ -101,7 +101,8 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/icon_avatar_setavatar" />
+        app:srcCompat="@drawable/icon_avatar_setavatar"
+        android:onClick="setAvatar"/>
 
     <ImageButton
         android:id="@+id/Button_Shop_Closet"
@@ -114,7 +115,8 @@
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:srcCompat="@drawable/icon_shop_avatar" />
+        app:srcCompat="@drawable/icon_shop_avatar"
+        android:onClick="viewShopFromAvatar"/>
 
     <TextView
         android:id="@+id/avatar_avatarName"
@@ -131,11 +133,11 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/Button_Shop_Closet"
-        app:layout_constraintRight_toLeftOf="@+id/imageButton"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintRight_toLeftOf="@+id/Button_Set_Avatar"
+        app:layout_constraintTop_toBottomOf="@+id/avatar_avatarImage" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/avatar_btnPrev"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dp"
@@ -147,16 +149,17 @@
         android:adjustViewBounds="false"
         android:background="@color/zxing_transparent"
         android:scaleType="fitEnd"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar_avatarImage"
         app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintRight_toLeftOf="@+id/avatar_avatarImage"
+        app:layout_constraintTop_toTopOf="@+id/avatar_avatarImage"
         app:layout_constraintVertical_bias="0.497"
-        app:srcCompat="@drawable/testing_left" />
+        app:srcCompat="@drawable/testing_left"
+        android:onClick="displayPreviousAvatar"/>
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/avatar_btnNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="2dp"
@@ -166,12 +169,13 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="2dp"
         android:background="@color/zxing_transparent"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintBottom_toBottomOf="@+id/avatar_avatarImage"
         app:layout_constraintHorizontal_bias="0.61"
-        app:layout_constraintLeft_toRightOf="@+id/imageView5"
+        app:layout_constraintLeft_toRightOf="@+id/avatar_avatarImage"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/avatar_avatarImage"
         app:layout_constraintVertical_bias="0.497"
-        app:srcCompat="@drawable/testing_right" />
+        app:srcCompat="@drawable/testing_right"
+        android:onClick="displayNextAvatar"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,11 +1,11 @@
 package cchapy.cc;
 
+import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TabHost;
-
-import cchapy.cc.dummy.DummyContent;
+import android.widget.TextView;
 
 public class ShopActivity extends AppCompatActivity
         implements VoucherListingFragment.OnListFragmentInteractionListener,
@@ -44,6 +44,35 @@ public class ShopActivity extends AppCompatActivity
                     .add(R.id.avatar_shoplist, new AvatarListingFragment())
                     .commit();
         }
+
+        updateLeafCount();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        updateLeafCount();
+    }
+
+    public void updateLeafCount() {
+        Context context = getApplicationContext();
+        int userID = UserInfoHelper.getLoggedInId(context);
+
+        int leafCount;
+        if (userID == -1) {
+            leafCount = 0;
+        } else {
+            //get leaf count
+            UserFetcher uFetch = new UserFetcher(context);
+            leafCount = uFetch.getCurrentLeavesById(userID);
+        }
+
+        TextView avatarLeafCount = (TextView)findViewById(R.id.shop_leaves_avatar);
+        TextView discountLeafCount = (TextView)findViewById(R.id.shop_leaves_discount);
+
+        avatarLeafCount.setText(Integer.toString(leafCount));
+        discountLeafCount.setText(Integer.toString(leafCount));
     }
 
     @Override

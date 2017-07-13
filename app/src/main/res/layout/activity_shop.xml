@@ -28,8 +28,8 @@
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:focusableInTouchMode="false"
-                android:background="#F0F0F0">
+                android:background="#F0F0F0"
+                android:focusableInTouchMode="false">
 
             </TabWidget>
 
@@ -67,14 +67,28 @@
                             android:textOff="@string/asc"
                             android:textOn="@string/desc" />
 
-                        <EditText
-                            android:id="@+id/Avatar_Search"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:hint="@string/search"
-                            android:inputType="text" />
+                        <LinearLayout
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.72"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/shop_leaves_avatar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:paddingTop="15dp"
+                                android:text="101010"
+                                android:textAlignment="textEnd"
+                                android:textSize="18sp" />
+
+                            <ImageView
+                                android:id="@+id/imageView4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/symbol_leaf" />
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -95,9 +109,9 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="#FFFFFF"
                         android:focusableInTouchMode="true"
-                        android:orientation="horizontal"
-                        android:background="#FFFFFF">
+                        android:orientation="horizontal">
 
                         <Spinner
                             android:id="@+id/spinner"
@@ -115,14 +129,29 @@
                             android:textOff="@string/asc"
                             android:textOn="@string/desc" />
 
-                        <EditText
-                            android:id="@+id/Discount_Search"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:hint="@string/search"
-                            android:inputType="text" />
+                        <LinearLayout
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.73"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/shop_leaves_discount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:paddingTop="15dp"
+                                android:text="101010"
+                                android:textAlignment="viewEnd"
+                                android:textSize="18sp" />
+
+                            <ImageView
+                                android:id="@+id/imageView3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/symbol_leaf" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 

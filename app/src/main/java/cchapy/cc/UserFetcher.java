@@ -3,8 +3,6 @@ package cchapy.cc;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.provider.ContactsContract;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +21,11 @@ public class UserFetcher {
         this.context = context;
     }
 
+    /**
+     *
+     * @param userID
+     * @return M for Male and F for Female, empty string on failure
+     */
     public String getGenderByUserId(int userID) {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
@@ -71,7 +74,7 @@ public class UserFetcher {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
-        String q = "SELECT UserID FROM users WHERE Username = '" + username + "'";
+        String q = "SELECT UserID FROM users WHERE Username = '" + username + "' COLLATE NOCASE";
         Cursor mCursor = db.rawQuery(q, null);
 
         mCursor.moveToFirst();
@@ -246,7 +249,7 @@ public class UserFetcher {
 
     public void setCurrentLeaves(int currentLeaves, int userID) {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
-        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         String q = "UPDATE users SET Leaves = " + currentLeaves + " WHERE UserID = " + userID;
 
@@ -280,7 +283,7 @@ public class UserFetcher {
 
     public void setTotalLeaves(int totalLeaves, int userID) {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
-        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
 
         String q = "UPDATE users SET Leaves_Total = " + totalLeaves + " WHERE UserID = " + userID;
 
@@ -364,6 +367,51 @@ public class UserFetcher {
         return localList;
     }
 
+    public List<User> fetchUsersByCityName(String cityName){
+
+        //set up
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        List<User> localList = new ArrayList<>();
+
+        String q = "SELECT * FROM users WHERE " +
+                DatabaseContract.UsersTable.COLUMN_NAME_CITY + " = '" + cityName + "'";
+
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.moveToFirst();
+        do {
+            int userID = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_USERID));
+            String username = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_USERNAME));
+            int leaves = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_LEAVES));
+            String gender = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_GENDER));
+            int carbon = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_CARBON));
+            String city = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_CITY));
+            int avatarEquipped = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_AVATAR_EQUIPPED));
+            int leavesTotal = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_LEAVES_TOTAL));
+
+            User user = new User(userID, username, leaves, gender, carbon, city, avatarEquipped, leavesTotal);
+            localList.add(user);
+
+        } while (mCursor.moveToNext());
+
+        //Clean up
+        mCursor.close();
+        mDbHelper.close();
+        return localList;
+    }
+
+    public void setAvatarByUserID(int avatarID, int userID) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        String q = "UPDATE users SET Avatar_Equipped = " + avatarID + " WHERE UserID = " + userID;
+
+        db.execSQL(q);
+
+        mDbHelper.close();
+    }
 }
 
 

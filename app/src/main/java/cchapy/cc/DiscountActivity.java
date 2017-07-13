@@ -1,6 +1,7 @@
 package cchapy.cc;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -80,8 +81,11 @@ public class DiscountActivity extends AppCompatActivity
     }
 
     @Override
-    public void onListFragmentInteraction(Voucher item) {
-
+    public void onListFragmentInteraction(Voucher voucher) {
+        Intent intent = new Intent(this, DiscountPopup.class);
+        intent.putExtra("DISCOUNT", voucher.getId());
+        intent.putExtra("DISPLAY_BUY", false);
+        startActivity(intent);
     }
 
     public void updateLeafCount() {

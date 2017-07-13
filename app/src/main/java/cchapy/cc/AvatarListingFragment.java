@@ -65,7 +65,9 @@ public class AvatarListingFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyAvatarListingRecyclerViewAdapter(fetcher.fetchAllAvatars(), mListener));
+            recyclerView.setAdapter(new MyAvatarListingRecyclerViewAdapter(fetcher.fetchAllAvatars(
+                    getArguments().getString("sorting"),
+                    getArguments().getString("sortMethod")), mListener));
         }
         return view;
     }

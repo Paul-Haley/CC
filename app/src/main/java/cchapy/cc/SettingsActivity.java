@@ -34,5 +34,7 @@ public class SettingsActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = userData.edit();
         editor.clear();
         editor.commit();
+
+        Toast.makeText(this, "User Data Deleted", Toast.LENGTH_LONG).show();
     }
 }

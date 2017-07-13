@@ -48,51 +48,54 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/cardview_light_background"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp">
 
                         <TextView
-                            android:id="@+id/id"
+                            android:id="@+id/rankLabel"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/text_margin"
-                            android:layout_weight="0.4"
-                            android:background="@color/zxing_transparent"
+                            android:layout_marginTop="@dimen/text_margin"
+                            android:layout_weight="0.6"
                             android:text="@string/rank"
                             android:textAppearance="?attr/textAppearanceListItem"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/leaderboardFriendUsername"
+                            android:id="@+id/friendUsernameLabel"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/text_margin"
+                            android:layout_marginTop="@dimen/text_margin"
                             android:layout_weight="1"
-                            android:background="@color/zxing_transparent"
                             android:text="@string/username"
                             android:textAppearance="?attr/textAppearanceListItem"
-                            android:textStyle="bold" />
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
 
                         <TextView
-                            android:id="@+id/leaderboardFriendCity"
+                            android:id="@+id/friendCityLabel"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/text_margin"
                             android:layout_weight="0.7"
-                            android:background="@color/zxing_transparent"
                             android:text="@string/city"
                             android:textAppearance="?attr/textAppearanceListItem"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            />
 
                         <TextView
-                            android:id="@+id/leaderboardFriendLeaves"
+                            android:id="@+id/friendLeavesLabel"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/text_margin"
                             android:layout_weight="0.5"
-                            android:background="@color/zxing_transparent"
                             android:text="@string/leaves"
                             android:textAppearance="?attr/textAppearanceListItem"
-                            android:textStyle="bold" />
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -113,51 +116,54 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/cardview_light_background"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp">
 
                         <TextView
-                            android:id="@+id/id"
+                            android:id="@+id/rankLabel"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/text_margin"
-                            android:layout_weight="0.4"
-                            android:background="@color/zxing_transparent"
+                            android:layout_marginTop="@dimen/text_margin"
+                            android:layout_weight="0.6"
                             android:text="@string/rank"
                             android:textAppearance="?attr/textAppearanceListItem"
+                            android:textSize="14sp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/leaderboardFriendUsername"
+                            android:id="@+id/friendUsernameLabel"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/text_margin"
+                            android:layout_marginTop="@dimen/text_margin"
                             android:layout_weight="1"
-                            android:background="@color/zxing_transparent"
                             android:text="@string/username"
                             android:textAppearance="?attr/textAppearanceListItem"
-                            android:textStyle="bold" />
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
 
                         <TextView
-                            android:id="@+id/leaderboardFriendCity"
+                            android:id="@+id/friendCityLabel"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/text_margin"
                             android:layout_weight="0.7"
-                            android:background="@color/zxing_transparent"
                             android:text="@string/city"
                             android:textAppearance="?attr/textAppearanceListItem"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            />
 
                         <TextView
-                            android:id="@+id/leaderboardFriendLeaves"
+                            android:id="@+id/friendLeavesLabel"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/text_margin"
                             android:layout_weight="0.5"
-                            android:background="@color/zxing_transparent"
                             android:text="@string/leaves"
                             android:textAppearance="?attr/textAppearanceListItem"
-                            android:textStyle="bold" />
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -175,54 +181,56 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:background="@color/cardview_light_background"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp">
 
                         <TextView
-                            android:id="@+id/id"
+                            android:id="@+id/rankLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/text_margin"
+                            android:layout_weight="0.6"
+                            android:text="@string/rank"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/citynameLabel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/text_margin"
+                            android:layout_weight="1"
+                            android:text="@string/city_name"
+                            android:textAppearance="?attr/textAppearanceListItem"
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/totalUsersLabel"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/text_margin"
                             android:layout_weight="0.4"
-                            android:background="@color/zxing_transparent"
-                            android:text="@string/rank"
-                            android:textAppearance="?attr/textAppearanceListItem"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/leaderboardCityName"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/text_margin"
-                            android:layout_weight="1"
-                            android:background="@color/zxing_transparent"
-                            android:text="@string/city_name"
-                            android:textAppearance="?attr/textAppearanceListItem"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/leaderboardCityUserCount"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/text_margin"
-                            android:layout_weight="0.7"
-                            android:background="@color/zxing_transparent"
                             android:text="@string/total_users"
                             android:textAppearance="?attr/textAppearanceListItem"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:textSize="14sp"
+                            />
 
                         <TextView
-                            android:id="@+id/leaderboardFriendLeaves"
+                            android:id="@+id/totalPointsLabel"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/text_margin"
                             android:layout_weight="0.5"
-                            android:background="@color/zxing_transparent"
                             android:text="@string/total_points"
                             android:textAppearance="?attr/textAppearanceListItem"
-                            android:textStyle="bold" />
-
+                            android:textSize="14sp"
+                            android:textStyle="bold"/>
                     </LinearLayout>
 
                     <LinearLayout

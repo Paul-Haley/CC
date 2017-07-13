@@ -10,6 +10,8 @@ import com.google.zxing.integration.android.IntentResult;
 
 public class QRActivity extends AppCompatActivity {
 
+    private final String QR_PREFIX = "CCHAPY_";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,13 +37,10 @@ public class QRActivity extends AppCompatActivity {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
                 finish(); // Go back to the last activity
             } else {
-                //TODO: Delete this later
                 //verification of QR code
                 String scannedResult = result.getContents();
-                if (scannedResult.startsWith("CCHAPY_")) {
-                    //valid
-                    //TODO: add check for numbers after CCHAPY_
-                    Toast.makeText(this, "REMEMBER TO DELETE THIS\nScanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+                if (scannedResult.startsWith(QR_PREFIX)) {//TODO: MAKE A BETTER VERIFICATION CODE
+                    //valid TODO: add check for numbers after CCHAPY_
                     Intent intent = new Intent(this, ScannedActivity.class);
                     startActivity(intent);
                 } else {

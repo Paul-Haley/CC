@@ -25,7 +25,7 @@ public class ScannedActivity extends AppCompatActivity {
 
         TextView leaves = (TextView) findViewById(R.id.leaves);
         int leaveCount = 50;
-        leaves.setText("You received " + leaveCount + " x "); //TODO: make dynamic
+        leaves.setText("You received " + leaveCount);
         //TODO: put logic for awarding on avatars
         gotCrate = true;
     }

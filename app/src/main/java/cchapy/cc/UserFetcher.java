@@ -302,9 +302,8 @@ public class UserFetcher {
 
         String q = "UPDATE users SET Leaves = " + currentLeaves + " WHERE UserID = " + userID;
 
-        Cursor mCursor = db.rawQuery(q, null);
-
-        mCursor.close();
+        db.execSQL(q);
+        
         mDbHelper.close();
     }
 
@@ -336,9 +335,8 @@ public class UserFetcher {
 
         String q = "UPDATE users SET Leaves_Total = " + totalLeaves + " WHERE UserID = " + userID;
 
-        Cursor mCursor = db.rawQuery(q, null);
+        db.execSQL(q);
 
-        mCursor.close();
         mDbHelper.close();
     }
 

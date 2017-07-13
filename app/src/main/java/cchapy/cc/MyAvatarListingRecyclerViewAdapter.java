@@ -63,7 +63,7 @@ public class MyAvatarListingRecyclerViewAdapter extends RecyclerView.Adapter<MyA
         holder.mPrice.setText(Integer.toString(holder.mItem.getPrice()));
 
         int rarity = holder.mItem.getRarity(); // Setting rarity stars displayed
-        holder.mRarity.setText("Stars: " + rarity);
+        holder.mRarity.setText(R.string.Stars_Label);
         if (rarity < 3) {
             holder.mStar3.setVisibility(View.INVISIBLE);
             if (rarity < 2) {

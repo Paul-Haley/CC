@@ -46,19 +46,19 @@
     <string name="Beijing">北京</string>
     <string name="Dalian">大连</string>
     <string name="Shanghai">上海</string>
-    <string name="location">Location:</string>
-    <string name="expires">Expires</string>
-    <string name="owned">Already owned</string>
-    <string name="insufficient_funds">Insufficient Leaves</string>
-    <string name="Buy">Buy</string>
-    <string name="purchase_successful">Purchase successful</string>
-    <string name="qrPrompt">Scan a CC QR code for Leaves and Avatars</string>
-    <string name="Avatar_Updated">Avatar Updated</string>
-    <string name="Login_Prompt">Login in Settings</string>
-    <string name="reset_database">Reset Database</string>
-    <string name="reset">Reset</string>
-    <string name="logout">Logout</string>
-    <string name="log_out_user">Log Out User</string>
+    <string name="location">所在地点:</string>
+    <string name="expires">期限</string>
+    <string name="owned">已拥有</string>
+    <string name="insufficient_funds">余额不足</string>
+    <string name="Buy">购买</string>
+    <string name="purchase_successful">支付成功</string>
+    <string name="qrPrompt">扫描二维码以获取叶子和玩偶</string>
+    <string name="Avatar_Updated">玩偶升级</string>
+    <string name="Login_Prompt">在设置中登录</string>
+    <string name="reset_database">重置数据</string>
+    <string name="reset">重置</string>
+    <string name="logout">登出账号</string>
+    <string name="log_out_user">注销账号</string>
     <string name="login_success">Login Successful</string>
     <string name="login_fail">Login Failed</string>
     <string name="user_login">User Login</string>
@@ -69,16 +69,16 @@
 
 
     <string-array name="sorting_options_vouchers">
-        <item>NEW</item>
+        <item>新品</item>
         <item>A-Z</item>
-        <item>TIME</item>
-        <item>PRICE</item>
+        <item>使用期限</item>
+        <item>价格</item>
     </string-array>
 
     <string-array name="sorting_options_avatars">
-        <item>NEW</item>
+        <item>新品</item>
         <item>A-Z</item>
-        <item>STARS</item>
-        <item>PRICE</item>
+        <item>星级</item>
+        <item>价格</item>
     </string-array>
 </resources>

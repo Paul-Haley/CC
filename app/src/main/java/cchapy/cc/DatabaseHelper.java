@@ -20,6 +20,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         this.context = context;
     }
 
+    public void clear() {
+        context.deleteDatabase("cc.db");
+    }
+
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(SQL_CREATE_AVATAR_TABLE);

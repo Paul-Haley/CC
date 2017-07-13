@@ -129,6 +129,40 @@ public class AvatarFetcher {
         return avatars;
     }
 
+    public List<Avatar> fetchAllAvatars() {
+        List<Avatar> avatars = new ArrayList<Avatar>();
+
+        // Setting up
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        Cursor mCursor = db.rawQuery("SELECT * FROM avatars",
+                null);
+        mCursor.moveToFirst();
+        do {
+
+            // Getting the avatars
+            int AvatarID = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_ID));
+            int StarNum = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_STARNUM));
+            int Price = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_PRICE));
+            String Name = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_NAME));
+            String Desc = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_DESCRIPTION));
+            int IMM = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_M_MAIN));
+            int IMA = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_M_ALT));
+            int IFM = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_F_MAIN));
+            int IFA = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.AvatarTable.COLUMN_NAME_IMAGE_F_ALT));
+
+            Avatar avatar = new Avatar(AvatarID, StarNum, Price, Name, Desc, IMM, IMA, IFM, IFA);
+            avatars.add(avatar);
+
+        } while(mCursor.moveToNext());
+
+        // Cleaning up
+        mCursor.close();
+        mDbHelper.close();
+        return avatars;
+    }
+
     /**
      * @param db Database
      * @return The id of all user owned avatars

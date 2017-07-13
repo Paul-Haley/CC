@@ -28,6 +28,12 @@ public class SettingsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void clearDB(View view) {
+        DatabaseHelper dbHelper = new DatabaseHelper(getApplicationContext());
+        dbHelper.clear();
+        Toast.makeText(this, "Database reset", Toast.LENGTH_LONG).show();
+    }
+
     public void clearLogin(View view) {
         SharedPreferences userData = getApplicationContext().getSharedPreferences(
                 getString(R.string.preference_file_key), Context.MODE_PRIVATE);

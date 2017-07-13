@@ -50,4 +50,19 @@ public class Avatar {
         return name;
     }
 
+    @Override
+    public boolean equals(Object other) {
+        if (other instanceof Avatar) {
+            if (((Avatar)other).getId() == this.getId()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return this.getId();
+    }
+
 }

@@ -8,37 +8,40 @@
         android:id="@+id/leaderboardCityRank"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
-        android:layout_weight="0.4"
+        android:layout_marginTop="@dimen/text_margin"
+        android:layout_weight="0.6"
         android:text="1"
         android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="14sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/leaderboardCityName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/text_margin"
+        android:layout_marginTop="@dimen/text_margin"
         android:layout_weight="1"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:text="Blah"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="14sp"/>
 
     <TextView
         android:id="@+id/leaderboardTotalUsers"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
-        android:layout_weight="0.8"
-        android:elevation="1dp"
+        android:layout_weight="0.4"
         android:text="The Sun"
         android:textAppearance="?attr/textAppearanceListItem"
-        android:textStyle="italic" />
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/leaderboardTotalLeaves"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/text_margin"
-        android:layout_weight="0.8"
+        android:layout_weight="0.5"
         android:text="9999"
-        android:textAppearance="?attr/textAppearanceListItem" />
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textSize="14sp" />
 </LinearLayout>

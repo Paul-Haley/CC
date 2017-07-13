@@ -16,20 +16,21 @@
         android:background="#FFFFFF">
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/discount_sort_select"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:entries="@array/sorting_options_vouchers" />
 
         <ToggleButton
-            android:id="@+id/toggleButton3"
+            android:id="@+id/discount_toggle_sort"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.46"
             android:text="ToggleButton"
             android:textOff="@string/asc"
-            android:textOn="@string/desc" />
+            android:textOn="@string/desc"
+            android:onClick="triggerUpdate"/>
 
         <TextView
             android:id="@+id/discount_leaves"

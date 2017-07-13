@@ -74,7 +74,8 @@ public class VoucherListingFragment extends Fragment {
             }
             if (getArguments() != null) {
                 recyclerView.setAdapter(new MyVoucherListingRecyclerViewAdapter(fetcher.fetchVouchersByUserId(
-                        (int)getArguments().getFloat("userID")), mListener));
+                        (int)getArguments().getFloat("userID"), getArguments().getString("sorting"),
+                        getArguments().getString("sortMethod")), mListener));
             } else {
                 recyclerView.setAdapter(new MyVoucherListingRecyclerViewAdapter(fetcher.fetchAllVouchers(), mListener));
             }

@@ -1,7 +1,5 @@
 package cchapy.cc;
 
-import java.util.Date;
-
 /**
  * Created by Hayley on 11/07/2017.
  * A class modelling a user in the system.
@@ -52,6 +50,15 @@ public class Voucher {
 
     public String getShop() {
         return shop;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (object == null || object instanceof Voucher) {
+            return false;
+        }
+
+        return this.getId() == ((Voucher) object).getId();
     }
 }
 

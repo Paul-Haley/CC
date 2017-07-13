@@ -32,13 +32,30 @@
             android:textOn="@string/desc"
             android:onClick="triggerUpdate"/>
 
-        <TextView
-            android:id="@+id/discount_leaves"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="Leaves: 1010"
-            android:textAlignment="center" />
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.73"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/discount_leaves"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:paddingTop="15dp"
+                android:text="101010"
+                android:textAlignment="textEnd"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/symbol_leaf" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

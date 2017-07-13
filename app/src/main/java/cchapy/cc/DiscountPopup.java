@@ -1,5 +1,6 @@
 package cchapy.cc;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -21,7 +22,8 @@ public class DiscountPopup extends AppCompatActivity {
         supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_discount_popup);
 
-        updatePopup(getIntent().getIntExtra("DISCOUNT", 0));
+        Intent intent = getIntent();
+        updatePopup(intent.getIntExtra("DISCOUNT", 0));
     }
 
     /**
@@ -58,6 +60,12 @@ public class DiscountPopup extends AppCompatActivity {
 
     private void setBuyButton() {
         Button buy = (Button)findViewById(R.id.shop_pop_disc_purchase);
+
+        if (!(getIntent().getBooleanExtra("DISPLAY_BUY", true))) {
+            buy.setVisibility(View.INVISIBLE);
+            buy.setEnabled(false);
+            return;
+        }
 
         int userId = UserInfoHelper.getLoggedInId(getApplicationContext());
         UserFetcher uFetcher = new UserFetcher(getApplicationContext());

@@ -47,9 +47,8 @@
                 <TextView
                     android:id="@+id/Discount_Name"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:maxLines="2"
                     android:text="Voucher Name"
                     android:textAlignment="viewStart"
                     android:textAppearance="@android:style/TextAppearance.Material.Medium" />

@@ -40,10 +40,16 @@ public class AvatarActivity extends AppCompatActivity {
 
             ownedAvatars = uFetch.getOwnedAvatarsByUserId(userID);
             displayEquippedAvatar();
+        } else {
+            TextView avatarText = (TextView)findViewById(R.id.avatar_avatarName);
+            avatarText.setText("Please log in");
         }
     }
 
     public void displayEquippedAvatar() {
+        if (UserInfoHelper.getLoggedInId(getApplicationContext()) == -1) {
+            return;
+        }
         Context context = getApplicationContext();
         int userID = UserInfoHelper.getLoggedInId(getApplicationContext());
         UserFetcher uFetch = new UserFetcher(getApplicationContext());
@@ -75,6 +81,9 @@ public class AvatarActivity extends AppCompatActivity {
     }
 
     public void displayNextAvatar(View view) {
+        if (UserInfoHelper.getLoggedInId(getApplicationContext()) == -1) {
+            return;
+        }
         Context context = getApplicationContext();
         int userID = UserInfoHelper.getLoggedInId(getApplicationContext());
         UserFetcher uFetch = new UserFetcher(getApplicationContext());
@@ -103,6 +112,9 @@ public class AvatarActivity extends AppCompatActivity {
     }
 
     public void displayPreviousAvatar(View view) {
+        if (UserInfoHelper.getLoggedInId(getApplicationContext()) == -1) {
+            return;
+        }
         Context context = getApplicationContext();
         int userID = UserInfoHelper.getLoggedInId(getApplicationContext());
         UserFetcher uFetch = new UserFetcher(getApplicationContext());
@@ -154,6 +166,9 @@ public class AvatarActivity extends AppCompatActivity {
     }
 
     public void setAvatar(View view) {
+        if (UserInfoHelper.getLoggedInId(getApplicationContext()) == -1) {
+            return;
+        }
         Avatar toChange = ownedAvatars.get(index);
 
         int userID = UserInfoHelper.getLoggedInId(getApplicationContext());

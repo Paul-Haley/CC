@@ -27,7 +27,7 @@ public class VoucherFetcher {
      * @param id Voucher id
      * @return single voucher by id or TODO: null if not found
      */
-    public Voucher fetchVoucherById(int id) {
+    public Voucher fetchVoucherByVoucherId(int id) {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
         String idString = Integer.toString(id);
@@ -57,6 +57,29 @@ public class VoucherFetcher {
         do {
             voucherList.add(createVoucherFromDatabase(mCursor));
         } while (mCursor.moveToNext());
+
+        mCursor.close();
+        mDbHelper.close();
+        return voucherList;
+    }
+
+    public List<Voucher> fetchVouchersByUserId(int userId) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+
+        List<Voucher> voucherList = new ArrayList<>();
+
+        String q = "SELECT * FROM discounts WHERE DiscountID IN (SELECT discount FROM discounts_owned" +
+                " WHERE User = " + userId + ")";
+        System.out.println(q);
+        Cursor mCursor = db.rawQuery(q, null);
+
+        if (mCursor.getCount() != 0) {
+            mCursor.moveToFirst();
+            do {
+                voucherList.add(createVoucherFromDatabase(mCursor));
+            } while (mCursor.moveToNext());
+        }
 
         mCursor.close();
         mDbHelper.close();

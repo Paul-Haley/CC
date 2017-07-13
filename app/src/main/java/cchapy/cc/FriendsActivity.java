@@ -70,6 +70,9 @@ public class FriendsActivity extends AppCompatActivity
     }
 
     public void viewPopUpProfile(User user) {
+        if (UserInfoHelper.getLoggedInId(getApplicationContext()) == -1) {
+            return;
+        }
         //Create view QR intent
         //TODO: Build user into intent to display appropiate profile
         Intent intent = new Intent(this, DisplayPopUpProfileActivity.class);
@@ -79,6 +82,9 @@ public class FriendsActivity extends AppCompatActivity
     }
 
     public void viewPopUpProfile(View view) {
+        if (UserInfoHelper.getLoggedInId(getApplicationContext()) == -1) {
+            return;
+        }
         //Create view QR intent
         //TODO: Build user into intent to display appropiate profile
         Intent intent = new Intent(this, DisplayPopUpProfileActivity.class);

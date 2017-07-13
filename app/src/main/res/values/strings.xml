@@ -39,6 +39,7 @@
     <string name="city_name">City Name</string>
     <string name="total_users">Total Users</string>
     <string name="total_points">Total Points</string>
+    <string name="Stars_Label">Stars:</string>
 
     <string-array name="sorting_options_vouchers">
         <item>NEW</item>

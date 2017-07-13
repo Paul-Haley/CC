@@ -51,14 +51,15 @@ public class VoucherFetcher {
         return voucherList;
     }
 
-    public List<Voucher> fetchVouchersByUserId(int userId) {
+    public List<Voucher> fetchVouchersByUserId(int userId, String sorting, String sortingMethod) {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
 
         List<Voucher> voucherList = new ArrayList<>();
 
         String q = "SELECT * FROM discounts WHERE DiscountID IN (SELECT discount FROM discounts_owned" +
-                " WHERE User = " + userId + ")";
+                " WHERE User = " + userId + ") ORDER BY " + sortingMethod + " " + sorting;
+        System.out.println(q);
         Cursor mCursor = db.rawQuery(q, null);
 
         mCursor.moveToFirst();

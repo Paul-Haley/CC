@@ -35,6 +35,14 @@
     <string name="cities">城市</string>
     <string name="avatars">玩偶</string>
 
+    <string name="reward">奖励</string>
+    <string name="saved_user_id">记住账号</string>
+    <string name="preference_file_key">com.cchapy.cc.USER_DATA</string>
+    <string name="city_name">城市名</string>
+    <string name="total_points">全部叶子</string>
+    <string name="total_users">全部用户</string>
+    <string name="Stars_Label">星星:</string>
+
 
     <string-array name="sorting_options_vouchers">
         <item>NEW</item>

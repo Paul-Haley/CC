@@ -92,6 +92,27 @@ public class UserFetcher {
         return userID;
     }
 
+    public int getFriendCountById(int UserID) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+        int friendCount;
+
+        String q = "SELECT count(*) FROM friends WHERE User1 = " + UserID;
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.moveToFirst();
+
+        try {
+            do {
+                friendCount = mCursor.getInt((mCursor.getColumnIndex("count(*)")));
+            } while (mCursor.moveToNext());
+        } catch (IndexOutOfBoundsException e) {
+            return 0;
+        }
+
+        return friendCount;
+    }
+
     public String getUsernameById(int UserID) {
         DatabaseHelper mDbHelper = new DatabaseHelper(context);
         SQLiteDatabase db = mDbHelper.getReadableDatabase();
@@ -134,6 +155,34 @@ public class UserFetcher {
         }
 
         return (returnedPassword.equals(password));
+    }
+
+    public User fetchUser(int uID){
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getReadableDatabase();
+        User user;
+
+        String q = "SELECT * FROM users WHERE UserID = " + uID;
+        Cursor mCursor = db.rawQuery(q, null);
+
+        mCursor.moveToFirst();
+        do {
+            int userID = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_USERID));
+            String username = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_USERNAME));
+            int leaves = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_LEAVES));
+            String gender = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_GENDER));
+            int carbon = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_CARBON));
+            String city = mCursor.getString(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_CITY));
+            int avatarEquipped = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_AVATAR_EQUIPPED));
+            int leavesTotal = mCursor.getInt(mCursor.getColumnIndex(DatabaseContract.UsersTable.COLUMN_NAME_LEAVES_TOTAL));
+
+            user = new User(userID, username, leaves, gender, carbon, city, avatarEquipped, leavesTotal);
+
+        } while (mCursor.moveToNext());
+
+        mCursor.close();
+        mDbHelper.close();
+        return user;
     }
 
     public List<User> fetchAllUsers(){

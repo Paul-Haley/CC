@@ -103,7 +103,7 @@ public class DiscountActivity extends AppCompatActivity
 
         TextView discountLeafCount = (TextView)findViewById(R.id.discount_leaves);
 
-        discountLeafCount.setText("Leaves: " + leafCount);
+        discountLeafCount.setText(Integer.toString(leafCount));
     }
 
     @Override

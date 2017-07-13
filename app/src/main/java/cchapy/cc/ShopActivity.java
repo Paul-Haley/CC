@@ -4,18 +4,29 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 public class ShopActivity extends AppCompatActivity
         implements VoucherListingFragment.OnListFragmentInteractionListener,
-        AvatarListingFragment.OnListFragmentInteractionListener {
+        AvatarListingFragment.OnListFragmentInteractionListener,
+        AdapterView.OnItemSelectedListener{
     TabHost tabs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
+
+        Spinner spin1 = (Spinner) findViewById(R.id.sort_avatar_select);
+        spin1.setOnItemSelectedListener(this);
+
+        Spinner spin2 = (Spinner) findViewById(R.id.sort_discount_select);
+        spin2.setOnItemSelectedListener(this);
 
         //set up tabs
         TabHost tabs = (TabHost)findViewById(R.id.tabHost);
@@ -40,12 +51,11 @@ public class ShopActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.voucher_shoplist, new VoucherListingFragment())
                     .commit();
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.avatar_shoplist, new AvatarListingFragment())
-                    .commit();
         }
 
         updateLeafCount();
+        displayAvatars();
+        displayDiscounts();
     }
 
     @Override
@@ -53,6 +63,89 @@ public class ShopActivity extends AppCompatActivity
         super.onResume();
 
         updateLeafCount();
+        displayAvatars();
+        displayDiscounts();
+    }
+
+    public void displayDiscounts() {
+        ToggleButton toggle = (ToggleButton)findViewById(R.id.discount_sort_toggle);
+        Spinner sortSelect = (Spinner)findViewById(R.id.sort_discount_select);
+
+        Bundle arguments = new Bundle();
+        if (!toggle.isChecked()) {
+            //asc
+            arguments.putString("sorting", "ASC");
+        } else {
+            //desc
+            arguments.putString("sorting", "DESC");
+        }
+
+        String sortSelection = sortSelect.getSelectedItem().toString();
+        switch (sortSelection) {
+            case "NEW":
+                arguments.putString("sortMethod", "DiscountID");
+                break;
+            case "A-Z":
+                arguments.putString("sortMethod", "Name");
+                break;
+            case "TIME":
+                arguments.putString("sortMethod", "Time");
+                break;
+            case "PRICE":
+                arguments.putString("sortMethod", "Price");
+                break;
+        }
+
+        arguments.putFloat("userID", -1);
+        VoucherListingFragment voucherListing = new VoucherListingFragment();
+        voucherListing.setArguments(arguments);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.voucher_shoplist, voucherListing)
+                .commit();
+    }
+
+    public void updateAvatars(View view) {
+        displayAvatars();
+    }
+
+    public void updateDiscounts(View view) {
+        displayDiscounts();
+    }
+
+    public void displayAvatars() {
+        ToggleButton toggle = (ToggleButton)findViewById(R.id.avatar_sort_toggle);
+        Spinner sortSelect = (Spinner)findViewById(R.id.sort_avatar_select);
+
+        Bundle arguments = new Bundle();
+        if (!toggle.isChecked()) {
+            //asc
+            arguments.putString("sorting", "ASC");
+        } else {
+            //desc
+            arguments.putString("sorting", "DESC");
+        }
+
+        String sortSelection = sortSelect.getSelectedItem().toString();
+        switch (sortSelection) {
+            case "NEW":
+                arguments.putString("sortMethod", "AvatarID");
+                break;
+            case "A-Z":
+                arguments.putString("sortMethod", "Name");
+                break;
+            case "STARS":
+                arguments.putString("sortMethod", "StarNum");
+                break;
+            case "PRICE":
+                arguments.putString("sortMethod", "Price");
+                break;
+        }
+
+        AvatarListingFragment avatarListing = new AvatarListingFragment();
+        avatarListing.setArguments(arguments);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.avatar_shoplist, avatarListing)
+                .commit();
     }
 
     public void updateLeafCount() {
@@ -82,6 +175,17 @@ public class ShopActivity extends AppCompatActivity
 
     @Override
     public void onListFragmentInteraction(Avatar item) {
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        displayAvatars();
+        displayDiscounts();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
 }

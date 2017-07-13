@@ -90,8 +90,10 @@ public class AvatarFetcher {
     /**
      *
      * @return The list of all avatars
+     * @param sorting
+     * @param sortMethod
      */
-    public List<Avatar> fetchAllAvatars() {
+    public List<Avatar> fetchAllAvatars(String sorting, String sortMethod) {
         List<Avatar> avatars = new ArrayList<Avatar>();
 
         // Setting up
@@ -100,7 +102,8 @@ public class AvatarFetcher {
 
         List<Integer> owned = getOwnedAvatars(db); // Reading owned avatars for the current user
 
-        Cursor mCursor = db.rawQuery("SELECT * FROM avatars", null);
+        Cursor mCursor = db.rawQuery("SELECT * FROM avatars ORDER BY " + sortMethod + " " + sorting,
+                null);
         mCursor.moveToFirst();
         do {
 

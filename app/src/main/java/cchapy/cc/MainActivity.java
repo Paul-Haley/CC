@@ -4,7 +4,6 @@ package cchapy.cc;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -59,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         if (userID == -1) {
             //no user logged in
             TextView userText = (TextView)findViewById(R.id.Text_Username);
-            userText.setText("LOG IN");
+            userText.setText("LOG IN"); //TODO: unhardcode
 
             ImageView avatar = (ImageView)findViewById(R.id.Image_Avatar);
             avatar.setVisibility(View.INVISIBLE);

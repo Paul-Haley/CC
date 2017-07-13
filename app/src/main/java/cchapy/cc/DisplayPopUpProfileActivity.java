@@ -21,7 +21,6 @@ public class DisplayPopUpProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_pop_up_profile);
 
         UserFetcher fetcher = new UserFetcher(this);
-        AvatarFetcher avatarFetcher = new AvatarFetcher(this);
 
         //get the intent that started this activity
         Intent intent = getIntent();
@@ -48,5 +47,8 @@ public class DisplayPopUpProfileActivity extends AppCompatActivity {
         TypedArray avatars = res.obtainTypedArray(R.array.avatars);
         ImageView avatarView = (ImageView)findViewById(R.id.Image_Avatar);
         avatarView.setImageResource(avatars.getResourceId(avatarImageID, -1));
+
+        TextView friendCount = (TextView)findViewById(R.id.friendcountText);
+        friendCount.setText(Integer.toString(fetcher.getFriendCountById(user.getId())));
     }
 }

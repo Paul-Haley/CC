@@ -58,7 +58,7 @@ public class DisplayProfileActivity extends AppCompatActivity {
         city.setText(user.getCity());
 
         TextView leaves = (TextView)findViewById(R.id.leavecountText);
-        leaves.setText(Integer.toString(user.getLeafCount()));
+        leaves.setText(Integer.toString(user.getTotalLeafCount()));
 
         TextView co2 = (TextView)findViewById(R.id.co2Text);
         co2.setText(Integer.toString(user.getCarbon()));

@@ -137,7 +137,7 @@ public class LeaderboardActivity extends AppCompatActivity
             ImageView mLeafIcon = view.findViewById(R.id.leafIcon);
             TextView mRankNum = view.findViewById(R.id.rankNum);
 
-            mTopUsername.setText("LOG IN");
+            mTopUsername.setText(getString(R.string.login));
             mTopUserCity.setVisibility(View.GONE);
             mTopUserLeaves.setVisibility(View.GONE);
             mTopUserAvatar.setVisibility(View.GONE);
@@ -177,7 +177,7 @@ public class LeaderboardActivity extends AppCompatActivity
             ImageView mLeafIcon = view.findViewById(R.id.leafIconLocal);
             TextView mRankNum = view.findViewById(R.id.rankNumLocal);
 
-            mTopUsername.setText("LOG IN");
+            mTopUsername.setText(getString(R.string.login));
             mTopUserCity.setVisibility(View.GONE);
             mTopUserLeaves.setVisibility(View.GONE);
             mTopUserAvatar.setVisibility(View.GONE);

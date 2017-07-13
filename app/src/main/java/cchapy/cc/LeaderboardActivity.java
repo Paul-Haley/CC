@@ -1,11 +1,8 @@
 package cchapy.cc;
 
 import android.content.Intent;
-<<<<<<< HEAD
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,17 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
 import java.util.List;
-
-import cchapy.cc.User;
-=======
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.widget.TabHost;
->>>>>>> 13edf7a939798aa0a10c02ff8c4545236bebe7e3
 
 public class LeaderboardActivity extends AppCompatActivity
         implements UserFragment.OnListFragmentInteractionListener, LocalUserFragment.OnListFragmentInteractionListener,

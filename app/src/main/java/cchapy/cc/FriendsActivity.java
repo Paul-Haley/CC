@@ -43,7 +43,7 @@ public class FriendsActivity extends AppCompatActivity
         if (userID == -1) {
             //no user logged in
             TextView userText = (TextView)findViewById(R.id.usernamestring);
-            userText.setText("LOG IN");
+            userText.setText(getString(R.string.Login_Prompt));
 
             ImageView avatar = (ImageView)findViewById(R.id.userProfileImg);
             avatar.setVisibility(View.INVISIBLE);

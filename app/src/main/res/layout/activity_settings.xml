@@ -19,7 +19,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Log Out User"
+            android:text="@string/log_out_user"
             android:textAlignment="center"
             android:textColor="@color/cardview_dark_background"
             android:textSize="18sp" />
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="clearLogin"
-            android:text="Logout" />
+            android:text="@string/logout" />
 
 
     </LinearLayout>
@@ -72,7 +72,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Reset Database"
+            android:text="@string/reset_database"
             android:textAlignment="center"
             android:textColor="@color/cardview_dark_background"
             android:textSize="18sp" />
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="clearDB"
-            android:text="Reset" />
+            android:text="@string/reset" />
 
     </LinearLayout>
 

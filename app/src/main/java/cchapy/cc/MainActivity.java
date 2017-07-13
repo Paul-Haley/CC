@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         if (userID == -1) {
             //no user logged in
             TextView userText = (TextView)findViewById(R.id.Text_Username);
-            userText.setText("LOG IN"); //TODO: unhardcode
+            userText.setText(R.string.Login_Prompt);
 
             ImageView avatar = (ImageView)findViewById(R.id.Image_Avatar);
             avatar.setVisibility(View.INVISIBLE);

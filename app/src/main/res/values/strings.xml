@@ -46,6 +46,13 @@
     <string name="insufficient_funds">Insufficient Leaves</string>
     <string name="Buy">Buy</string>
     <string name="purchase_successful">Purchase successful</string>
+    <string name="qrPrompt">Scan a CC QR code for Leaves and Avatars</string>
+    <string name="Avatar_Updated">Avatar Updated</string>
+    <string name="Login_Prompt">Login in Settings</string>
+    <string name="reset_database">Reset Database</string>
+    <string name="reset">Reset</string>
+    <string name="logout">Logout</string>
+    <string name="log_out_user">Log Out User</string>
 
     <string-array name="sorting_options_vouchers">
         <item>NEW</item>

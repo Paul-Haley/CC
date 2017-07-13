@@ -60,7 +60,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.29"
                     android:paddingTop="8dp"
-                    android:text="Please Log In"
+                    android:text="@string/Login_Prompt"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -70,7 +70,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="29dp"
                     android:layout_weight="0.29"
-                    android:text="City"
+                    android:text="@string/city"
                     android:textSize="20sp"
                     android:textStyle="italic"
                     tools:layout_editor_absoluteX="90dp"

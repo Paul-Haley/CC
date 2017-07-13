@@ -43,7 +43,7 @@ public class AvatarActivity extends AppCompatActivity {
             displayEquippedAvatar();
         } else {
             TextView avatarText = (TextView)findViewById(R.id.avatar_avatarName);
-            avatarText.setText("Please log in");
+            avatarText.setText(getString(R.string.login));
         }
     }
 
@@ -191,6 +191,6 @@ public class AvatarActivity extends AppCompatActivity {
 
         uFetch.setAvatarByUserID(toChange.getId(), userID);
 
-        Toast.makeText(this, "Avatar Updated", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, R.string.Avatar_Updated, Toast.LENGTH_LONG).show();
     }
 }

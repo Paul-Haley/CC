@@ -67,14 +67,13 @@
                             android:textOff="@string/asc"
                             android:textOn="@string/desc" />
 
-                        <EditText
-                            android:id="@+id/Avatar_Search"
-                            android:layout_width="0dp"
+                        <TextView
+                            android:id="@+id/shop_leaves_avatar"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:hint="@string/search"
-                            android:inputType="text" />
+                            android:layout_weight="0.5"
+                            android:text="Leaves: 101010"
+                            android:textAlignment="center" />
 
                     </LinearLayout>
 
@@ -115,14 +114,13 @@
                             android:textOff="@string/asc"
                             android:textOn="@string/desc" />
 
-                        <EditText
-                            android:id="@+id/Discount_Search"
-                            android:layout_width="0dp"
+                        <TextView
+                            android:id="@+id/shop_leaves_discount"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:ems="10"
-                            android:hint="@string/search"
-                            android:inputType="text" />
+                            android:text="Leaves: 101010"
+                            android:textAlignment="center" />
 
                     </LinearLayout>
 

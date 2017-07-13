@@ -97,10 +97,12 @@ public class VoucherFetcher {
         System.out.println(q);
         Cursor mCursor = db.rawQuery(q, null);
 
-        mCursor.moveToFirst();
-        do {
-            voucherList.add(createVoucherFromDatabase(mCursor));
-        } while (mCursor.moveToNext());
+        if (mCursor.getCount() != 0) {
+            mCursor.moveToFirst();
+            do {
+                voucherList.add(createVoucherFromDatabase(mCursor));
+            } while (mCursor.moveToNext());
+        }
 
         mCursor.close();
         mDbHelper.close();

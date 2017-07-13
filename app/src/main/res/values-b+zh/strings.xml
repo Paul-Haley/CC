@@ -51,6 +51,7 @@
     <string name="owned">Already owned</string>
     <string name="insufficient_funds">Insufficient Leaves</string>
     <string name="Buy">Buy</string>
+    <string name="purchase_successful">Purchase successful</string>
 
 
     <string-array name="sorting_options_vouchers">

@@ -499,6 +499,15 @@ public class UserFetcher {
         mDbHelper.close();
         return friendList;
     }
+
+    public void giveUserVoucherbyId(int userId, int voucherId) {
+        DatabaseHelper mDbHelper = new DatabaseHelper(context);
+        SQLiteDatabase db = mDbHelper.getWritableDatabase();
+
+        db.execSQL("INSERT INTO discounts_owned VALUES (" + userId + ", " + voucherId + ")");
+
+        mDbHelper.close();
+    }
 }
 
 

@@ -9,6 +9,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class DiscountPopup extends AppCompatActivity {
 
@@ -73,8 +74,22 @@ public class DiscountPopup extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        setBuyButton();
+    }
+
     public void buy(View view) {
         int userId = UserInfoHelper.getLoggedInId(getApplicationContext());
         UserInfoHelper.spendLeaves(getApplicationContext(), userId, voucher.getPrice());
+
+        // Update database
+        UserFetcher uFetcher = new UserFetcher(getApplicationContext());
+        uFetcher.giveUserVoucherbyId(userId, voucher.getId());
+
+
+        Toast.makeText(getApplicationContext(), getString(R.string.purchase_successful), Toast.LENGTH_SHORT);
+        finish();
     }
 }

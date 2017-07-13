@@ -54,11 +54,16 @@ public class Voucher {
 
     @Override
     public boolean equals(Object object) {
-        if (object == null || object instanceof Voucher) {
+        if (object == null || !(object instanceof Voucher)) {
             return false;
         }
 
         return this.getId() == ((Voucher) object).getId();
+    }
+
+    @Override
+    public int hashCode() {
+        return this.getId();
     }
 }
 

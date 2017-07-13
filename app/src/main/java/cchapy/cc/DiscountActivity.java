@@ -60,6 +60,15 @@ public class DiscountActivity extends AppCompatActivity
             case "PRICE":
                 arguments.putString("sortMethod", "Price");
                 break;
+            case "新品":
+                arguments.putString("sortMethod", "DiscountID");
+                break;
+            case "使用期限":
+                arguments.putString("sortMethod", "Time");
+                break;
+            case "价格":
+                arguments.putString("sortMethod", "Price");
+                break;
         }
 
         arguments.putFloat("userID", UserInfoHelper.getLoggedInId(getApplicationContext()));

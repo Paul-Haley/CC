@@ -81,7 +81,7 @@
                 android:id="@+id/leavesLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/leaves"
+                android:text="@string/total_leaves"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 tools:layout_editor_absoluteX="90dp"

@@ -67,6 +67,7 @@
     <string name="cancelled">Cancelled</string>
     <string name="you_received">You received</string>
     <string name="avatar_already_owned">Avatar already owned</string>
+    <string name="total_leaves">Total Leaves</string>
 
     <string-array name="sorting_options_vouchers">
         <item>NEW</item>

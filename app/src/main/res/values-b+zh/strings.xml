@@ -67,10 +67,10 @@
     <string name="submit">提交</string>
     <string name="cancel">取消</string>
 
-    <string name="invalid_QR">不好扫码</string>
-    <string name="cancelled">取消了</string>
-    <string name="you_received">你收到了</string>
-    <string name="avatar_already_owned">你已经有玩偶</string>
+    <string name="invalid_QR">扫码失败</string>
+    <string name="cancelled">已取消</string>
+    <string name="you_received">已收到</string>
+    <string name="avatar_already_owned">你已拥有这个玩偶</string>
 
     <string-array name="sorting_options_vouchers">
         <item>新品</item>

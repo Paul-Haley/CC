@@ -71,7 +71,7 @@
     <string name="cancelled">已取消</string>
     <string name="you_received">已收到</string>
     <string name="avatar_already_owned">你已拥有这个玩偶</string>
-    <string name="total_leaves">Total Leaves</string>
+    <string name="total_leaves">全部叶子</string>
 
     <string-array name="sorting_options_vouchers">
         <item>新品</item>

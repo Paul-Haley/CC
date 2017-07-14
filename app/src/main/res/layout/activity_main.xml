@@ -212,7 +212,7 @@
     <TextView
         android:id="@+id/Text_Username"
         android:layout_width="144dp"
-        android:layout_height="29dp"
+        android:layout_height="wrap_content"
         android:ems="10"
         android:maxLines="3"
         android:text="@string/username"
